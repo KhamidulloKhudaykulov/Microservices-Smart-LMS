@@ -13,10 +13,9 @@ public class Fullname : ValueObject
     {
         if (!string.IsNullOrEmpty(value))
         {
-            return Result.Failure<ValueObject>(new Error("", ""));
+            return Result.Failure<ValueObject>(new Error("Fullname.NullValue", "The specific value can't be null or empty"));
         }
-        
-        
+        return new Fullname(value);
     }
 
     public override IEnumerable<object> GetAtomicValues()
