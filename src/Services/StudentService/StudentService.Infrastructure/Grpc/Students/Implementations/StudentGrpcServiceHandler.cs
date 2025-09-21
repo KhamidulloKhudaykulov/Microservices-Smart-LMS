@@ -10,9 +10,12 @@ public class StudentGrpcServiceHandler(
         VerifyStudentRequest request,
         ServerCallContext context)
     {
-        var student = await _studentRepository.SelectAsync(u => u.Id == Guid.Parse(request.StudentId));
-        VerifyStudentResponse response = new VerifyStudentResponse();
+        var student = await _studentRepository
+            .SelectAsync(u => u.Id == Guid.Parse(request.StudentId));
         
-        return response;
+        return new VerifyStudentResponse
+        {
+            Exists = student is not null
+        };
     }
 }
