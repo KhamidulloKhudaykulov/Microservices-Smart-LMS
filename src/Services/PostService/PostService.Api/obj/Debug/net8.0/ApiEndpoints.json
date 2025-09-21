@@ -1,0 +1,34 @@
+[
+  {
+    "ContainingType": "PostService.Api.Controllers.PostController",
+    "Method": "Post",
+    "RelativePath": "api/posts",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "PostService.Application.UseCases.Posts.Commands.CreatePostCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PostService.Api.Controllers.PostController",
+    "Method": "GetAll",
+    "RelativePath": "api/posts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "PostService.Application.UseCases.Posts.Queries.GetAllPostsQuery",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

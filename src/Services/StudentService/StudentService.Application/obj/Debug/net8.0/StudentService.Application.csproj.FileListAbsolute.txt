@@ -1,0 +1,5 @@
+E:\Private\.NET\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\StudentService.Application.csproj.AssemblyReference.cache
+E:\Private\.NET\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\StudentService.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\Private\.NET\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\StudentService.Application.AssemblyInfoInputs.cache
+E:\Private\.NET\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\StudentService.Application.AssemblyInfo.cs
+E:\Private\.NET\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\StudentService.Application.csproj.CoreCompileInputs.cache

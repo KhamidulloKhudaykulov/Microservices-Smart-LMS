@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option csharp_namespace = "PostService.Infrastructure.Grpc";
+
+service UserService {
+  rpc VerifyExistUser (VerifyUserRequest) returns (VerifyUserResponse);
+}
+
+message VerifyUserRequest {
+  string userId = 1;
+}
+
+message VerifyUserResponse {
+  bool exists = 1;
+}

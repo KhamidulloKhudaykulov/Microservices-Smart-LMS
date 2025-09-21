@@ -1,0 +1,2 @@
+obj\Debug\net9.0\Grpc\Students\Protos/Student.cs \
+obj\Debug\net9.0\Grpc\Students\Protos/StudentGrpc.cs: Grpc/Students/Protos/student.proto

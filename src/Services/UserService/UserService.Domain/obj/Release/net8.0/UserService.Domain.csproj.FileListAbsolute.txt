@@ -1,0 +1,11 @@
+D:\selfprojects\Humanity\src\Services\UserService\UserService.Domain\bin\Release\net8.0\UserService.Domain.deps.json
+D:\selfprojects\Humanity\src\Services\UserService\UserService.Domain\bin\Release\net8.0\UserService.Domain.dll
+D:\selfprojects\Humanity\src\Services\UserService\UserService.Domain\bin\Release\net8.0\UserService.Domain.pdb
+D:\selfprojects\Humanity\src\Services\UserService\UserService.Domain\obj\Release\net8.0\UserService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\selfprojects\Humanity\src\Services\UserService\UserService.Domain\obj\Release\net8.0\UserService.Domain.AssemblyInfoInputs.cache
+D:\selfprojects\Humanity\src\Services\UserService\UserService.Domain\obj\Release\net8.0\UserService.Domain.AssemblyInfo.cs
+D:\selfprojects\Humanity\src\Services\UserService\UserService.Domain\obj\Release\net8.0\UserService.Domain.csproj.CoreCompileInputs.cache
+D:\selfprojects\Humanity\src\Services\UserService\UserService.Domain\obj\Release\net8.0\UserService.Domain.dll
+D:\selfprojects\Humanity\src\Services\UserService\UserService.Domain\obj\Release\net8.0\refint\UserService.Domain.dll
+D:\selfprojects\Humanity\src\Services\UserService\UserService.Domain\obj\Release\net8.0\UserService.Domain.pdb
+D:\selfprojects\Humanity\src\Services\UserService\UserService.Domain\obj\Release\net8.0\ref\UserService.Domain.dll
