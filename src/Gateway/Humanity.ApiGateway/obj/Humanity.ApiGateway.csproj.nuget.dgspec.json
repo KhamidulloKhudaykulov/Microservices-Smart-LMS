@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Gateway/Humanity.ApiGateway/Humanity.ApiGateway.csproj": {}
+    "E:\\Private\\.NET\\Humanity\\src\\Gateway\\Humanity.ApiGateway\\Humanity.ApiGateway.csproj": {}
   },
   "projects": {
-    "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Gateway/Humanity.ApiGateway/Humanity.ApiGateway.csproj": {
+    "E:\\Private\\.NET\\Humanity\\src\\Gateway\\Humanity.ApiGateway\\Humanity.ApiGateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Gateway/Humanity.ApiGateway/Humanity.ApiGateway.csproj",
+        "projectUniqueName": "E:\\Private\\.NET\\Humanity\\src\\Gateway\\Humanity.ApiGateway\\Humanity.ApiGateway.csproj",
         "projectName": "Humanity.ApiGateway",
-        "projectPath": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Gateway/Humanity.ApiGateway/Humanity.ApiGateway.csproj",
-        "packagesPath": "/home/pop-ospop-os/.nuget/packages/",
-        "outputPath": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Gateway/Humanity.ApiGateway/obj/",
+        "projectPath": "E:\\Private\\.NET\\Humanity\\src\\Gateway\\Humanity.ApiGateway\\Humanity.ApiGateway.csproj",
+        "packagesPath": "C:\\Users\\asabr\\.nuget\\packages\\",
+        "outputPath": "E:\\Private\\.NET\\Humanity\\src\\Gateway\\Humanity.ApiGateway\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/pop-ospop-os/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\asabr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -80,20 +86,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.20, 8.0.20]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[8.0.20, 8.0.20]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.20, 8.0.20]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -102,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/pop-ospop-os/.dotnet/sdk/9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

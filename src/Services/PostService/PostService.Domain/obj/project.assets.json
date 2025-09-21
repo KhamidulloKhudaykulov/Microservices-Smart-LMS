@@ -8,24 +8,31 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/home/pop-ospop-os/.nuget/packages/": {}
+    "C:\\Users\\asabr\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/PostService/PostService.Domain/PostService.Domain.csproj",
+      "projectUniqueName": "E:\\Private\\.NET\\Humanity\\src\\Services\\PostService\\PostService.Domain\\PostService.Domain.csproj",
       "projectName": "PostService.Domain",
-      "projectPath": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/PostService/PostService.Domain/PostService.Domain.csproj",
-      "packagesPath": "/home/pop-ospop-os/.nuget/packages/",
-      "outputPath": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/PostService/PostService.Domain/obj/",
+      "projectPath": "E:\\Private\\.NET\\Humanity\\src\\Services\\PostService\\PostService.Domain\\PostService.Domain.csproj",
+      "packagesPath": "C:\\Users\\asabr\\.nuget\\packages\\",
+      "outputPath": "E:\\Private\\.NET\\Humanity\\src\\Services\\PostService\\PostService.Domain\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/pop-ospop-os/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\asabr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -60,22 +67,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.20, 8.0.20]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.20, 8.0.20]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/pop-ospop-os/.dotnet/sdk/9.0.305/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

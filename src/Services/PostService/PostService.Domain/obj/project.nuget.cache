@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EatVzfNzRTs=",
+  "dgSpecHash": "1TWJekdsUHg=",
   "success": true,
-  "projectFilePath": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/PostService/PostService.Domain/PostService.Domain.csproj",
-  "expectedPackageFiles": [
-    "/home/pop-ospop-os/.nuget/packages/microsoft.netcore.app.ref/8.0.20/microsoft.netcore.app.ref.8.0.20.nupkg.sha512",
-    "/home/pop-ospop-os/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.20/microsoft.aspnetcore.app.ref.8.0.20.nupkg.sha512"
-  ],
+  "projectFilePath": "E:\\Private\\.NET\\Humanity\\src\\Services\\PostService\\PostService.Domain\\PostService.Domain.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

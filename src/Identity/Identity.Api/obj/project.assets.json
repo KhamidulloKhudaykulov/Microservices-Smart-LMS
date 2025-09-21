@@ -3125,38 +3125,45 @@
     ]
   },
   "packageFolders": {
-    "/home/pop-ospop-os/.nuget/packages/": {}
+    "C:\\Users\\asabr\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Identity/Identity.Api/Identity.Api.csproj",
+      "projectUniqueName": "E:\\Private\\.NET\\Humanity\\src\\Identity\\Identity.Api\\Identity.Api.csproj",
       "projectName": "Identity.Api",
-      "projectPath": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Identity/Identity.Api/Identity.Api.csproj",
-      "packagesPath": "/home/pop-ospop-os/.nuget/packages/",
-      "outputPath": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Identity/Identity.Api/obj/",
+      "projectPath": "E:\\Private\\.NET\\Humanity\\src\\Identity\\Identity.Api\\Identity.Api.csproj",
+      "packagesPath": "C:\\Users\\asabr\\.nuget\\packages\\",
+      "outputPath": "E:\\Private\\.NET\\Humanity\\src\\Identity\\Identity.Api\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/pop-ospop-os/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\asabr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Identity/Identity.Application/Identity.Application.csproj": {
-              "projectPath": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Identity/Identity.Application/Identity.Application.csproj"
+            "E:\\Private\\.NET\\Humanity\\src\\Identity\\Identity.Application\\Identity.Application.csproj": {
+              "projectPath": "E:\\Private\\.NET\\Humanity\\src\\Identity\\Identity.Application\\Identity.Application.csproj"
             },
-            "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Identity/Identity.Domain/Identity.Domain.csproj": {
-              "projectPath": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Identity/Identity.Domain/Identity.Domain.csproj"
+            "E:\\Private\\.NET\\Humanity\\src\\Identity\\Identity.Domain\\Identity.Domain.csproj": {
+              "projectPath": "E:\\Private\\.NET\\Humanity\\src\\Identity\\Identity.Domain\\Identity.Domain.csproj"
             },
-            "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Identity/Identity.Infrastructure/Identity.Infrastructure.csproj": {
-              "projectPath": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Identity/Identity.Infrastructure/Identity.Infrastructure.csproj"
+            "E:\\Private\\.NET\\Humanity\\src\\Identity\\Identity.Infrastructure\\Identity.Infrastructure.csproj": {
+              "projectPath": "E:\\Private\\.NET\\Humanity\\src\\Identity\\Identity.Infrastructure\\Identity.Infrastructure.csproj"
             }
           }
         }
@@ -3201,20 +3208,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.20, 8.0.20]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.linux-x64",
-            "version": "[8.0.20, 8.0.20]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.20, 8.0.20]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -3223,7 +3216,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/pop-ospop-os/.dotnet/sdk/9.0.305/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

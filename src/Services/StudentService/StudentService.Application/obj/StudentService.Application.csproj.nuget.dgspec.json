@@ -1,33 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/StudentService.Application.csproj": {}
+    "E:\\Private\\.NET\\Humanity\\src\\Services\\StudentService\\StudentService.Application\\StudentService.Application.csproj": {}
   },
   "projects": {
-    "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/StudentService.Application.csproj": {
+    "E:\\Private\\.NET\\Humanity\\src\\Services\\StudentService\\StudentService.Application\\StudentService.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/StudentService.Application.csproj",
+        "projectUniqueName": "E:\\Private\\.NET\\Humanity\\src\\Services\\StudentService\\StudentService.Application\\StudentService.Application.csproj",
         "projectName": "StudentService.Application",
-        "projectPath": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/StudentService.Application.csproj",
-        "packagesPath": "/home/pop-ospop-os/.nuget/packages/",
-        "outputPath": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/obj/",
+        "projectPath": "E:\\Private\\.NET\\Humanity\\src\\Services\\StudentService\\StudentService.Application\\StudentService.Application.csproj",
+        "packagesPath": "C:\\Users\\asabr\\.nuget\\packages\\",
+        "outputPath": "E:\\Private\\.NET\\Humanity\\src\\Services\\StudentService\\StudentService.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/pop-ospop-os/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\asabr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/StudentService.Domain.csproj": {
-                "projectPath": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/StudentService.Domain.csproj"
+              "E:\\Private\\.NET\\Humanity\\src\\Services\\StudentService\\StudentService.Domain\\StudentService.Domain.csproj": {
+                "projectPath": "E:\\Private\\.NET\\Humanity\\src\\Services\\StudentService\\StudentService.Domain\\StudentService.Domain.csproj"
               }
             }
           }
@@ -72,41 +78,37 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.20, 8.0.20]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.20, 8.0.20]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/pop-ospop-os/.dotnet/sdk/9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/StudentService.Domain.csproj": {
+    "E:\\Private\\.NET\\Humanity\\src\\Services\\StudentService\\StudentService.Domain\\StudentService.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/StudentService.Domain.csproj",
+        "projectUniqueName": "E:\\Private\\.NET\\Humanity\\src\\Services\\StudentService\\StudentService.Domain\\StudentService.Domain.csproj",
         "projectName": "StudentService.Domain",
-        "projectPath": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/StudentService.Domain.csproj",
-        "packagesPath": "/home/pop-ospop-os/.nuget/packages/",
-        "outputPath": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/obj/",
+        "projectPath": "E:\\Private\\.NET\\Humanity\\src\\Services\\StudentService\\StudentService.Domain\\StudentService.Domain.csproj",
+        "packagesPath": "C:\\Users\\asabr\\.nuget\\packages\\",
+        "outputPath": "E:\\Private\\.NET\\Humanity\\src\\Services\\StudentService\\StudentService.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/pop-ospop-os/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\asabr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -141,22 +143,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.20, 8.0.20]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.20, 8.0.20]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/pop-ospop-os/.dotnet/sdk/9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

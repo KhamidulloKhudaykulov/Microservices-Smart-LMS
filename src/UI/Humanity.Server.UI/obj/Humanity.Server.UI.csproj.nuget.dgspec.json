@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/UI/Humanity.Server.UI/Humanity.Server.UI.csproj": {}
+    "E:\\Private\\.NET\\Humanity\\src\\UI\\Humanity.Server.UI\\Humanity.Server.UI.csproj": {}
   },
   "projects": {
-    "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/UI/Humanity.Server.UI/Humanity.Server.UI.csproj": {
+    "E:\\Private\\.NET\\Humanity\\src\\UI\\Humanity.Server.UI\\Humanity.Server.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/UI/Humanity.Server.UI/Humanity.Server.UI.csproj",
+        "projectUniqueName": "E:\\Private\\.NET\\Humanity\\src\\UI\\Humanity.Server.UI\\Humanity.Server.UI.csproj",
         "projectName": "Humanity.Server.UI",
-        "projectPath": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/UI/Humanity.Server.UI/Humanity.Server.UI.csproj",
-        "packagesPath": "/home/pop-ospop-os/.nuget/packages/",
-        "outputPath": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/UI/Humanity.Server.UI/obj/",
+        "projectPath": "E:\\Private\\.NET\\Humanity\\src\\UI\\Humanity.Server.UI\\Humanity.Server.UI.csproj",
+        "packagesPath": "C:\\Users\\asabr\\.nuget\\packages\\",
+        "outputPath": "E:\\Private\\.NET\\Humanity\\src\\UI\\Humanity.Server.UI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/pop-ospop-os/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\asabr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -62,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/pop-ospop-os/.dotnet/sdk/9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
