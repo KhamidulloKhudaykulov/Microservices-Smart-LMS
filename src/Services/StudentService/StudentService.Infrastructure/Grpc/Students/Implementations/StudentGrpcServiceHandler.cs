@@ -12,13 +12,7 @@ public class StudentGrpcServiceHandler(
     {
         var student = await _studentRepository.SelectAsync(u => u.Id == Guid.Parse(request.StudentId));
         VerifyStudentResponse response = new VerifyStudentResponse();
-        if (student == null)
-        {
-            response.Exists = false;
-            return response;
-        }
-
-        response.Exists = true;
+        
         return response;
     }
 }
