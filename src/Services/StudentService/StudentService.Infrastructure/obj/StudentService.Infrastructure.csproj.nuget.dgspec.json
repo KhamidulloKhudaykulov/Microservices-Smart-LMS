@@ -217,6 +217,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.72.0, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.9.17, )"
             }
           },
           "imports": [
