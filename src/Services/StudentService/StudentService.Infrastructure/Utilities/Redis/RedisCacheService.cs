@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using StackExchange.Redis;
 using StudentService.Application.Interfaces.Redis;
 
@@ -12,16 +13,21 @@ public class RedisCacheService : IRedisCacheService
         var redis = ConnectionMultiplexer.Connect(connectionString);
         _db = redis.GetDatabase();
     }
-    public async Task SetString(string key, string value)
+    public async Task SetAsync<T>(string key, T value)
     {
-        await _db.StringSetAsync(key, value);
+        var json = JsonConvert.SerializeObject(value);
+        await _db.StringSetAsync(key, json);
     }
 
-    public async Task<string> GetString(string key)
+    public async Task<T?> GetAsync<T>(string key)
     {
-        return await _db.StringGetAsync(key);
-    }
+        var json = await _db.StringGetAsync(key);
 
+        if (json.IsNullOrEmpty)
+            return default;
+
+        return JsonConvert.DeserializeObject<T>(json!);
+    }
     public async Task RemoveKey(string key)
     {
         await _db.KeyDeleteAsync(key);

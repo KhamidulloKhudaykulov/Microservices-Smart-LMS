@@ -1,23 +1,52 @@
 ﻿using MediatR;
+using StudentService.Application.Helpers;
+using StudentService.Application.Interfaces.Redis;
+using StudentService.Application.UseCases.Students.Contracts;
 using StudentService.Domain.Entities;
 using StudentService.Domain.Repositories;
 
 namespace StudentService.Application.UseCases.Students.Queries;
 
-public record GetStudentsQuery : IRequest<Result<IEnumerable<Student>>>;
+public record GetStudentsQuery(
+    int PageNumber,
+    int PageSize) : IRequest<Result<IEnumerable<StudentResponseDto>>>;
 
-public class GetStudentsQueryHandler : IRequestHandler<GetStudentsQuery, Result<IEnumerable<Student>>>
+public class GetStudentsQueryHandler : IRequestHandler<GetStudentsQuery, Result<IEnumerable<StudentResponseDto>>>
 {
     private readonly IStudentRepository _studentRepository;
+    private readonly IRedisCacheService _redisCacheService;
 
-    public GetStudentsQueryHandler(IStudentRepository studentRepository)
+    public GetStudentsQueryHandler(IStudentRepository studentRepository, IRedisCacheService redisCacheService)
     {
         _studentRepository = studentRepository;
+        _redisCacheService = redisCacheService;
     }
 
-    public async Task<Result<IEnumerable<Student>>> Handle(GetStudentsQuery request, CancellationToken cancellationToken)
+    public async Task<Result<IEnumerable<StudentResponseDto>>> Handle(GetStudentsQuery request, CancellationToken cancellationToken)
     {
-        var students = await _studentRepository.SelectAllAsync();
+        var cacheKey = RedisHelper.GenerateKey("students", new
+        {
+            PageNumber = request.PageNumber,
+            PageSiz = request.PageSize
+        });
+        
+        var items = await _redisCacheService
+            .GetAsync<IEnumerable<StudentResponseDto>>(cacheKey);
+        
+        if (items is not null)
+            return Result.Success<IEnumerable<StudentResponseDto>>(items);
+        
+        var students = (await _studentRepository.SelectAllAsync())
+            .Skip((request.PageNumber - 1) * request.PageSize)
+            .Take(request.PageSize)
+            .Select(s => new StudentResponseDto()
+            {
+                Id = s.Id,
+                FullName = s.FullName,
+                PhoneNumber = s.PhoneNumber,
+                PassportData = s.PassportData,
+            });
+        
         return Result.Success(students);
     }
 }

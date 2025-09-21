@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wilNqAsWKJw=",
+  "dgSpecHash": "QugdU3peQz4=",
   "success": true,
   "projectFilePath": "/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Infrastructure/StudentService.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "/home/pop-ospop-os/.nuget/packages/microsoft.identitymodel.jsonwebtokens/8.0.1/microsoft.identitymodel.jsonwebtokens.8.0.1.nupkg.sha512",
     "/home/pop-ospop-os/.nuget/packages/microsoft.identitymodel.logging/8.0.1/microsoft.identitymodel.logging.8.0.1.nupkg.sha512",
     "/home/pop-ospop-os/.nuget/packages/microsoft.identitymodel.tokens/8.0.1/microsoft.identitymodel.tokens.8.0.1.nupkg.sha512",
+    "/home/pop-ospop-os/.nuget/packages/newtonsoft.json/13.0.4/newtonsoft.json.13.0.4.nupkg.sha512",
     "/home/pop-ospop-os/.nuget/packages/pipelines.sockets.unofficial/2.2.8/pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
     "/home/pop-ospop-os/.nuget/packages/stackexchange.redis/2.9.17/stackexchange.redis.2.9.17.nupkg.sha512",
     "/home/pop-ospop-os/.nuget/packages/system.io.pipelines/5.0.1/system.io.pipelines.5.0.1.nupkg.sha512"
