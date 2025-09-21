@@ -14,3 +14,15 @@ obj/
 *.cache
 *.log
 *.vs/
+
+# .NET build artifacts
+bin/
+obj/
+*.user
+*.rsuser
+*.suo
+*.cache
+*.dbmdl
+*.log
+*.vs/
+*.vscode/
