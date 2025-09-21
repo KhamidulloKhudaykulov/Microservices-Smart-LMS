@@ -1,0 +1,16 @@
+# VS Code
+.vscode/
+
+# JetBrains IDE
+.idea/
+
+# Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.rsuser
+*.suo
+*.cache
+*.log
+*.vs/
