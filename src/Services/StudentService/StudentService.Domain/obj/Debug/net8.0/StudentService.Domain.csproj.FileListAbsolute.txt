@@ -1,4 +1,16 @@
-E:\Private\.NET\Humanity\src\Services\StudentService\StudentService.Domain\obj\Debug\net8.0\StudentService.Domain.GeneratedMSBuildEditorConfig.editorconfig
-E:\Private\.NET\Humanity\src\Services\StudentService\StudentService.Domain\obj\Debug\net8.0\StudentService.Domain.AssemblyInfoInputs.cache
-E:\Private\.NET\Humanity\src\Services\StudentService\StudentService.Domain\obj\Debug\net8.0\StudentService.Domain.AssemblyInfo.cs
-E:\Private\.NET\Humanity\src\Services\StudentService\StudentService.Domain\obj\Debug\net8.0\StudentService.Domain.csproj.CoreCompileInputs.cache
+E:/Private/.NET/Humanity/src/Services/StudentService/StudentService.Domain/obj/Debug/net8.0/StudentService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:/Private/.NET/Humanity/src/Services/StudentService/StudentService.Domain/obj/Debug/net8.0/StudentService.Domain.AssemblyInfoInputs.cache
+E:/Private/.NET/Humanity/src/Services/StudentService/StudentService.Domain/obj/Debug/net8.0/StudentService.Domain.AssemblyInfo.cs
+E:/Private/.NET/Humanity/src/Services/StudentService/StudentService.Domain/obj/Debug/net8.0/StudentService.Domain.csproj.CoreCompileInputs.cache
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/bin/Debug/net8.0/StudentService.Domain.deps.json
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/bin/Debug/net8.0/StudentService.Domain.dll
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/bin/Debug/net8.0/StudentService.Domain.pdb
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/obj/Debug/net8.0/StudentService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/obj/Debug/net8.0/StudentService.Domain.AssemblyInfoInputs.cache
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/obj/Debug/net8.0/StudentService.Domain.AssemblyInfo.cs
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/obj/Debug/net8.0/StudentService.Domain.csproj.CoreCompileInputs.cache
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/obj/Debug/net8.0/StudentService.Domain.sourcelink.json
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/obj/Debug/net8.0/StudentService.Domain.dll
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/obj/Debug/net8.0/refint/StudentService.Domain.dll
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/obj/Debug/net8.0/StudentService.Domain.pdb
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/obj/Debug/net8.0/ref/StudentService.Domain.dll

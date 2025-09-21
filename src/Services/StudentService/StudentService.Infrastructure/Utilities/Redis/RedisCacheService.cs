@@ -28,6 +28,13 @@ public class RedisCacheService : IRedisCacheService
 
         return JsonConvert.DeserializeObject<T>(json!);
     }
+
+    public Task SetExpireAsync(string key, TimeSpan expiration)
+    {
+        _db.KeyExpire(key, expiration);
+        return Task.CompletedTask;
+    }
+
     public async Task RemoveKey(string key)
     {
         await _db.KeyDeleteAsync(key);

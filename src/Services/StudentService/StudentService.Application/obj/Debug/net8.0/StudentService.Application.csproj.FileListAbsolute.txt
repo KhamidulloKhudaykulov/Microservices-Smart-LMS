@@ -1,5 +1,21 @@
-E:\Private\.NET\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\StudentService.Application.csproj.AssemblyReference.cache
-E:\Private\.NET\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\StudentService.Application.GeneratedMSBuildEditorConfig.editorconfig
-E:\Private\.NET\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\StudentService.Application.AssemblyInfoInputs.cache
-E:\Private\.NET\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\StudentService.Application.AssemblyInfo.cs
-E:\Private\.NET\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\StudentService.Application.csproj.CoreCompileInputs.cache
+E:/Private/.NET/Humanity/src/Services/StudentService/StudentService.Application/obj/Debug/net8.0/StudentService.Application.csproj.AssemblyReference.cache
+E:/Private/.NET/Humanity/src/Services/StudentService/StudentService.Application/obj/Debug/net8.0/StudentService.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:/Private/.NET/Humanity/src/Services/StudentService/StudentService.Application/obj/Debug/net8.0/StudentService.Application.AssemblyInfoInputs.cache
+E:/Private/.NET/Humanity/src/Services/StudentService/StudentService.Application/obj/Debug/net8.0/StudentService.Application.AssemblyInfo.cs
+E:/Private/.NET/Humanity/src/Services/StudentService/StudentService.Application/obj/Debug/net8.0/StudentService.Application.csproj.CoreCompileInputs.cache
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/bin/Debug/net8.0/StudentService.Application.deps.json
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/bin/Debug/net8.0/StudentService.Application.dll
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/bin/Debug/net8.0/StudentService.Application.pdb
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/bin/Debug/net8.0/StudentService.Domain.dll
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/bin/Debug/net8.0/StudentService.Domain.pdb
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/obj/Debug/net8.0/StudentService.Application.csproj.AssemblyReference.cache
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/obj/Debug/net8.0/StudentService.Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/obj/Debug/net8.0/StudentService.Application.AssemblyInfoInputs.cache
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/obj/Debug/net8.0/StudentService.Application.AssemblyInfo.cs
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/obj/Debug/net8.0/StudentService.Application.csproj.CoreCompileInputs.cache
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/obj/Debug/net8.0/StudentService.Application.sourcelink.json
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/obj/Debug/net8.0/StudentS.7AD106C8.Up2Date
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/obj/Debug/net8.0/StudentService.Application.dll
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/obj/Debug/net8.0/refint/StudentService.Application.dll
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/obj/Debug/net8.0/StudentService.Application.pdb
+/home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/obj/Debug/net8.0/ref/StudentService.Application.dll

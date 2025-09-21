@@ -27,7 +27,7 @@ public class GetStudentsQueryHandler : IRequestHandler<GetStudentsQuery, Result<
         var cacheKey = RedisHelper.GenerateKey("students", new
         {
             PageNumber = request.PageNumber,
-            PageSiz = request.PageSize
+            PageSize = request.PageSize
         });
         
         var items = await _redisCacheService
@@ -46,6 +46,9 @@ public class GetStudentsQueryHandler : IRequestHandler<GetStudentsQuery, Result<
                 PhoneNumber = s.PhoneNumber,
                 PassportData = s.PassportData,
             });
+
+        await _redisCacheService.SetAsync(cacheKey, students);
+        await _redisCacheService.SetExpireAsync(cacheKey, TimeSpan.FromMinutes(60));
         
         return Result.Success(students);
     }
