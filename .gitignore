@@ -81,3 +81,49 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# Rider-specific files
+.idea/
+*.iml
+*.iws
+*.ipr
+*.suo
+*.user
+*.userprefs
+
+# Visual Studio-specific files (for mixed environments)
+.vs/
+*.sln.docstates
+*.vssscc
+*.vspscc
+*.csproj.user
+*.resharper
+
+# Package directories
+packages/
+node_modules/ # If you are using Node.js packages in your C# project
+
+# Test results
+TestResults/
+
+# Logs
+logs/
+*.log
+
+# Nupkg files
+*.nupkg
+
+# Global packages folder
+.nuget/packages/
+
+# Other common exclusions
+Thumbs.db
+Desktop.ini
+*.bak
+*.orig
+*.swp
+*.swo
