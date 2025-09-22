@@ -11,9 +11,12 @@ public class FullName : ValueObject
 
     public static Result<FullName> Create(string value)
     {
-        if (!string.IsNullOrEmpty(value))
+        if (string.IsNullOrWhiteSpace(value))
         {
-            return Result.Failure<FullName>(new Error("Fullname.NullValue", "The specific value can't be null or empty"));
+            return Result.Failure<FullName>(
+                new Error(
+                    "Fullname.NullValue", 
+                    "The specific value can't be null or empty"));
         }
         return new FullName(value);
     }

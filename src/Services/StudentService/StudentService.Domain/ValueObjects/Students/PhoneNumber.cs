@@ -14,7 +14,7 @@ public class PhoneNumber : ValueObject
 
     public static Result<PhoneNumber> Create(string value)
     {
-        if (!string.IsNullOrEmpty(value))
+        if (string.IsNullOrWhiteSpace(value))
         {
             return Result.Failure<PhoneNumber>(
                 new Error("PhoneNumber.Empty", "Telefon raqam bo‘sh bo‘lishi mumkin emas."));

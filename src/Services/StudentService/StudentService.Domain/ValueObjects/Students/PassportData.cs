@@ -13,7 +13,7 @@ public class PassportData : ValueObject
 
     public static Result<PassportData> Create(string value)
     {
-        if (!string.IsNullOrEmpty(value))
+        if (string.IsNullOrWhiteSpace(value))
         {
             return Result.Failure<PassportData>(new Error(
                 "PassportData.IsEmpty", "PassportData can not be null or empty"));
