@@ -7,7 +7,6 @@ public record GetStudentQuery() : IRequest<Result<IEnumerable<StudentResponseDto
     
 public class GetStudentQueryHandler : IRequestHandler<GetStudentQuery, Result<IEnumerable<StudentResponseDto>>>
 {
-    
     public Task<Result<IEnumerable<StudentResponseDto>>> Handle(GetStudentQuery request, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
