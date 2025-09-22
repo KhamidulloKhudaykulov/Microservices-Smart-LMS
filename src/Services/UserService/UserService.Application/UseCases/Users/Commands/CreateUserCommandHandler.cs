@@ -6,7 +6,8 @@ using UserService.Domain.Repositories;
 namespace UserService.Application.UseCases.Users.Commands;
 
 public record CreateUserCommand(
-    string UserName) : IRequest<Result>;
+    string UserName,
+    string Email) : IRequest<Result>;
 
 public sealed class CreateUserCommandHandler(
     IUserRepository _userRepository,
@@ -17,7 +18,8 @@ public sealed class CreateUserCommandHandler(
     {
         var user = User.Create(
             Guid.NewGuid(),
-            request.UserName)
+            request.UserName,
+            request.Email)
             .Value;
 
         await _userRepository.InsertAsync(user, cancellationToken);
