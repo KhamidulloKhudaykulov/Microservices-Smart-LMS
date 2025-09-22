@@ -36,9 +36,9 @@ public class Student : Entity
     {
         var student = new Student(
             id, 
-            ValueObjects.Students.FullName.Create(fullName).Value,
-            ValueObjects.Students.PhoneNumber.Create(phoneNumber).Value,
-            ValueObjects.Students.PassportData.Create(passportData).Value
+            FullName.Create(fullName).Value,
+            PhoneNumber.Create(phoneNumber).Value,
+            PassportData.Create(passportData).Value
             );
 
         student.AddDomainEvent(new StudentCreatedDomainEvent(student.Id, student.PhoneNumber));
@@ -51,9 +51,9 @@ public class Student : Entity
         string phoneNumber, 
         string passportData)
     {
-        var fullNameResult = ValueObjects.Students.FullName.Create(fullName);
-        var phoneNumberResult = ValueObjects.Students.PhoneNumber.Create(phoneNumber);
-        var passportDataResult = ValueObjects.Students.PassportData.Create(passportData);
+        var fullNameResult = FullName.Create(fullName);
+        var phoneNumberResult = PhoneNumber.Create(phoneNumber);
+        var passportDataResult = PassportData.Create(passportData);
         
         if (fullNameResult.IsFailure)
             return Result.Failure<Student>(fullNameResult.Error);
