@@ -10,7 +10,7 @@ public class PhoneNumber : ValueObject
     {
         Value = value;
     }
-    string Value { get; init; }
+    public string Value { get; init; }
 
     public static Result<PhoneNumber> Create(string value)
     {

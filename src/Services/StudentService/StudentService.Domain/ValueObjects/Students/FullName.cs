@@ -5,9 +5,9 @@ namespace StudentService.Domain.ValueObjects.Students;
 public class FullName : ValueObject
 {
     private FullName(string value)
-        => Value = value;
+        => Result.Success(Value = value);
     
-    string Value { get; init; }
+    public string Value { get; init; }
 
     public static Result<FullName> Create(string value)
     {

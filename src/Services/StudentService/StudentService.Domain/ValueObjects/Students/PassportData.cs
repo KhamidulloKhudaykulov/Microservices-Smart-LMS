@@ -9,7 +9,7 @@ public class PassportData : ValueObject
     {
         Value = value;
     }
-    string Value { get; init; }
+    public string Value { get; init; }
 
     public static Result<PassportData> Create(string value)
     {
