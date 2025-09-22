@@ -11,11 +11,11 @@ public class PassportData : ValueObject
     }
     string Value { get; init; }
 
-    public static Result<ValueObject> Create(string value)
+    public static Result<PassportData> Create(string value)
     {
         if (!string.IsNullOrEmpty(value))
         {
-            return Result.Failure<ValueObject>(new Error(
+            return Result.Failure<PassportData>(new Error(
                 "PassportData.IsEmpty", "PassportData can not be null or empty"));
         }
         
@@ -23,7 +23,7 @@ public class PassportData : ValueObject
         var pattern = @"^[A-Z]{2}\d{7}$";
         if (!Regex.IsMatch(value, pattern))
         {
-            return Result.Failure<ValueObject>(
+            return Result.Failure<PassportData>(
                 new Error("PassportData.InvalidFormat", "Pasport raqami noto‘g‘ri formatda (masalan: AA1234567)."));
         }
 

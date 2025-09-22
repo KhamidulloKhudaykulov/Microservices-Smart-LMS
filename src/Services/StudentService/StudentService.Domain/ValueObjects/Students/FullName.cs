@@ -9,11 +9,11 @@ public class FullName : ValueObject
     
     string Value { get; init; }
 
-    public static Result<ValueObject> Create(string value)
+    public static Result<FullName> Create(string value)
     {
         if (!string.IsNullOrEmpty(value))
         {
-            return Result.Failure<ValueObject>(new Error("Fullname.NullValue", "The specific value can't be null or empty"));
+            return Result.Failure<FullName>(new Error("Fullname.NullValue", "The specific value can't be null or empty"));
         }
         return new FullName(value);
     }

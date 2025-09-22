@@ -12,11 +12,11 @@ public class PhoneNumber : ValueObject
     }
     string Value { get; init; }
 
-    public static Result<ValueObject> Create(string value)
+    public static Result<PhoneNumber> Create(string value)
     {
         if (!string.IsNullOrEmpty(value))
         {
-            return Result.Failure<ValueObject>(
+            return Result.Failure<PhoneNumber>(
                 new Error("PhoneNumber.Empty", "Telefon raqam bo‘sh bo‘lishi mumkin emas."));
         }
 
@@ -24,7 +24,7 @@ public class PhoneNumber : ValueObject
         var uzbekPhonePattern = @"^(\+998|998)(\d{9})$";
         if (!Regex.IsMatch(value, uzbekPhonePattern))
         {
-            return Result.Failure<ValueObject>(
+            return Result.Failure<PhoneNumber>(
                 new Error("PhoneNumber.InvalidFormat", "Telefon raqam formati noto‘g‘ri. (+998901234567)"));
         }
 
