@@ -21,7 +21,9 @@ public class GetAllStudentsQueryHandler : IRequestHandler<GetAllStudentsQuery, R
         _redisCacheService = redisCacheService;
     }
 
-    public async Task<Result<IEnumerable<StudentResponseDto>>> Handle(GetAllStudentsQuery request, CancellationToken cancellationToken)
+    public async Task<Result<IEnumerable<StudentResponseDto>>> Handle(
+        GetAllStudentsQuery request, 
+        CancellationToken cancellationToken)
     {
         var cacheKey = RedisHelper.GenerateUserKey(request.PageNumber, request.PageSize);
         
