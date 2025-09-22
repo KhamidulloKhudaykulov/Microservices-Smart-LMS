@@ -2,27 +2,26 @@
 using StudentService.Application.Helpers;
 using StudentService.Application.Interfaces.Redis;
 using StudentService.Application.UseCases.Students.Contracts;
-using StudentService.Domain.Entities;
 using StudentService.Domain.Repositories;
 
 namespace StudentService.Application.UseCases.Students.Queries;
 
-public record GetStudentsQuery(
+public record GetAllStudentsQuery(
     int PageNumber,
     int PageSize) : IRequest<Result<IEnumerable<StudentResponseDto>>>;
 
-public class GetStudentsQueryHandler : IRequestHandler<GetStudentsQuery, Result<IEnumerable<StudentResponseDto>>>
+public class GetAllStudentsQueryHandler : IRequestHandler<GetAllStudentsQuery, Result<IEnumerable<StudentResponseDto>>>
 {
     private readonly IStudentRepository _studentRepository;
     private readonly IRedisCacheService _redisCacheService;
 
-    public GetStudentsQueryHandler(IStudentRepository studentRepository, IRedisCacheService redisCacheService)
+    public GetAllStudentsQueryHandler(IStudentRepository studentRepository, IRedisCacheService redisCacheService)
     {
         _studentRepository = studentRepository;
         _redisCacheService = redisCacheService;
     }
 
-    public async Task<Result<IEnumerable<StudentResponseDto>>> Handle(GetStudentsQuery request, CancellationToken cancellationToken)
+    public async Task<Result<IEnumerable<StudentResponseDto>>> Handle(GetAllStudentsQuery request, CancellationToken cancellationToken)
     {
         var cacheKey = RedisHelper.GenerateUserKey(request.PageNumber, request.PageSize);
         
