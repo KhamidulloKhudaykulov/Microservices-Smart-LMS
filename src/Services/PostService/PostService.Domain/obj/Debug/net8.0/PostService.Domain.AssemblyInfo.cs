@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PostService.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f513e6cccabd8772f5fa7fd9bab60c5cb1d3eab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3ce43082b950f37f84fe19f8059aae6abf02d9e")]
 [assembly: System.Reflection.AssemblyProductAttribute("PostService.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PostService.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
