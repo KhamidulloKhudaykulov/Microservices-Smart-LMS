@@ -3,6 +3,7 @@ using StudentService.Application.Helpers;
 using StudentService.Application.Interfaces.Redis;
 using StudentService.Application.UseCases.Students.Contracts;
 using StudentService.Domain.Repositories;
+using StudentService.Domain.ValueObjects.Students;
 
 namespace StudentService.Application.UseCases.Students.Queries;
 
@@ -42,6 +43,7 @@ public class GetAllStudentsQueryHandler : IRequestHandler<GetAllStudentsQuery, R
                 FullName = s.FullName.Value,
                 PhoneNumber = s.PhoneNumber.Value,
                 PassportData = s.PassportData.Value,
+                Email = s.Email.Value
             });
 
         await _redisCacheService.SetAsync(cacheKey, students);
