@@ -65,7 +65,8 @@ public class Student : Entity
         FullName = fullNameResult.Value;
         PhoneNumber = phoneNumberResult.Value;
         PassportData = passportDataResult.Value;
-
+        
+        return Result.Success(this);
     }
 
     internal void ChangeStatus(StudentStatus newStatus)
