@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using StudentService.Application.Interfaces.DomainEvents;
 using StudentService.Domain.Entities;
 using StudentService.Domain.Repositories;
 
@@ -11,20 +12,24 @@ public record CreateStudentCommand(
 
 public sealed class CreateStudentCommandHandler(
     IStudentRepository _studentRepository,
+    IDomainEventDispatcher _domainEventDispatcher,
     IUnitOfWork _unitOfWork)
     : IRequestHandler<CreateStudentCommand, Result>
 {
     public async Task<Result> Handle(CreateStudentCommand request, CancellationToken cancellationToken)
     {
         var studentId = Guid.NewGuid();
-        var createResult = Student.Create(
+        var student = Student.Create(
             studentId,
             request.FullName,
             request.PhoneNumber,
             request.PassportData).Value;
 
-        await _studentRepository.InsertAsync(createResult, cancellationToken);
+        await _studentRepository.InsertAsync(student, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
+
+        await _domainEventDispatcher.DispatchAsync(student.DomainEvents);
+        student.ClearDomainEvents();
 
         return Result.Success();
     }
