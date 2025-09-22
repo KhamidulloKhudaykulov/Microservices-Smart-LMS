@@ -1,10 +1,12 @@
-﻿using StudentService.Domain.Enums;
+﻿using StudentService.Domain.DomainEvents.Students;
+using StudentService.Domain.Enums;
 using StudentService.Domain.Interfaces;
+using StudentService.Domain.Primitives;
 using StudentService.Domain.States;
 
 namespace StudentService.Domain.Entities;
 
-public class Student : IEntity
+public class Student : Entity
 {
     private Student(
         Guid id, 
@@ -18,7 +20,6 @@ public class Student : IEntity
         PassportData = passportData;
     }
 
-    public Guid Id { get; private set; }
     public string FullName { get; private set; }
     public string PhoneNumber { get; private set; }
     public string PassportData { get; private set; }
@@ -32,8 +33,11 @@ public class Student : IEntity
         string phoneNumber, 
         string passportData)
     {
-        var result = new Student(id, fullName, phoneNumber, passportData);
-        return result;
+        var student = new Student(id, fullName, phoneNumber, passportData);
+
+        student.AddDomainEvent(new StudentCreatedDomainEvent(student.Id, student.PhoneNumber));
+
+        return student;
     }
 
     internal void ChangeStatus(StudentStatus newStatus)
