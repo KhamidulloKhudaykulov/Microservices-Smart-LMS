@@ -29,7 +29,7 @@ public partial class StudentController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAsync([FromQuery] GetStudentsQuery query)
+    public async Task<IActionResult> GetAsync([FromQuery] GetAllStudentsQuery query)
     {
         var permissions = HttpContext.GetStudentPermissions();
 

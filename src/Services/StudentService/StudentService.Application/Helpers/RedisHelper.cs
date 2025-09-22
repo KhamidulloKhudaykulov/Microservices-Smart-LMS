@@ -1,6 +1,3 @@
-using System.Globalization;
-using System.Text;
-
 namespace StudentService.Application.Helpers;
 
 public static class RedisHelper

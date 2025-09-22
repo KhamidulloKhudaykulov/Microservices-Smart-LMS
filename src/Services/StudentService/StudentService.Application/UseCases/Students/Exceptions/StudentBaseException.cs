@@ -1,5 +1,4 @@
-﻿using StudentService.Domain.Interfaces;
-using StudentService.Domain.Primitives;
+﻿using StudentService.Domain.Primitives;
 
 namespace StudentService.Application.UseCases.Students.Exceptions;
 
