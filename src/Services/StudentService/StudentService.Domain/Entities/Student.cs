@@ -24,6 +24,7 @@ public class Student : Entity
     public FullName FullName { get; private set; }
     public PhoneNumber PhoneNumber { get; private set; }
     public PassportData PassportData { get; private set; }
+    public string Email { get; private set; } = string.Empty;
 
     public StudentStatus StudentStatus { get; protected set; } = StudentStatus.Active;
     private IStudentStatusState _studentStatusState = new ActiveStudentState();
@@ -41,7 +42,7 @@ public class Student : Entity
             PassportData.Create(passportData).Value
             );
 
-        student.AddDomainEvent(new StudentCreatedDomainEvent(student.Id, student.PhoneNumber));
+        student.AddDomainEvent(new StudentCreatedDomainEvent(student.Id, student.Email));
 
         return student;
     }
