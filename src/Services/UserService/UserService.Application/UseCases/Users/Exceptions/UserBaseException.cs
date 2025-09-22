@@ -1,8 +1,8 @@
-﻿using UserService.Domain.Interfaces;
+﻿using UserService.Domain.Primitives;
 
 namespace UserService.Application.UseCases.Users.Exceptions;
 
-public static class UserBaseException<T> where T : IEntity
+public static class UserBaseException<T> where T : Entity
 {
     public static Result<T> UserNotFoundException()
         => Result.Failure<T>(new Error(

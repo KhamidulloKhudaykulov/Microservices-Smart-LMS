@@ -1,8 +1,9 @@
 ﻿using StudentService.Domain.Interfaces;
+using StudentService.Domain.Primitives;
 
 namespace StudentService.Application.UseCases.Students.Exceptions;
 
-public static class StudentBaseException<T> where T : IEntity
+public static class StudentBaseException<T> where T : Entity
 {
     public static Result<T> StudentNotFoundException()
         => Result.Failure<T>(new Error(
