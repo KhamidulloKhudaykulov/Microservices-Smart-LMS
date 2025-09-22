@@ -18,7 +18,7 @@ public class FullName : ValueObject
                     "Fullname.NullValue", 
                     "The specific value can't be null or empty"));
         }
-        return new FullName(value);
+        return Result.Success(new FullName(value));
     }
 
     public override IEnumerable<object> GetAtomicValues()

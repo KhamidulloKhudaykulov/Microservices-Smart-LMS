@@ -27,7 +27,7 @@ public class PassportData : ValueObject
                 new Error("PassportData.InvalidFormat", "Pasport raqami noto‘g‘ri formatda (masalan: AA1234567)."));
         }
 
-        return new PassportData(value);
+        return Result.Success(new PassportData(value));
     }
     
     public override IEnumerable<object> GetAtomicValues()

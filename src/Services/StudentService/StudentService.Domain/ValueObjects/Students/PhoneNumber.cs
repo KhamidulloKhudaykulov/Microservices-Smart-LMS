@@ -28,7 +28,7 @@ public class PhoneNumber : ValueObject
                 new Error("PhoneNumber.InvalidFormat", "Telefon raqam formati noto‘g‘ri. (+998901234567)"));
         }
 
-        return new PhoneNumber(value);
+        return Result.Success(new PhoneNumber(value));
     }
 
     public override IEnumerable<object> GetAtomicValues()
