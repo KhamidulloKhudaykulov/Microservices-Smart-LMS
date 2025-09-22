@@ -8,7 +8,8 @@ namespace StudentService.Application.UseCases.Students.Commands;
 public record CreateStudentCommand(
     string FullName,
     string PhoneNumber,
-    string PassportData) : IRequest<Result>;
+    string PassportData,
+    string Email) : IRequest<Result>;
 
 public sealed class CreateStudentCommandHandler(
     IStudentRepository _studentRepository,
@@ -23,7 +24,8 @@ public sealed class CreateStudentCommandHandler(
             studentId,
             request.FullName,
             request.PhoneNumber,
-            request.PassportData).Value;
+            request.PassportData,
+            request.Email).Value;
 
         await _studentRepository.InsertAsync(student, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);

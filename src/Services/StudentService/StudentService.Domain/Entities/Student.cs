@@ -13,18 +13,20 @@ public class Student : Entity
         Guid id, 
         FullName fullname, 
         PhoneNumber phoneNumber, 
-        PassportData passportData)
+        PassportData passportData,
+        Email email)
     {
         Id = id;
         FullName = fullname;
         PhoneNumber = phoneNumber;
         PassportData = passportData;
+        Email = email;
     }
 
     public FullName FullName { get; private set; }
     public PhoneNumber PhoneNumber { get; private set; }
     public PassportData PassportData { get; private set; }
-    public string Email { get; private set; } = string.Empty;
+    public Email Email { get; private set; }
 
     public StudentStatus StudentStatus { get; protected set; } = StudentStatus.Active;
     private IStudentStatusState _studentStatusState = new ActiveStudentState();
@@ -33,16 +35,18 @@ public class Student : Entity
         Guid id, 
         string fullName, 
         string phoneNumber, 
-        string passportData)
+        string passportData,
+        string email)
     {
         var student = new Student(
             id, 
             FullName.Create(fullName).Value,
             PhoneNumber.Create(phoneNumber).Value,
-            PassportData.Create(passportData).Value
+            PassportData.Create(passportData).Value,
+            Email.Create(email).Value
             );
 
-        student.AddDomainEvent(new StudentCreatedDomainEvent(student.Id, student.Email));
+        student.AddDomainEvent(new StudentCreatedDomainEvent(student.Id, student.Email.Value));
 
         return student;
     }
