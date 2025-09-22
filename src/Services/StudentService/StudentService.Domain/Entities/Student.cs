@@ -3,6 +3,7 @@ using StudentService.Domain.Enums;
 using StudentService.Domain.Interfaces;
 using StudentService.Domain.Primitives;
 using StudentService.Domain.States;
+using StudentService.Domain.ValueObjects.Students;
 
 namespace StudentService.Domain.Entities;
 
@@ -10,9 +11,9 @@ public class Student : Entity
 {
     private Student(
         Guid id, 
-        string fullname, 
-        string phoneNumber, 
-        string passportData)
+        FullName fullname, 
+        PhoneNumber phoneNumber, 
+        PassportData passportData)
     {
         Id = id;
         FullName = fullname;
@@ -20,9 +21,9 @@ public class Student : Entity
         PassportData = passportData;
     }
 
-    public string FullName { get; private set; }
-    public string PhoneNumber { get; private set; }
-    public string PassportData { get; private set; }
+    public FullName FullName { get; private set; }
+    public PhoneNumber PhoneNumber { get; private set; }
+    public PassportData PassportData { get; private set; }
 
     public StudentStatus StudentStatus { get; protected set; } = StudentStatus.Active;
     private IStudentStatusState _studentStatusState = new ActiveStudentState();
@@ -33,11 +34,38 @@ public class Student : Entity
         string phoneNumber, 
         string passportData)
     {
-        var student = new Student(id, fullName, phoneNumber, passportData);
+        var student = new Student(
+            id, 
+            ValueObjects.Students.FullName.Create(fullName).Value,
+            ValueObjects.Students.PhoneNumber.Create(phoneNumber).Value,
+            ValueObjects.Students.PassportData.Create(passportData).Value
+            );
 
         student.AddDomainEvent(new StudentCreatedDomainEvent(student.Id, student.PhoneNumber));
 
         return student;
+    }
+
+    public Result<Student> Update(
+        string fullName, 
+        string phoneNumber, 
+        string passportData)
+    {
+        var fullNameResult = ValueObjects.Students.FullName.Create(fullName);
+        var phoneNumberResult = ValueObjects.Students.PhoneNumber.Create(phoneNumber);
+        var passportDataResult = ValueObjects.Students.PassportData.Create(passportData);
+        
+        if (fullNameResult.IsFailure)
+            return Result.Failure<Student>(fullNameResult.Error);
+        if (phoneNumberResult.IsFailure)
+            return Result.Failure<Student>(phoneNumberResult.Error);
+        if (passportDataResult.IsFailure)
+            return Result.Failure<Student>(passportDataResult.Error);
+
+        FullName = fullNameResult.Value;
+        PhoneNumber = phoneNumberResult.Value;
+        PassportData = passportDataResult.Value;
+
     }
 
     internal void ChangeStatus(StudentStatus newStatus)
