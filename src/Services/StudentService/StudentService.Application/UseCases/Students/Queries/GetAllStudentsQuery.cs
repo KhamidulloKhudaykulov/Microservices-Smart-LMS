@@ -37,9 +37,9 @@ public class GetAllStudentsQueryHandler : IRequestHandler<GetAllStudentsQuery, R
             .Select(s => new StudentResponseDto()
             {
                 Id = s.Id,
-                FullName = s.FullName,
-                PhoneNumber = s.PhoneNumber,
-                PassportData = s.PassportData,
+                FullName = $"{s.FullName}",
+                PhoneNumber = $"{s.PhoneNumber}",
+                PassportData = $"{s.PassportData}",
             });
 
         await _redisCacheService.SetAsync(cacheKey, students);
