@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
-<Project>
-  <PropertyGroup>
-    <_PublishTargetUrl>D:\selfprojects\Humanity\src\Services\UserService\UserService.Api\bin\Release\net8.0\publish\</_PublishTargetUrl>
-    <History>True|2025-09-08T04:37:19.0074889Z||;True|2025-09-08T09:31:20.6948824+05:00||;True|2025-09-08T09:29:09.7108721+05:00||;True|2025-09-08T09:19:59.0182022+05:00||;</History>
-    <LastFailureDetails />
-  </PropertyGroup>
-</Project>
