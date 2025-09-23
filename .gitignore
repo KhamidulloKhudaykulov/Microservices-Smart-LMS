@@ -127,3 +127,21 @@ Desktop.ini
 *.orig
 *.swp
 *.swo
+
+# Visual Studio files
+**/*.AssemblyInfo.cs
+**/project.packagespec.json
+**/rider.project.restore.info
+**/project.assets.json
+**/obj/
+**/bin/
+
+# IDE specific files
+**/.vs/
+**/.vscode/
+**/*user*
+**/*cache*
+
+# Temporary files
+**/*.tmp
+**/*.temp
