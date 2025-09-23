@@ -3,7 +3,7 @@ using PaymentService.Domain.Interfaces;
 
 namespace PaymentService.Domain.States.Payments;
 
-public class CreatePaymentState : IPaymentStatusState
+public class CreatedPaymentState : IPaymentStatusState
 {
     public void CancelPayment(PaymentEntity entity, string reason)
     {

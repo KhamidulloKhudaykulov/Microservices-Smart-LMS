@@ -36,7 +36,7 @@ public class PaymentEntity : Entity
     public string? CancellationReason { get; private set; }
     
     public PaymentStatus PaymentStatus { get; protected set; }
-    public IPaymentStatusState _paymentStatusState = new CreatePaymentState();
+    public IPaymentStatusState _paymentStatusState = new CreatedPaymentState();
 
     public static Result<PaymentEntity> Create(
         Guid userId, 
