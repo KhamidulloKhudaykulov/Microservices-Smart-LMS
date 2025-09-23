@@ -69,4 +69,10 @@ public class PaymentEntity : Entity
 
     public void ChangeStatus(PaymentStatus newStatus)
         => PaymentStatus = newStatus;
+
+    public void Complete() => _paymentStatusState.CompletePayment(this);
+    public void Process() => _paymentStatusState.ProcessPayment(this);
+    public void Refund() => _paymentStatusState.RefundPayment(this);
+    public void Cancel(string reason) => _paymentStatusState.CancelPayment(this, reason);
+    public void Fail(string reason) => _paymentStatusState.FailPayment(this);
 }
