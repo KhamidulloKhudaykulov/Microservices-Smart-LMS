@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace PaymentService.Domain.Interfaces;
+namespace SharedKernel.Domain.Specifications;
 
 public interface ISpecification<T>
 {

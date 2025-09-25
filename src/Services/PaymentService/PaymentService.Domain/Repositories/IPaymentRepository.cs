@@ -1,5 +1,5 @@
 ﻿using PaymentService.Domain.Entities;
-using PaymentService.Domain.Interfaces;
+using SharedKernel.Domain.Repositories;
 
 namespace PaymentService.Domain.Repositories;
 

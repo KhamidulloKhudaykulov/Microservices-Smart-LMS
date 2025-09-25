@@ -17,5 +17,6 @@ public class GetPaymentsByIdsCommandHandler(
     {
         var specification = new PaymentByIdsSpecification(request.AccountId, request.PaymentIds);
         var payments = await _paymentRepository.ListAsync(specification);
+        throw new NotImplementedException();
     }
 }

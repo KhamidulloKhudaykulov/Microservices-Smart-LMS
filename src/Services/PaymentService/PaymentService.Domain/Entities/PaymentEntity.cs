@@ -1,7 +1,7 @@
 ﻿using PaymentService.Domain.Enums;
 using PaymentService.Domain.Interfaces;
-using PaymentService.Domain.Primitives;
 using PaymentService.Domain.States.Payments;
+using SharedKernel.Domain.Primitives;
 
 namespace PaymentService.Domain.Entities;
 

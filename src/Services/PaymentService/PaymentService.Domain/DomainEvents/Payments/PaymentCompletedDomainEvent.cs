@@ -1,5 +1,5 @@
 ﻿using PaymentService.Domain.Enums;
-using PaymentService.Domain.Events;
+using SharedKernel.Domain.Events;
 
 namespace PaymentService.Domain.DomainEvents.Payments;
 

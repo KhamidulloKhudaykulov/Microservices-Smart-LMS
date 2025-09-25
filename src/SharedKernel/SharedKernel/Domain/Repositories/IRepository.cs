@@ -1,4 +1,6 @@
-﻿namespace PaymentService.Domain.Interfaces;
+﻿using SharedKernel.Domain.Specifications;
+
+namespace SharedKernel.Domain.Repositories;
 
 public interface IRepository<T>
 {

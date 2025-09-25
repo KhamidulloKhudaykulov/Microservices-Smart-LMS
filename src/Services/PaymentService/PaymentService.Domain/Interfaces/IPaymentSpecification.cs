@@ -1,4 +1,5 @@
 ﻿using PaymentService.Domain.Entities;
+using SharedKernel.Domain.Specifications;
 
 namespace PaymentService.Domain.Interfaces;
 
