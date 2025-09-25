@@ -8,6 +8,7 @@ using PaymentService.Domain.Repositories;
 namespace PaymentService.Application.UseCases.Payments.Commands;
 
 public record CreatePaymentCommand(
+    Guid AccountId,
     Guid UserId,
     Guid CourseId,
     decimal Amount,
@@ -30,7 +31,7 @@ public class CreatePaymentCommandHandler(
         if (validationResult.IsFailure)
             return Result.Failure<Guid>(validationResult.Error);
 
-        var payment = PaymentEntity.Create(request.UserId, request.CourseId, request.Amount, DateTime.UtcNow, request.ForMonths, request.PaymentMethod);
+        var payment = PaymentEntity.Create(request.AccountId, request.UserId, request.CourseId, request.Amount, DateTime.UtcNow, request.ForMonths, request.PaymentMethod);
         if (payment.IsFailure)
             return Result.Failure<Guid>(payment.Error);
 

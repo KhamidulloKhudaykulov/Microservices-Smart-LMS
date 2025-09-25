@@ -9,6 +9,7 @@ public class PaymentEntity : Entity
 {
     private PaymentEntity(
         Guid id,
+        Guid accountId,
         Guid userId, 
         Guid courseId, 
         decimal amount, 
@@ -27,6 +28,7 @@ public class PaymentEntity : Entity
         PaymentStatus = status;
     }
 
+    public Guid AccountId { get; private set; }
     public Guid UserId { get; private set; }
     public Guid CourseId { get; private set; }
     public decimal Amount { get; private set; }
@@ -39,6 +41,7 @@ public class PaymentEntity : Entity
     public IPaymentStatusState _paymentStatusState = new CreatedPaymentState();
 
     public static Result<PaymentEntity> Create(
+        Guid accountId,
         Guid userId, 
         Guid courseId, 
         decimal amount, 
@@ -53,6 +56,7 @@ public class PaymentEntity : Entity
         }
         var payment = new PaymentEntity(
             id ?? Guid.NewGuid(),
+            accountId,
             userId,
             courseId,
             amount,
