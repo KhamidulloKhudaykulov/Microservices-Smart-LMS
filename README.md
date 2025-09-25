@@ -33,4 +33,5 @@ This project is designed following **Clean Architecture** and **Clean Code** pri
 
 ---
 
-**Note:** The project’s focus is on creating a maintainable, extensible, and highly testable architecture rather than on a specific business use case.
+**Note:** The project’s focus is on creating a maintainable, extensible, and highly testable architecture rather than on a specific business use case. However, it is designed with best practices in mind and could potentially be deployed to production if adapted to a real-world scenario.
+
