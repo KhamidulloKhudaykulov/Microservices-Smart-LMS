@@ -10,9 +10,9 @@ namespace StudentService.Domain.Entities;
 public class Student : Entity
 {
     private Student(
-        Guid id,
-        FullName fullname,
-        PhoneNumber phoneNumber,
+        Guid id, 
+        FullName fullname, 
+        PhoneNumber phoneNumber, 
         PassportData passportData,
         Email email)
     {
@@ -32,14 +32,14 @@ public class Student : Entity
     private IStudentStatusState _studentStatusState = new ActiveStudentState();
 
     public static Result<Student> Create(
-        Guid id,
-        string fullName,
-        string phoneNumber,
+        Guid id, 
+        string fullName, 
+        string phoneNumber, 
         string passportData,
         string email)
     {
         var student = new Student(
-            id,
+            id, 
             FullName.Create(fullName).Value,
             PhoneNumber.Create(phoneNumber).Value,
             PassportData.Create(passportData).Value,
@@ -52,14 +52,14 @@ public class Student : Entity
     }
 
     public Result<Student> Update(
-        string fullName,
-        string phoneNumber,
+        string fullName, 
+        string phoneNumber, 
         string passportData)
     {
         var fullNameResult = FullName.Create(fullName);
         var phoneNumberResult = PhoneNumber.Create(phoneNumber);
         var passportDataResult = PassportData.Create(passportData);
-
+        
         if (fullNameResult.IsFailure)
             return Result.Failure<Student>(fullNameResult.Error);
         if (phoneNumberResult.IsFailure)
@@ -70,7 +70,7 @@ public class Student : Entity
         FullName = fullNameResult.Value;
         PhoneNumber = phoneNumberResult.Value;
         PassportData = passportDataResult.Value;
-
+        
         return Result.Success(this);
     }
 

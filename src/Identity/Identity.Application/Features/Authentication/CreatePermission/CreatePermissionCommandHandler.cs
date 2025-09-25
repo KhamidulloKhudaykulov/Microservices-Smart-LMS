@@ -1,7 +1,7 @@
-﻿using Identity.Domain.Entities;
-using Identity.Domain.Repositories;
+﻿using Identity.Domain.Repositories;
 using Identity.Domain.Shared;
 using MediatR;
+using Identity.Domain.Entities;
 
 namespace Identity.Application.Features.Authentication.CreatePermission;
 
@@ -21,7 +21,7 @@ public class CreatePermissionCommandHandler(
         }
 
         var permission = Permission.Create(Guid.NewGuid(), request.PermissionName.ToLower()).Value;
-
+        
         await _permissionRepository.InsertAsync(permission);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 

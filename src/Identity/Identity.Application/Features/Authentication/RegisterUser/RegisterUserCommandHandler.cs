@@ -25,7 +25,7 @@ public class RegisterUserCommandHandler(
 
         var newUser = User.Create(
             Guid.NewGuid(),
-            request.UserName,
+            request.UserName, 
             _passwordHasher.Generate(request.Password)).Value;
 
         if (!await _userServiceClient.RegisterAsync(newUser.UserName))

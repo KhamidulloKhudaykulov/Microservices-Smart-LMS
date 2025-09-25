@@ -39,7 +39,7 @@ public static class DependencyInjection
         services.AddScoped<IRoleRepository, RoleRepository>();
         services.AddScoped<IPermissionRepository, PermissionRepository>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
-
+        
         services.AddScoped<IPasswordHasher, PasswordHasher>();
 
         services.AddScoped<ITokenService, JwtService>();

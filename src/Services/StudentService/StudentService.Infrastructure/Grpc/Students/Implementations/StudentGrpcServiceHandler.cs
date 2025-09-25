@@ -12,7 +12,7 @@ public class StudentGrpcServiceHandler(
     {
         var student = await _studentRepository
             .SelectAsync(u => u.Id == Guid.Parse(request.StudentId));
-
+        
         return new VerifyStudentResponse
         {
             Exists = student is not null

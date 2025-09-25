@@ -7,7 +7,7 @@ public class PaymentByIdsSpecification : BaseSpecification
         if (paymentIds == null || !paymentIds.Any())
             throw new ArgumentException("PaymentIds list cannot be null or empty.", nameof(paymentIds));
 
-        Criteria =
+        Criteria = 
             payment => paymentIds.Contains(payment.Id)
             && payment.AccountId == accountId;
 

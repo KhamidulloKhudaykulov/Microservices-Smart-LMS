@@ -30,7 +30,7 @@ public class AuthencticationController : ControllerBase
 
     [HttpGet]
     [Route("login")]
-    public async Task<IActionResult> Login([FromQuery] LoginCommand command)
+    public async Task<IActionResult> Login([FromQuery]LoginCommand command)
     {
         var result = await _sender.Send(command);
         if (result.IsSuccess)

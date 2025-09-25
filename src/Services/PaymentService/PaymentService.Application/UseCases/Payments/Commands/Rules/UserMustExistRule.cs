@@ -11,7 +11,7 @@ public class UserMustExistRule(
         var user = await _userServiceClient.IsUserAvailableAsync(command.UserId);
         if (!user)
             return Result.Failure(new Error(
-                "User.NotFound",
+                "User.NotFound", 
                 "The specified user does not exist."));
 
 

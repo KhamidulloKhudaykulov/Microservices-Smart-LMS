@@ -1,5 +1,5 @@
-﻿using StudentService.Domain.Primitives;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
+using StudentService.Domain.Primitives;
 
 namespace StudentService.Domain.ValueObjects.Students;
 

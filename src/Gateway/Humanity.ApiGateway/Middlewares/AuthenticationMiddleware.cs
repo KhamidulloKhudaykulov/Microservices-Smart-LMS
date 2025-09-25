@@ -10,7 +10,7 @@ public class AuthenticationMiddleware
         _next = next;
         _publicEndpoints = configuration
             .GetSection("PublicEndpoints")
-            .Get<string[]>()
+            .Get<string[]>() 
             ?? Array.Empty<string>();
     }
 

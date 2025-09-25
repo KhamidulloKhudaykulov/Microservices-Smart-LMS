@@ -21,6 +21,6 @@ public abstract class Entity
     public void ClearDomainEvents()
         => _domainEvents.Clear();
 
-    public IReadOnlyCollection<IDomainEvent> GetDomainEvents()
+    public IReadOnlyCollection<IDomainEvent> GetDomainEvents() 
         => DomainEvents;
 }

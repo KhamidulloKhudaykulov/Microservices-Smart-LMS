@@ -1,4 +1,6 @@
-﻿namespace PaymentService.Domain.Specifications;
+﻿using PaymentService.Domain.Entities;
+
+namespace PaymentService.Domain.Specifications;
 
 public class PaymentByAccountSpecification : BaseSpecification
 {

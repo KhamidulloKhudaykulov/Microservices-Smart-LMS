@@ -8,7 +8,7 @@ public record CompleteCoursePaymentCommand(
 
 public class CompleteCoursePaymentCommandHandler(
     IPaymentRepository _paymentRepository,
-    IUnitOfWork _unitOfWork)
+    IUnitOfWork _unitOfWork) 
     : IRequestHandler<CompleteCoursePaymentCommand, Result>
 {
     public async Task<Result> Handle(CompleteCoursePaymentCommand request, CancellationToken cancellationToken)
@@ -18,11 +18,11 @@ public class CompleteCoursePaymentCommandHandler(
             return Result.Failure(new Error(
                 code: "Payment.NotFound",
                 message: "Payment is not found"));
-
+        
         payment.Complete();
-
+        
         await _unitOfWork.SaveChangesAsync(cancellationToken);
-
+        
         return Result.Success();
     }
 }

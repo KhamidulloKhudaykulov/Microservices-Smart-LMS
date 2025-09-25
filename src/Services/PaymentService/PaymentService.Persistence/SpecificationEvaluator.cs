@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PaymentService.Domain.Interfaces;
 using SharedKernel.Domain.Specifications;
+using System.Linq;
 
 namespace PaymentService.Persistence;
 
@@ -7,7 +9,7 @@ public class SpecificationEvaluator<T> where T : class
 {
     public static IQueryable<T> GetQuery(
         IQueryable<T> inputQuery,
-        ISpecification<T> specification,
+        ISpecification<T> specification, 
         bool ignorePaging = false)
     {
         IQueryable<T> query = inputQuery;

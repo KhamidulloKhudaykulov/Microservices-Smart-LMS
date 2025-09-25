@@ -3,6 +3,7 @@ using StudentService.Application.Helpers;
 using StudentService.Application.Interfaces.Redis;
 using StudentService.Application.UseCases.Students.Contracts;
 using StudentService.Domain.Repositories;
+using StudentService.Domain.ValueObjects.Students;
 
 namespace StudentService.Application.UseCases.Students.Queries;
 
@@ -22,17 +23,17 @@ public class GetAllStudentsQueryHandler : IRequestHandler<GetAllStudentsQuery, R
     }
 
     public async Task<Result<IEnumerable<StudentResponseDto>>> Handle(
-        GetAllStudentsQuery request,
+        GetAllStudentsQuery request, 
         CancellationToken cancellationToken)
     {
         var cacheKey = RedisHelper.GenerateUserKey(request.PageNumber, request.PageSize);
-
+        
         var items = await _redisCacheService
             .GetAsync<IEnumerable<StudentResponseDto>>(cacheKey);
-
+        
         if (items is not null)
             return Result.Success<IEnumerable<StudentResponseDto>>(items);
-
+        
         var students = (await _studentRepository.SelectAllAsync())
             .Skip((request.PageNumber - 1) * request.PageSize)
             .Take(request.PageSize)
@@ -47,7 +48,7 @@ public class GetAllStudentsQueryHandler : IRequestHandler<GetAllStudentsQuery, R
 
         await _redisCacheService.SetAsync(cacheKey, students);
         await _redisCacheService.SetExpireAsync(cacheKey, TimeSpan.FromMinutes(60));
-
+        
         return Result.Success(students);
     }
 }
