@@ -1,4 +1,6 @@
-﻿using PaymentService.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using PaymentService.Domain.Entities;
+using PaymentService.Domain.Interfaces;
 using PaymentService.Domain.Repositories;
 using System.Linq.Expressions;
 
@@ -6,24 +8,35 @@ namespace PaymentService.Persistence.Repositories;
 
 public class PaymentRepository : IPaymentRepository
 {
+    private readonly ApplicationDbContext _dbContext;
+    private readonly DbSet<PaymentEntity> _dbSet;
+
+    public PaymentRepository(ApplicationDbContext dbContext)
+    {
+        _dbContext = dbContext;
+        _dbSet = _dbContext.Set<PaymentEntity>();
+    }
+
+    public async Task<int> CountAsync(ISpecification<PaymentEntity> specification)
+    {
+        var query = ApplySpecification(specification);
+        return await query.CountAsync();
+    }
+
+    public Task DeleteAsync(PaymentEntity entity)
+    {
+        throw new NotImplementedException();
+    }
+
     public Task<PaymentEntity> InsertAsync(PaymentEntity entity)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<PaymentEntity>> SelectAllAsEnumerableAsync(Expression<Func<PaymentEntity, bool>> predicate)
+    public async Task<IReadOnlyList<PaymentEntity>> ListAsync(ISpecification<PaymentEntity> specification)
     {
-        throw new NotImplementedException();
-    }
-
-    public IQueryable<PaymentEntity> SelectAllAsQueryable()
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<PaymentEntity?> SelectAsync(Expression<Func<PaymentEntity, bool>> predicate)
-    {
-        throw new NotImplementedException();
+        var query = ApplySpecification(specification);
+        return await query.ToListAsync();
     }
 
     public Task<PaymentEntity?> SelectByIdAsync(Guid id)
@@ -34,5 +47,10 @@ public class PaymentRepository : IPaymentRepository
     public Task<PaymentEntity> UpdateAsync(PaymentEntity entity)
     {
         throw new NotImplementedException();
+    }
+
+    private IQueryable<PaymentEntity> ApplySpecification(ISpecification<PaymentEntity> specification)
+    {
+        return SpecificationEvaluator<PaymentEntity>.GetQuery(_dbSet.AsQueryable(), specification);
     }
 }
