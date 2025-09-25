@@ -1,5 +1,5 @@
-using PostService.Persistence.Extensions;
 using PostService.Infrastructure.Extensions;
+using PostService.Persistence.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 

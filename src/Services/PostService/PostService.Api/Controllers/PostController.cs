@@ -17,7 +17,7 @@ public class PostController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post([FromBody]CreatePostCommand command)
+    public async Task<IActionResult> Post([FromBody] CreatePostCommand command)
     {
         var request = await _sender.Send(command);
         if (request.IsFailure)
@@ -29,7 +29,7 @@ public class PostController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll([FromQuery]GetAllPostsQuery query)
+    public async Task<IActionResult> GetAll([FromQuery] GetAllPostsQuery query)
     {
         var request = await _sender.Send(query);
         if (request.IsFailure)

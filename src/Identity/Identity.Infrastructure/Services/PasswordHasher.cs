@@ -1,5 +1,4 @@
-﻿using BCrypt.Net;
-using Identity.Application.Common;
+﻿using Identity.Application.Common;
 
 public class PasswordHasher : IPasswordHasher
 {

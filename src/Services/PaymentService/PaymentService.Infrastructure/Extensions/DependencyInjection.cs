@@ -11,7 +11,7 @@ namespace PaymentService.Infrastructure.Extensions;
 public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructure(
-        this IServiceCollection _services, 
+        this IServiceCollection _services,
         IConfiguration _configuration)
     {
         // Configure RedisSetting

@@ -9,7 +9,7 @@ public record CancelCoursePaymentCommand(
 
 public class CancelCoursePaymentCommandHandler(
     IPaymentRepository _paymentRepository,
-    IUnitOfWork _unitOfWork) 
+    IUnitOfWork _unitOfWork)
     : IRequestHandler<CancelCoursePaymentCommand, Result>
 {
     public async Task<Result> Handle(CancelCoursePaymentCommand request, CancellationToken cancellationToken)
