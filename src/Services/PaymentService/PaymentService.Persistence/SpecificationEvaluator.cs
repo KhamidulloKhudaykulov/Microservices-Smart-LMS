@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PaymentService.Domain.Interfaces;
+using SharedKernel.Domain.Specifications;
 using System.Linq;
 
 namespace PaymentService.Persistence;

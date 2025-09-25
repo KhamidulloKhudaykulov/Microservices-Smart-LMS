@@ -2,8 +2,9 @@
 using PaymentService.Domain.Entities;
 using PaymentService.Domain.Interfaces;
 using PaymentService.Domain.Repositories;
+using SharedKernel.Domain.Specifications;
+using PaymentService.Infrastructure.Heplers.Redis;
 using StackExchange.Redis;
-using System.Linq.Expressions;
 
 namespace StudentService.Infrastructure.Decorators.Repositories;
 
@@ -58,7 +59,7 @@ public class CachingPaymentRepository : IPaymentRepository
         if (paymentSpecification == null)
             throw new ArgumentException("Specification must be of type IPaymentSpecification", nameof(specification));
 
-        var cacheKey = $"{paymentSpecification.AccountId}:payments:skip{specification.Skip}:take:{specification.Take}";
+        var cacheKey = RedisKeyHelper.GeneratePaymentKey(paymentSpecification.AccountId.ToString(), specification.Take, specification.Skip);
         throw new NotImplementedException();
     }
 

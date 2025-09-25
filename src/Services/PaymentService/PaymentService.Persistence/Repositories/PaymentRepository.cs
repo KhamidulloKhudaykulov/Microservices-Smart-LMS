@@ -2,6 +2,7 @@
 using PaymentService.Domain.Entities;
 using PaymentService.Domain.Interfaces;
 using PaymentService.Domain.Repositories;
+using SharedKernel.Domain.Specifications;
 using System.Linq.Expressions;
 
 namespace PaymentService.Persistence.Repositories;
