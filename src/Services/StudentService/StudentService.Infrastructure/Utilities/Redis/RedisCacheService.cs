@@ -7,7 +7,6 @@ namespace StudentService.Infrastructure.Utilities.Redis;
 public class RedisCacheService : IRedisCacheService
 {
     private readonly IDatabase _db;
-
     public RedisCacheService(string connectionString)
     {
         var redis = ConnectionMultiplexer.Connect(connectionString);

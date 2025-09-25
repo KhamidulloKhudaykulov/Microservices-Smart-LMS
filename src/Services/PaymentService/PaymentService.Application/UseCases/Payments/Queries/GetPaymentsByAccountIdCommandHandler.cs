@@ -17,8 +17,8 @@ public class GetPaymentsByAccountIdCommandHandler(
     public async Task<Result<List<PaymentResponseDto>>> Handle(GetPaymentsByAccountIdCommand request, CancellationToken cancellationToken)
     {
         var specification = new PaymentByAccountSpecification(
-            request.AccountId, 
-            request.PageNumber, 
+            request.AccountId,
+            request.PageNumber,
             request.PageSize);
 
         var payments = await _paymentRepository.ListAsync(specification);

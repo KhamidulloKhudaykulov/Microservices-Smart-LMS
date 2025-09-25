@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using PaymentService.Domain.Entities;
+using PaymentService.Domain.Interfaces;
 using PaymentService.Domain.Repositories;
 using StackExchange.Redis;
 using System.Linq.Expressions;
@@ -29,35 +30,6 @@ public class CachingPaymentRepository : IPaymentRepository
         return result;
     }
 
-    public Task<IEnumerable<PaymentEntity>> SelectAllAsEnumerableAsync(Expression<Func<PaymentEntity, bool>> predicate)
-    {
-        var dataFromCache = _redisDb.StringGet($"{CachePrefix}");
-        if (dataFromCache.HasValue)
-        {
-            var cachedEntities = JsonConvert.DeserializeObject<IEnumerable<PaymentEntity>>(dataFromCache!);
-            if (cachedEntities != null)
-            {
-                return Task.FromResult(cachedEntities);
-            }
-        }
-
-        var entities = _inner.SelectAllAsEnumerableAsync(predicate);
-        var serializedData = JsonConvert.SerializeObject(entities.Result);
-        _redisDb.StringSet($"{CachePrefix}", serializedData, TimeSpan.FromMinutes(10));
-        
-        return entities;
-    }
-
-    public IQueryable<PaymentEntity> SelectAllAsQueryable()
-    {
-        return _inner.SelectAllAsQueryable();
-    }
-
-    public Task<PaymentEntity?> SelectAsync(Expression<Func<PaymentEntity, bool>> predicate)
-    {
-        return _inner.SelectAsync(predicate);
-    }
-
     public async Task<PaymentEntity?> SelectByIdAsync(Guid id)
     {
         var dataFromCache = _redisDb.StringGet($"{CachePrefix}:payments:{id}");
@@ -73,5 +45,25 @@ public class CachingPaymentRepository : IPaymentRepository
     public async Task<PaymentEntity> UpdateAsync(PaymentEntity entity)
     {
         return await _inner.UpdateAsync(entity);
+    }
+
+    public Task DeleteAsync(PaymentEntity entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<IReadOnlyList<PaymentEntity>> ListAsync(ISpecification<PaymentEntity> specification)
+    {
+        var paymentSpecification = specification as IPaymentSpecification;
+        if (paymentSpecification == null)
+            throw new ArgumentException("Specification must be of type IPaymentSpecification", nameof(specification));
+
+        var cacheKey = $"{paymentSpecification.AccountId}:payments:skip{specification.Skip}:take:{specification.Take}";
+        throw new NotImplementedException();
+    }
+
+    public Task<int> CountAsync(ISpecification<PaymentEntity> specification)
+    {
+        throw new NotImplementedException();
     }
 }
