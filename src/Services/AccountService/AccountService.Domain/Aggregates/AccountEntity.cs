@@ -1,4 +1,5 @@
 ﻿using AccountService.Domain.Entities;
+using AccountService.Domain.Enums;
 using AccountService.Domain.ValueObjects.Accounts;
 using SharedKernel.Domain.Primitives;
 
@@ -53,9 +54,16 @@ public class AccountEntity : AggregateRoot
         AddressId = address?.Id;
     }
 
-    public void AttachAccountSetting(AccountSetting accountSetting)
+    public Result<AccountSetting> AttachAccountSetting(AccountStatus status)
     {
-        AccountSetting = accountSetting;
-        AccountSettingId = accountSetting.Id;
+        if (AccountSetting != null)
+            return Result.Failure<AccountSetting>(new Error("AccountSetting.Exists", "Account already has settings"));
+
+        var setting = AccountSetting.AttachToAccount(Guid.NewGuid(), Id, status);
+
+        AccountSetting = setting.Value;
+        AccountSettingId = setting.Value.Id;
+
+        return setting;
     }
 }

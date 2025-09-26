@@ -13,18 +13,15 @@ public class AccountSetting : Entity
     private AccountSetting(
         Guid id,
         Guid accountId,
-        AccountEntity accountEntity,
         AccountStatus accountStatus)
     {
         Id = id;
         AccountId = accountId;
-        Account = accountEntity;
         Status = accountStatus;
         CreatedAt = DateTime.UtcNow;
     }
 
     public Guid AccountId { get; private set; }
-    public AccountEntity? Account { get; private set; }
     public AccountStatus Status { get; private set; }
     public DateTime CreatedAt { get; private set; }
     public DateTime? UpdatedAt { get; private set; }
@@ -34,10 +31,9 @@ public class AccountSetting : Entity
     public static Result<AccountSetting> AttachToAccount(
         Guid id,
         Guid accountId,
-        AccountEntity accountEntity,
         AccountStatus accountStatus)
     {
-        return Result.Success(new AccountSetting(id, accountId, accountEntity, accountStatus));
+        return Result.Success(new AccountSetting(id, accountId, accountStatus));
     }
 
     public void Update(DateTime updatedTime)
