@@ -1,8 +1,6 @@
-﻿using AccountService.Domain.Entities;
-using AccountService.Domain.Enums;
+﻿using AccountService.Domain.Enums;
 using AccountService.Domain.ValueObjects.Addresses;
 using SharedKernel.Domain.Primitives;
-using System.IO;
 
 namespace AccountService.Domain.Entities;
 
@@ -13,7 +11,7 @@ public class Address : Entity
         Street street,
         City city,
         Region region,
-        Guid? accountId = null)
+        Guid accountId)
         : base(id)
     {
         Street = street;
@@ -26,14 +24,13 @@ public class Address : Entity
     public City City { get; private set; }
     public Region Region { get; private set; }
 
-    public Guid? AccountId { get; private set; }
-    public AccountEntity? Account { get; private set; }
+    // One-to-One relationship with AccountEntity
+    public Guid AccountId { get; private set; }
 
     public void Update(
         Street street,
         City city,
-        Region region,
-        string postalCode)
+        Region region)
     {
         Street = street;
         City = city;
@@ -44,7 +41,7 @@ public class Address : Entity
         Street street,
         City city,
         Region region,
-        Guid? accountId = null)
+        Guid accountId)
     {
         if (street is null)
             return Result.Failure<Address>(new Error(
@@ -64,11 +61,5 @@ public class Address : Entity
             accountId);
 
         return Result.Success(address);
-    }
-
-    public void AttachToAccount(AccountEntity account)
-    {
-        Account = account;
-        AccountId = account.Id;
     }
 }
