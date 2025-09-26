@@ -14,4 +14,10 @@
     <ProjectReference Include="..\AccountService.Domain\AccountService.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UseCases\Accounts\Queries\" />
+    <Folder Include="UseCases\Addresses\Commands\" />
+    <Folder Include="UseCases\Addresses\Queries\" />
+  </ItemGroup>
+
 </Project>
