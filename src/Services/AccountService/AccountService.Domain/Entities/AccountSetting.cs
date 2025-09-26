@@ -23,7 +23,6 @@ public class AccountSetting : Entity
         CreatedAt = DateTime.UtcNow;
     }
 
-    public Guid Id { get; private set; } = Guid.NewGuid();
     public Guid AccountId { get; private set; }
     public AccountEntity? Account { get; private set; }
     public AccountStatus Status { get; private set; }
