@@ -48,6 +48,23 @@ public class AccountEntity : AggregateRoot
         return Result.Success(account);
     }
 
+    public Result<AccountEntity> Update(
+        AccountName? accountName, 
+        PhoneNumber? phoneNumber, 
+        Email? email)
+    {
+        if (accountName != null)
+            AccountName = accountName;
+
+        if (phoneNumber != null)
+            PhoneNumber = phoneNumber;
+
+        if (email != null) 
+            Email = email;
+
+        return this;
+    }
+
     public void UpdateAddress(Address? address)
     {
         Address = address;

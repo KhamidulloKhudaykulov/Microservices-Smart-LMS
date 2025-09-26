@@ -1,5 +1,4 @@
-﻿using AccountService.Domain.Aggregates;
-using AccountService.Domain.Enums;
+﻿using AccountService.Domain.Enums;
 using AccountService.Domain.Interfaces;
 using AccountService.Domain.States;
 using SharedKernel.Domain.Primitives;
