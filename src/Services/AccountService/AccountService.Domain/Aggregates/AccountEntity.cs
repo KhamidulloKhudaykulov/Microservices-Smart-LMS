@@ -32,26 +32,11 @@ public class AccountEntity : AggregateRoot
     public AccountSetting? AccountSetting { get; private set; }
 
     public static Result<AccountEntity> Create(
-        AccountName accountName,
-        PhoneNumber phoneNumber,
-        Email email,
-        Address? address = null)
+     AccountName accountName,
+     PhoneNumber phoneNumber,
+     Email email,
+     Address? address = null)
     {
-        if (accountName == null)
-            return Result.Failure<AccountEntity>(new Error(
-                "AccountName.Null",
-                "AccountName is required"));
-
-        if (phoneNumber == null)
-            return Result.Failure<AccountEntity>(new Error(
-                "PhoneNumber.Null", 
-                "PhoneNumber is required"));
-
-        if (email == null)
-            return Result.Failure<AccountEntity>(new Error(
-                "Email.Null", 
-                "Email is required"));
-
         var account = new AccountEntity(
             Guid.NewGuid(),
             accountName,

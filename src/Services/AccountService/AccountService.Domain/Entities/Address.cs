@@ -43,16 +43,6 @@ public class Address : Entity
         Region region,
         Guid accountId)
     {
-        if (street is null)
-            return Result.Failure<Address>(new Error(
-                "Address.StreetNull",
-                "Street must be provided"));
-
-        if (region is null)
-            return Result.Failure<Address>(new Error(
-                "Address.RegionNull",
-                "Region must be provided"));
-
         var address = new Address(
             Guid.NewGuid(),
             street,
