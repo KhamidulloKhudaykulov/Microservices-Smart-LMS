@@ -10,14 +10,12 @@ public class Address : Entity
         Guid id,
         Street street,
         City city,
-        Region region,
-        Guid accountId)
+        Region region)
         : base(id)
     {
         Street = street;
         City = city;
         Region = region;
-        AccountId = accountId;
     }
 
     public Street Street { get; private set; }
@@ -40,15 +38,13 @@ public class Address : Entity
     public static Result<Address> Create(
         Street street,
         City city,
-        Region region,
-        Guid accountId)
+        Region region)
     {
         var address = new Address(
             Guid.NewGuid(),
             street,
             city,
-            region,
-            accountId);
+            region);
 
         return Result.Success(address);
     }
