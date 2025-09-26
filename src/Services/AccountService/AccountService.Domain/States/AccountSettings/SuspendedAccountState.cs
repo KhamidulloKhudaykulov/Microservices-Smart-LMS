@@ -2,7 +2,7 @@
 using AccountService.Domain.Enums;
 using AccountService.Domain.Interfaces;
 
-namespace AccountService.Domain.States;
+namespace AccountService.Domain.States.AccountSettings;
 
 public class SuspendedAccountState : IAccountStatusState
 {
