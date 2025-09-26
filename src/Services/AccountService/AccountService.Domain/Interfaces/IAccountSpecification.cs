@@ -1,4 +1,4 @@
-﻿using AccountService.Domain.Entities;
+﻿using AccountService.Domain.Aggregates;
 using SharedKernel.Domain.Specifications;
 
 namespace AccountService.Domain.Interfaces;

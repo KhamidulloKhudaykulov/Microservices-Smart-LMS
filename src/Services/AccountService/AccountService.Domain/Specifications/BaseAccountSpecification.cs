@@ -1,4 +1,4 @@
-﻿using AccountService.Domain.Entities;
+﻿using AccountService.Domain.Aggregates;
 using AccountService.Domain.Interfaces;
 using System.Linq.Expressions;
 
