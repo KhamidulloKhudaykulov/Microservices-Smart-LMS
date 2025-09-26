@@ -11,4 +11,5 @@ public interface IRepository<T>
 
     Task<IReadOnlyList<T>> ListAsync(ISpecification<T> specification);
     Task<int> CountAsync(ISpecification<T> specification);
+    Task<T> SelectAsync(ISpecification<T> specification);
 }
