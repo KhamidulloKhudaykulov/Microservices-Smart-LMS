@@ -1,4 +1,5 @@
-﻿using AccountService.Domain.Entities;
+﻿using AccountService.Domain.Aggregates;
+using AccountService.Domain.Entities;
 using AccountService.Domain.Enums;
 using AccountService.Domain.Interfaces;
 using SharedKernel.Domain.Primitives;
@@ -7,31 +8,31 @@ namespace AccountService.Domain.States;
 
 public class LockedAccountState : IAccountStatusState
 {
-    public void Activate(AccountEntity account)
+    public void Activate(AccountSetting account)
     {
         account.SetState(new ActiveAccountState());
         account.ChangeStatus(AccountStatus.Active);
     }
 
-    public void Deactivate(AccountEntity account)
+    public void Deactivate(AccountSetting account)
     {
         account.SetState(new InactiveAccountState());
         account.ChangeStatus(AccountStatus.Inactive);
     }
 
-    public void Suspend(AccountEntity account)
+    public void Suspend(AccountSetting account)
     {
         account.SetState(new SuspendedAccountState());
         account.ChangeStatus(AccountStatus.Suspended);
     }
 
-    public void Close(AccountEntity account)
+    public void Close(AccountSetting account)
     {
         account.SetState(new ClosedAccountState());
         account.ChangeStatus(AccountStatus.Closed);
     }
 
-    public void Lock(AccountEntity account)
+    public void Lock(AccountSetting account)
     {
         // Allaqachon locked
         Result.Failure(new Error(
