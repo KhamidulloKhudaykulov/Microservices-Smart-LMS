@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <Folder Include="UseCases\Accounts\Queries\" />
-    <Folder Include="UseCases\Addresses\Commands\" />
     <Folder Include="UseCases\Addresses\Queries\" />
   </ItemGroup>
 
