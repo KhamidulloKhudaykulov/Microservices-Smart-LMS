@@ -1,6 +1,7 @@
 ﻿using AccountService.Domain.Enums;
-using AccountService.Domain.Repsoitories;
+using AccountService.Domain.Repositories;
 using MediatR;
+using SharedKernel.Domain.Repositories;
 
 namespace AccountService.Application.UseCases.AccountSettings.Commands;
 
