@@ -1,6 +1,4 @@
-﻿using AccountService.Domain.Aggregates;
-using AccountService.Domain.Entities;
-using SharedKernel.Domain.Primitives;
+﻿using AccountService.Domain.Entities;
 
 namespace AccountService.Domain.Interfaces;
 

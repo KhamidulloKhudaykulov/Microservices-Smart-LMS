@@ -11,7 +11,7 @@ public class CourseMustExistRule(
         var course = await _courseServiceClient.IsCourseAvailableAsync(command.CourseId);
         if (!course)
             return Result.Failure(new Error(
-                "Course.NotFound", 
+                "Course.NotFound",
                 "The specified course does not exist."));
 
         return Result.Success();

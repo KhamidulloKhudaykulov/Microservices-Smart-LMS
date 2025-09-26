@@ -12,7 +12,7 @@ public class LoginCommandHandler(
     ITokenService _tokenService) : IRequestHandler<LoginCommand, Result<string>>
 {
     public async Task<Result<string>> Handle(
-        LoginCommand request, 
+        LoginCommand request,
         CancellationToken cancellationToken)
     {
         var existUser = await _userRepository

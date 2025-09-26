@@ -1,5 +1,5 @@
-﻿using System.Text.RegularExpressions;
-using StudentService.Domain.Primitives;
+﻿using StudentService.Domain.Primitives;
+using System.Text.RegularExpressions;
 
 namespace StudentService.Domain.ValueObjects.Students;
 
@@ -18,7 +18,7 @@ public class PassportData : ValueObject
             return Result.Failure<PassportData>(new Error(
                 "PassportData.IsEmpty", "PassportData can not be null or empty"));
         }
-        
+
         // Regex: 2 ta katta harf + 7 ta raqam (AA1234567)
         var pattern = @"^[A-Z]{2}\d{7}$";
         if (!Regex.IsMatch(value, pattern))
@@ -29,7 +29,7 @@ public class PassportData : ValueObject
 
         return Result.Success(new PassportData(value));
     }
-    
+
     public override IEnumerable<object> GetAtomicValues()
     {
         yield return Value;

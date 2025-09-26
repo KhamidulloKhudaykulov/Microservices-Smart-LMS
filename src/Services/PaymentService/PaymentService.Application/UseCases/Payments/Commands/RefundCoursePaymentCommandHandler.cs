@@ -8,7 +8,7 @@ public record RefundCoursePaymentCommand(
 
 public class RefundCoursePaymentCommandHandler(
     IPaymentRepository _paymentRepository,
-    IUnitOfWork _unitOfWork) 
+    IUnitOfWork _unitOfWork)
     : IRequestHandler<RefundCoursePaymentCommand, Result>
 {
     public async Task<Result> Handle(RefundCoursePaymentCommand request, CancellationToken cancellationToken)

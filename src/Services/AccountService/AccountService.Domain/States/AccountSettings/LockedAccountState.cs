@@ -1,19 +1,15 @@
-﻿using AccountService.Domain.Aggregates;
-using AccountService.Domain.Entities;
+﻿using AccountService.Domain.Entities;
 using AccountService.Domain.Enums;
 using AccountService.Domain.Interfaces;
-using SharedKernel.Domain.Primitives;
 
 namespace AccountService.Domain.States;
 
-public class ActiveAccountState : IAccountStatusState
+public class LockedAccountState : IAccountStatusState
 {
     public void Activate(AccountSetting account)
     {
-        // Allaqachon Active
-        Result.Failure(new Error(
-            code: "Account.AlreadyActive",
-            message: "This account is already active"));
+        account.SetState(new ActiveAccountState());
+        account.ChangeStatus(AccountStatus.Active);
     }
 
     public void Deactivate(AccountSetting account)
@@ -36,7 +32,9 @@ public class ActiveAccountState : IAccountStatusState
 
     public void Lock(AccountSetting account)
     {
-        account.SetState(new LockedAccountState());
-        account.ChangeStatus(AccountStatus.Locked);
+        // Allaqachon locked
+        Result.Failure(new Error(
+            code: "Account.AlreadyLocked",
+            message: "This account is already locked"));
     }
 }

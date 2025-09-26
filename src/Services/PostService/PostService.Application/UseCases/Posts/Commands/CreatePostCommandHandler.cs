@@ -26,7 +26,7 @@ public class CreatePostCommandHandler(
         }
 
         var post = Post.Create(Guid.NewGuid(), request.Title, request.Body, request.userId).Value;
-        
+
         await _postRepository.InsertAsync(post);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 

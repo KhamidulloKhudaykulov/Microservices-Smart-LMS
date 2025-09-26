@@ -2,8 +2,8 @@
 using PaymentService.Domain.Entities;
 using PaymentService.Domain.Interfaces;
 using PaymentService.Domain.Repositories;
-using SharedKernel.Domain.Specifications;
 using PaymentService.Infrastructure.Heplers.Redis;
+using SharedKernel.Domain.Specifications;
 using StackExchange.Redis;
 
 namespace StudentService.Infrastructure.Decorators.Repositories;

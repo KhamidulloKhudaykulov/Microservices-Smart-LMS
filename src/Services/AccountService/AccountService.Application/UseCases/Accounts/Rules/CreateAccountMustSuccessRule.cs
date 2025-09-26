@@ -28,10 +28,10 @@ public class CreateAccountMustSuccessRule(
                 code: "Account.AlreadyExists",
                 message: "An account with the provided phone number or email already exists."));
         }
-        
+
         var account = AccountEntity.Create(
-            AccountName.Create(command.AccountName).Value, 
-            PhoneNumber.Create(command.PhoneNumber).Value, 
+            AccountName.Create(command.AccountName).Value,
+            PhoneNumber.Create(command.PhoneNumber).Value,
             Email.Create(command.Email).Value);
 
         if (account.IsFailure)

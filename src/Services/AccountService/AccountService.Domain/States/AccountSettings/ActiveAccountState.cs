@@ -1,17 +1,17 @@
-﻿using AccountService.Domain.Aggregates;
-using AccountService.Domain.Entities;
+﻿using AccountService.Domain.Entities;
 using AccountService.Domain.Enums;
 using AccountService.Domain.Interfaces;
-using SharedKernel.Domain.Primitives;
 
 namespace AccountService.Domain.States;
 
-public class PendingAccountState : IAccountStatusState
+public class ActiveAccountState : IAccountStatusState
 {
     public void Activate(AccountSetting account)
     {
-        account.SetState(new ActiveAccountState());
-        account.ChangeStatus(AccountStatus.Active);
+        // Allaqachon Active
+        Result.Failure(new Error(
+            code: "Account.AlreadyActive",
+            message: "This account is already active"));
     }
 
     public void Deactivate(AccountSetting account)
@@ -22,10 +22,8 @@ public class PendingAccountState : IAccountStatusState
 
     public void Suspend(AccountSetting account)
     {
-        // Pending accountni suspend qilish mantiqsiz
-        Result.Failure(new Error(
-            code: "Account.PendingCannotSuspend",
-            message: "Pending account cannot be suspended"));
+        account.SetState(new SuspendedAccountState());
+        account.ChangeStatus(AccountStatus.Suspended);
     }
 
     public void Close(AccountSetting account)

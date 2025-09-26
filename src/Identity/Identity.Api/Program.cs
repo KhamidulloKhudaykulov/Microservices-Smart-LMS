@@ -1,5 +1,5 @@
-using Identity.Api.Middlewares;
 using Identity.Api.Extensions;
+using Identity.Api.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +11,7 @@ var app = builder.Build();
 
 //if (app.Environment.IsDevelopment())
 //{
-   
+
 //}
 app.UseSwagger();
 app.UseSwaggerUI();

@@ -49,8 +49,8 @@ public class AccountEntity : AggregateRoot
     }
 
     public Result<AccountEntity> Update(
-        AccountName? accountName, 
-        PhoneNumber? phoneNumber, 
+        AccountName? accountName,
+        PhoneNumber? phoneNumber,
         Email? email)
     {
         if (accountName != null)
@@ -59,7 +59,7 @@ public class AccountEntity : AggregateRoot
         if (phoneNumber != null)
             PhoneNumber = phoneNumber;
 
-        if (email != null) 
+        if (email != null)
             Email = email;
 
         return this;

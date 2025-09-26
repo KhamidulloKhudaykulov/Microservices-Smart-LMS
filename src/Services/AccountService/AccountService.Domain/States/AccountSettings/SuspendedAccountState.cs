@@ -1,12 +1,10 @@
-﻿using AccountService.Domain.Aggregates;
-using AccountService.Domain.Entities;
+﻿using AccountService.Domain.Entities;
 using AccountService.Domain.Enums;
 using AccountService.Domain.Interfaces;
-using SharedKernel.Domain.Primitives;
 
 namespace AccountService.Domain.States;
 
-public class LockedAccountState : IAccountStatusState
+public class SuspendedAccountState : IAccountStatusState
 {
     public void Activate(AccountSetting account)
     {
@@ -22,8 +20,10 @@ public class LockedAccountState : IAccountStatusState
 
     public void Suspend(AccountSetting account)
     {
-        account.SetState(new SuspendedAccountState());
-        account.ChangeStatus(AccountStatus.Suspended);
+        // Allaqachon suspended
+        Result.Failure(new Error(
+            code: "Account.AlreadySuspended",
+            message: "This account is already suspended"));
     }
 
     public void Close(AccountSetting account)
@@ -34,9 +34,7 @@ public class LockedAccountState : IAccountStatusState
 
     public void Lock(AccountSetting account)
     {
-        // Allaqachon locked
-        Result.Failure(new Error(
-            code: "Account.AlreadyLocked",
-            message: "This account is already locked"));
+        account.SetState(new LockedAccountState());
+        account.ChangeStatus(AccountStatus.Locked);
     }
 }

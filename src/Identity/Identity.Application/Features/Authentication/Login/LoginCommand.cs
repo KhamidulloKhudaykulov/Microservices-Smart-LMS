@@ -4,5 +4,5 @@ using MediatR;
 namespace Identity.Application.Features.Authentication.Login;
 
 public record LoginCommand(
-    string UserName, 
+    string UserName,
     string Password) : IRequest<Result<string>>;

@@ -21,7 +21,7 @@ public class CreateRoleCommandHandler(
         }
 
         var role = Role.Create(Guid.NewGuid(), request.RoleName).Value;
-        
+
         await _roleRepository.InsertAsync(role);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 

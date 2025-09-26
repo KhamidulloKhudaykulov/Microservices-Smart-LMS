@@ -1,6 +1,4 @@
-﻿using AccountService.Domain.Aggregates;
-using AccountService.Domain.Interfaces;
-using SharedKernel.Domain.Specifications;
+﻿using SharedKernel.Domain.Specifications;
 using System.Linq.Expressions;
 
 namespace AccountService.Domain.Specifications;

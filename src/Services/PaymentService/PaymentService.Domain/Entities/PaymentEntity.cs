@@ -10,12 +10,12 @@ public class PaymentEntity : Entity
     private PaymentEntity(
         Guid id,
         Guid accountId,
-        Guid userId, 
-        Guid courseId, 
-        decimal amount, 
-        DateTime paymentDate, 
-        List<Month>? forMonths, 
-        PaymentMethod paymentMethod, 
+        Guid userId,
+        Guid courseId,
+        decimal amount,
+        DateTime paymentDate,
+        List<Month>? forMonths,
+        PaymentMethod paymentMethod,
         PaymentStatus status)
         : base(id)
     {
@@ -36,18 +36,18 @@ public class PaymentEntity : Entity
     public List<Month>? ForMonths { get; private set; }
     public PaymentMethod PaymentMethod { get; private set; }
     public string? CancellationReason { get; private set; }
-    
+
     public PaymentStatus PaymentStatus { get; protected set; }
     public IPaymentStatusState _paymentStatusState = new CreatedPaymentState();
 
     public static Result<PaymentEntity> Create(
         Guid accountId,
-        Guid userId, 
-        Guid courseId, 
-        decimal amount, 
-        DateTime paymentDate, 
-        List<Month>? forMonths, 
-        PaymentMethod paymentMethod, 
+        Guid userId,
+        Guid courseId,
+        decimal amount,
+        DateTime paymentDate,
+        List<Month>? forMonths,
+        PaymentMethod paymentMethod,
         Guid? id = null)
     {
         if (amount <= 0)

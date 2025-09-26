@@ -13,7 +13,7 @@ public record AttachAddressToAccountCommand(
     Guid AccountId,
     string Street,
     City City,
-    string Region) 
+    string Region)
     : ICommand<Unit>;
 
 public class AttachAddressToAccountCommandHandler(
@@ -37,7 +37,7 @@ public class AttachAddressToAccountCommandHandler(
             return Result.Failure<Unit>(region.Error);
 
         var address = Address.Create(street.Value, request.City, region.Value);
-        
+
         account.UpdateAddress(address.Value);
 
         await _accountRepository.UpdateAsync(account);

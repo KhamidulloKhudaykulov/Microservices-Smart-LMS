@@ -9,7 +9,7 @@ public record GetAccountSettingsQuery(
     Guid AccountId) : IQuery<AccountSettingResponseDto>;
 
 public class GetAccountSettingsQueryHandler(
-    IAccountSettingRepository _accountSettingRepository) 
+    IAccountSettingRepository _accountSettingRepository)
     : IQueryHandler<GetAccountSettingsQuery, AccountSettingResponseDto>
 {
     public async Task<Result<AccountSettingResponseDto>> Handle(GetAccountSettingsQuery request, CancellationToken cancellationToken)

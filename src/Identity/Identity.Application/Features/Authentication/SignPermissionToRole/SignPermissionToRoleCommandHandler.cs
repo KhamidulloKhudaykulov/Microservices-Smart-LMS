@@ -1,5 +1,4 @@
-﻿using Identity.Domain.Entities;
-using Identity.Domain.Repositories;
+﻿using Identity.Domain.Repositories;
 using Identity.Domain.Shared;
 using MediatR;
 
@@ -8,7 +7,7 @@ namespace Identity.Application.Features.Authentication.SignPermissionToRole;
 public class SignPermissionToRoleCommandHandler(
     IPermissionRepository _permissionRepository,
     IRoleRepository _roleRepository,
-    IUnitOfWork _unitOfWork) 
+    IUnitOfWork _unitOfWork)
     : IRequestHandler<SignPermissionToRoleCommand, Result>
 {
     public async Task<Result> Handle(SignPermissionToRoleCommand request, CancellationToken cancellationToken)

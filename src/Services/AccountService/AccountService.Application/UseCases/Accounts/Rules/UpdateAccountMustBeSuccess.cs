@@ -1,15 +1,13 @@
 ﻿using AccountService.Application.UseCases.Accounts.Commands;
-using AccountService.Domain.Aggregates;
 using AccountService.Domain.Repositories;
 using AccountService.Domain.Specifications.Accounts;
 using AccountService.Domain.ValueObjects.Accounts;
-using MediatR;
 using SharedKernel.Application.Common.Rules;
 
 namespace AccountService.Application.UseCases.Accounts.Rules;
 
 public class UpdateAccountMustBeSuccess(
-    IAccountRepository _accountRepository) 
+    IAccountRepository _accountRepository)
     : RuleBase<UpdateAccountCommand>
 {
     protected override async Task<Result> HandleAsync(UpdateAccountCommand command, CancellationToken cancellationToken)

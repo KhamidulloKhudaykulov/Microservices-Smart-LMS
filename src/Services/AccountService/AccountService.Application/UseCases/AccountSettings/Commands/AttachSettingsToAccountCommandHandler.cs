@@ -12,7 +12,7 @@ public record AttachSettingsToAccountCommand(
 
 public class AttachSettingsToAccountCommandHandler(
     IAccountRepository _accountRepository,
-    IUnitOfWork _unitOfWork) 
+    IUnitOfWork _unitOfWork)
     : IRequestHandler<AttachSettingsToAccountCommand, Result>
 {
     public async Task<Result> Handle(AttachSettingsToAccountCommand request, CancellationToken cancellationToken)
