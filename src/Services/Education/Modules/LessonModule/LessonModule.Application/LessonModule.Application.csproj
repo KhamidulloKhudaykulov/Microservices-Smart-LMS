@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="UseCases\Lessons\Queries\" />
+    <Folder Include="UseCases\Lessons\Contracts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\CourseModule\CourseModule.Application\CourseModule.Application.csproj" />
+    <ProjectReference Include="..\LessonModule.Domain\LessonModule.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
