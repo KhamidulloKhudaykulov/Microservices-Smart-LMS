@@ -1,4 +1,5 @@
-﻿using SharedKernel.Domain.Primitives;
+﻿using LessonModule.Domain.ValueObjects.Lessons;
+using SharedKernel.Domain.Primitives;
 
 namespace LessonModule.Domain.Entities;
 
@@ -6,7 +7,7 @@ public class LessonEntity : Entity
 {
     private LessonEntity(
         Guid courseId,
-        string theme,
+        Theme theme,
         DateTime date,
         TimeSpan startTime,
         TimeSpan endTime)
@@ -18,14 +19,14 @@ public class LessonEntity : Entity
         EndTime = endTime;
     }
     public Guid CourseId { get; private set; }
-    public string Theme { get; private set; }
+    public Theme Theme { get; private set; }
     public DateTime Date { get; private set; }
     public TimeSpan StartTime { get; private set; }
     public TimeSpan EndTime { get; private set; } = TimeSpan.Zero;
 
     public static Result<LessonEntity> Create(
         Guid courseId,
-        string theme,
+        Theme theme,
         DateTime date,
         TimeSpan startTime, 
         TimeSpan endTime)
