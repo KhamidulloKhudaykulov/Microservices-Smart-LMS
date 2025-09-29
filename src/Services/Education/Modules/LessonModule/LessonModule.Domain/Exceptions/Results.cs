@@ -2,6 +2,9 @@
 
 public static class Results
 {
+    public static Result<T> CustomException<T>(Error error)
+        => Result.Failure<T>(error);
+
     public static Result<T> NotFoundException<T>(string message)
     {
         return Result.Failure<T>(new Error(
