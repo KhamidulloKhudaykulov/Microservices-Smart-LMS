@@ -1,6 +1,6 @@
 ﻿using AccountService.Domain.Enums;
 using AccountService.Domain.Interfaces;
-using AccountService.Domain.States;
+using AccountService.Domain.States.AccountSettings;
 using SharedKernel.Domain.Primitives;
 
 namespace AccountService.Domain.Entities;

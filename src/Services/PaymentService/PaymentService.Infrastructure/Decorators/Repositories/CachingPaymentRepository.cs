@@ -67,4 +67,9 @@ public class CachingPaymentRepository : IPaymentRepository
     {
         throw new NotImplementedException();
     }
+
+    public Task<PaymentEntity> SelectAsync(ISpecification<PaymentEntity> specification)
+    {
+        throw new NotImplementedException();
+    }
 }

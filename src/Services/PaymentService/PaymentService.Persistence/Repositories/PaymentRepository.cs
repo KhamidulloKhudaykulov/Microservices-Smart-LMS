@@ -38,6 +38,11 @@ public class PaymentRepository : IPaymentRepository
         return await query.ToListAsync();
     }
 
+    public Task<PaymentEntity> SelectAsync(ISpecification<PaymentEntity> specification)
+    {
+        throw new NotImplementedException();
+    }
+
     public Task<PaymentEntity?> SelectByIdAsync(Guid id)
     {
         throw new NotImplementedException();
