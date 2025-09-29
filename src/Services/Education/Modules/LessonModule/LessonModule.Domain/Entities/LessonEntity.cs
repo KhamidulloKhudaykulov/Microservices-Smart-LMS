@@ -10,7 +10,7 @@ public class LessonEntity : Entity
         Theme theme,
         DateTime date,
         TimeSpan startTime,
-        TimeSpan endTime)
+        TimeSpan? endTime)
     {
         CourseId = courseId;
         Theme = theme;
@@ -22,14 +22,14 @@ public class LessonEntity : Entity
     public Theme Theme { get; private set; }
     public DateTime Date { get; private set; }
     public TimeSpan StartTime { get; private set; }
-    public TimeSpan EndTime { get; private set; } = TimeSpan.Zero;
+    public TimeSpan? EndTime { get; private set; }
 
     public static Result<LessonEntity> Create(
         Guid courseId,
         Theme theme,
         DateTime date,
         TimeSpan startTime, 
-        TimeSpan endTime)
+        TimeSpan? endTime = null)
     {
         return Result.Success(new LessonEntity(
             courseId,
