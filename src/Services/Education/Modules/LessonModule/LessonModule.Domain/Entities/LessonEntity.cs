@@ -38,4 +38,10 @@ public class LessonEntity : Entity
             startTime, 
             endTime));
     }
+
+    public void UpdateDate(DateTime date)
+    {
+        Date = date;
+        StartTime = date.TimeOfDay;
+    }
 }
