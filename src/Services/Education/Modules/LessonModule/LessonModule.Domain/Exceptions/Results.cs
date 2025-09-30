@@ -11,4 +11,11 @@ public static class Results
             code: ErrorType.NotFound,
             message: message));
     }
+
+    public static Result<T> InvalidArgumentException<T>(string message)
+    {
+        return Result.Failure<T>(new Error(
+            code: ErrorType.InvalidArgument,
+            message: message));
+    }
 }
