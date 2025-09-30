@@ -6,4 +6,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+	<ItemGroup>
+		<PackageReference Include="SharedKernel" Version="1.0.7" />
+	</ItemGroup>
 </Project>
