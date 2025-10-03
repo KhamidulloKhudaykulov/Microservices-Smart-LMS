@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Repositories\" />
-    <Folder Include="Extensions\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +16,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CourseModule.Domain\CourseModule.Domain.csproj" />
   </ItemGroup>
 
 </Project>
