@@ -1,4 +1,6 @@
-﻿using CourseModule.Infrastructure.Persistence;
+﻿using CourseModule.Application.Interfaces;
+using CourseModule.Infrastructure.Persistence;
+using CourseModule.Infrastructure.Services.Courses;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +17,8 @@ public static class DependencyInjection
         {
             options.UseSqlServer(configuration.GetConnectionString("DefaultCourseDbConnection"));
         });
+
+        services.AddScoped<ICourseService, CourseService>();
 
         return services;
     }
