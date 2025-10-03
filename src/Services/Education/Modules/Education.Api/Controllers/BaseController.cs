@@ -7,32 +7,16 @@ namespace Education.Api.Controllers;
 [Route("api/[controller]")]
 public class BaseController : ControllerBase
 {
-    protected IActionResult FromResult<T>(Result<T> result)
+    private IActionResult MapError(Error error) => error.Code switch
     {
-        if (result.IsSuccess && result.Value is not null)
-            return Ok(result.Value);
+        ErrorType.NotFound => NotFound(new { error.Message }),
+        ErrorType.InvalidArgument => BadRequest(new { error.Message }),
+        _ => BadRequest(new { error.Message })
+    };
 
-        if (result.IsSuccess)
-            return Ok(result.Value);
-
-        return result.Error.Code switch
-        {
-            ErrorType.NotFound => NotFound(new { result.Error.Message }),
-            ErrorType.InvalidArgument => BadRequest(new { result.Error.Message }),
-            _ => BadRequest(new { result.Error.Message })
-        };
-    }
+    protected IActionResult FromResult<T>(Result<T> result)
+        => result.IsSuccess ? Ok(result.Value) : MapError(result.Error);
 
     protected IActionResult FromResult(Result result)
-    {
-        if (result.IsSuccess)
-            return Ok(result);
-
-        return result.Error.Code switch
-        {
-            ErrorType.NotFound => NotFound(new { result.Error.Message }),
-            ErrorType.InvalidArgument => BadRequest(new { result.Error.Message }),
-            _ => BadRequest(new { result.Error.Message })
-        };
-    }
+        => result.IsSuccess ? Ok(result) : MapError(result.Error);
 }
