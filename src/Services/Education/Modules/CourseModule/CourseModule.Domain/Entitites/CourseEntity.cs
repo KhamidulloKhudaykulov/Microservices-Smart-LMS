@@ -7,28 +7,42 @@ namespace CourseModule.Domain.Entitites;
 
 public class CourseEntity : AggregateRoot
 {
-    public CourseEntity(
+    private CourseEntity(
         Guid id,
+        Guid AccountId,
         string name,
-        DateTime startsAt,
-        CourseStatus courseStatus) 
+        DateTime startsAt) 
         : base(id) 
     {
         Name = name;
         StartsAt = startsAt;
-        Status = courseStatus;
     }
-
-    public string Name { get; set; }
-    public DateTime StartsAt { get; set; }
-    public DateTime? EndsAt { get; set; }
-    public int Duration { get; set; }
-    public CourseStatus Status { get; set; }
+    public Guid AccountId { get; private set; }
+    public string Name { get; private set; }
+    public DateTime StartsAt { get; private set; }
+    public DateTime? EndsAt { get; private set; }
+    public CourseStatus Status { get; protected set; } = CourseStatus.Opened;
 
     private ICourseStatusState _courseStatusState = new OpenCourseState();
 
     public IList<StudentPayment>? StudentPayments { get; set; }
     public List<Guid>? StudentIds { get; set; }
+
+    public static Result<CourseEntity> Create(
+        Guid id,
+        Guid accountId,
+        string name,
+        DateTime startsAt)
+    {
+        var entity = new CourseEntity(id, accountId, name, startsAt);
+        return Result.Success(entity);
+    }
+
+    public void UpdateCourseName(string name)
+        => Name = name;
+
+    public void UpdateStartDate(DateTime startsAt) 
+        => StartsAt = startsAt;
 
     public void ChangeStatus(CourseStatus status)
         => Status = status;
@@ -36,7 +50,7 @@ public class CourseEntity : AggregateRoot
     public void SetState(ICourseStatusState courseStatusState)
         => _courseStatusState = courseStatusState;
 
-    public void Open() => _courseStatusState.Open(this);
-    public void Close() => _courseStatusState.Close(this);
-    public void Block() => _courseStatusState.Block(this);
+    public Result Open() => _courseStatusState.Open(this);
+    public Result Close() => _courseStatusState.Close(this);
+    public Result Block() => _courseStatusState.Block(this);
 }
