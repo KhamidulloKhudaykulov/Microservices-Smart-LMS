@@ -1,0 +1,7 @@
+Ef Configurations - Domain Qatlamidagi Entity'lar uchun Ef Modification Configuratsiyasi boshqaruv class'i. 
+
+Persistence - Db bilan ishlash uchun base context'ni implement qilgan class. Bu yerda hozircha aynan Ef uchun implement qilingan.
+
+Extensions - umumiy DI uchun moslashgan class'lar joylashuv folder'i.
+
+Repositories - Asosiy UoW implementatsiyasi va Domain Qatlamidagi Entity'lar uchun Db muloqot interface'larining implementatsiyasi joylashgan.
