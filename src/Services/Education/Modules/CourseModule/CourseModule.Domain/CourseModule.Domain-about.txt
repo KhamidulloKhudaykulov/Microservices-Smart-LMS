@@ -1,0 +1,9 @@
+DDD Prinsiplariga asoslangan holatda Qurilgan Domain Qatlam.
+
+Entitites - Aggregate va Entity'lar uchun umumiy folder. Loyiha kengayishiga qarab ajratib chiqiladi.
+
+Exceptions - Shu domain'da joylashgan Entity, Aggregate, Value object va h.k lar uchun Result tipidagi Exception'lar to'plami (kengayuvchan).
+
+Interfaces - Entity'lar bilan boshqa xizmatlarni bog'lash yoki Entity ustida ishalsh uchun interface'lar folder'i.
+
+States - State Design Pattern implementatsiyasi. Entity'ning holatini belgilovchi class'lar to'plami.
