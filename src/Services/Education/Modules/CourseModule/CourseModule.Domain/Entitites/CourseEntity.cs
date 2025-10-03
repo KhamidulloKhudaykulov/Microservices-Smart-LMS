@@ -25,9 +25,6 @@ public class CourseEntity : AggregateRoot
 
     private ICourseStatusState _courseStatusState = new OpenCourseState();
 
-    public IList<StudentPayment>? StudentPayments { get; set; }
-    public List<Guid>? StudentIds { get; set; }
-
     public static Result<CourseEntity> Create(
         Guid id,
         Guid accountId,
