@@ -15,18 +15,18 @@ public class CloseCourseCommandHandler(
 {
     public async Task<Result<Unit>> Handle(CloseCourseCommand request, CancellationToken cancellationToken)
     {
-        var existCourse = await _courseRepository
+        var course = await _courseRepository
             .SelectByIdAsync(request.CourseId);
 
-        if (existCourse is null)
+        if (course is null)
             return Results.NotFoundException<Unit>(CourseErrors.NotFound);
 
-        var result = existCourse.Close();
+        var closeResult = course.Close();
 
-        if (result.IsFailure)
-            return Results.CustomException<Unit>(result.Error);
+        if (closeResult.IsFailure)
+            return Results.CustomException<Unit>(closeResult.Error);
 
-        await _courseRepository.UpdateAsync(existCourse);
+        await _courseRepository.UpdateAsync(course);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result.Success(Unit.Value);

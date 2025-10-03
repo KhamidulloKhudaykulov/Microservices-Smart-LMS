@@ -19,8 +19,8 @@ public class CreateCourseCommandHandler(
 {
     public async Task<Result<Unit>> Handle(CreateCourseCommand request, CancellationToken cancellationToken)
     {
-        var existCourse = await _courseRepository.SelectByNameAsync(request.CourseName);
-        if (existCourse is not null)
+        var course = await _courseRepository.SelectByNameAsync(request.CourseName);
+        if (course is not null)
             return Results.AlreadyExistsException<Unit>(CourseErrors.AlreadyExists);
 
         var newCourse = CourseEntity.Create(

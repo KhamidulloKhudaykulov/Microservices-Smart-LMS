@@ -16,15 +16,15 @@ public class UpdateCourseNameCommandHandler(
 {
     public async Task<Result<Unit>> Handle(UpdateCourseNameCommand request, CancellationToken cancellationToken)
     {
-        var existCourse = await _courseRepository
+        var course = await _courseRepository
             .SelectByIdAsync(request.CourseId);
 
-        if (existCourse is null)
+        if (course is null)
             return Results.NotFoundException<Unit>(CourseErrors.NotFound);
 
-        existCourse.UpdateCourseName(request.CourseName);
+        course.UpdateCourseName(request.CourseName);
 
-        await _courseRepository.UpdateAsync(existCourse);
+        await _courseRepository.UpdateAsync(course);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result.Success(Unit.Value);

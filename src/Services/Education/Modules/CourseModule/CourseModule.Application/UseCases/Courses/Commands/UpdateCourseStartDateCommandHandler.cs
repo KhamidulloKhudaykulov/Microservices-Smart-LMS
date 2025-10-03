@@ -17,13 +17,13 @@ public class UpdateCourseStartDateCommandHandler(
 {
     public async Task<Result<Unit>> Handle(UpdateCourseStartDateCommand request, CancellationToken cancellationToken)
     {
-        var existCourse = await _courseRepository
+        var course = await _courseRepository
             .SelectByIdAsync(request.CourseId);
 
-        if (existCourse is null)
+        if (course is null)
             return Results.NotFoundException<Unit>(CourseErrors.NotFound);
 
-        existCourse.UpdateStartDate(request.StartsAt);
+        course.UpdateStartDate(request.StartsAt);
 
         await _courseRepository.UpdateAsync(existCourse);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
