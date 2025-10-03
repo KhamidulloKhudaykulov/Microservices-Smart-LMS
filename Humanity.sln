@@ -75,7 +75,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel", "src\SharedK
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Education", "Education", "{82373B69-7F92-25FF-C38D-C7DBA77E9B6B}"
 	ProjectSection(SolutionItems) = preProject
-		education-about.txt = education-about.txt
+		education-aboud.md = education-aboud.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{90C52EDF-B427-B9C8-5148-928341B5ADE9}"
