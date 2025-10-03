@@ -25,7 +25,7 @@ public class UpdateCourseStartDateCommandHandler(
 
         course.UpdateStartDate(request.StartsAt);
 
-        await _courseRepository.UpdateAsync(existCourse);
+        await _courseRepository.UpdateAsync(course);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result.Success(Unit.Value);
