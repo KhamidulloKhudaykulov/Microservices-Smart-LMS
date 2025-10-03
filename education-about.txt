@@ -1,0 +1,27 @@
+Modules
+
+1. Bu yerda Ta'limga oid bo'lgan va mantiqiy ichki modullar joylashadi.
+
+2. Har bir modul o‘z domeni uchun javobgar va boshqa modullar bilan ichki darajada bog‘lanadi.
+
+3. Modullar Education ichidagi barcha biznes qoidalarni boshqaradi va mustaqil ishlashga qodir.
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
+
+
+External
+
+1. Ushbu folder Education’ning tashqi dunyo bilan bog‘lovchi qatlami hisoblanadi.
+
+2. External modullar ko‘prik (bridge/gateway) vazifasini bajarib, Education domenidagi modullarni tashqi servislar bilan bog‘laydi.
+
+3. Bu yondashuvning asosiy maqsadi:
+
+	  I. Ichki modullarni tashqi integratsiya tafsilotlaridan ajratish.
+
+     II. Bog‘lanishni soddalashtirish va mustaqillikni saqlash.
+
+	III. Kengaytirish va o‘zgartirishni osonlashtirish (masalan, boshqa servisini ulash).
