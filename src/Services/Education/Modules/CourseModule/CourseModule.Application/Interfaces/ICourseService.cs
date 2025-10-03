@@ -2,5 +2,5 @@
 
 public interface ICourseService
 {
-    Task<bool> IsCourseAvailable(Guid courseId);
+    Task<Result<bool>> IsCourseAvailable(Guid courseId);
 }
