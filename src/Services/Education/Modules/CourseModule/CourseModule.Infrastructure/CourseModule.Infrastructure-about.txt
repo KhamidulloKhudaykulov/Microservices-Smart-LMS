@@ -5,3 +5,35 @@ Persistence - Db bilan ishlash uchun base context'ni implement qilgan class. Bu 
 Extensions - umumiy DI uchun moslashgan class'lar joylashuv folder'i.
 
 Repositories - Asosiy UoW implementatsiyasi va Domain Qatlamidagi Entity'lar uchun Db muloqot interface'larining implementatsiyasi joylashgan.
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+
+
+Infrastructure Layer
+
+Ef Configurations Ц A management class for EF modification configurations for Entities in the Domain Layer.
+
+Persistence Ц A class implementing the base context for working with the database. Currently, specifically implemented for EF.
+
+Extensions Ц A folder containing classes adapted for general Dependency Injection (DI).
+
+Repositories Ц Contains the main Unit of Work implementation and implementations of database interaction interfaces for Entities in the Domain Layer.
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+
+
+—лой инфраструктуры
+
+Ef Configurations Ц  ласс управлени€ конфигураци€ми модификаций EF дл€ Entity из сло€ Domain.
+
+Persistence Ц  ласс, реализующий базовый контекст дл€ работы с базой данных. Ќа данный момент реализован конкретно дл€ EF.
+
+Extensions Ц ѕапка с классами, адаптированными дл€ общей внедр€емости зависимостей (DI).
+
+Repositories Ц —одержит основную реализацию Unit of Work и реализации интерфейсов взаимодействи€ с базой данных дл€ Entity из сло€ Domain.

@@ -7,3 +7,35 @@ Exceptions - Shu domain'da joylashgan Entity, Aggregate, Value object va h.k lar
 Interfaces - Entity'lar bilan boshqa xizmatlarni bog'lash yoki Entity ustida ishalsh uchun interface'lar folder'i.
 
 States - State Design Pattern implementatsiyasi. Entity'ning holatini belgilovchi class'lar to'plami.
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+
+
+Domain Layer built according to DDD Principles
+
+Entities Ц A common folder for Aggregates and Entities. Can be further separated depending on project growth.
+
+Exceptions Ц A collection of Result-type exceptions for Entities, Aggregates, Value Objects, etc. within this domain (extensible).
+
+Interfaces Ц A folder for interfaces to connect Entities with other services or to operate on Entities.
+
+States Ц Implementation of the State Design Pattern. A collection of classes defining the state of an Entity.
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+
+
+—лой домена, построенный по принципам DDD
+
+Entities Ц ќбща€ папка дл€ Aggregate и Entity. ѕо мере роста проекта может быть разделена.
+
+Exceptions Ц Ќабор Result-типов исключений дл€ Entity, Aggregate, Value Object и т.д. в рамках этого домена (расшир€емый).
+
+Interfaces Ц ѕапка интерфейсов дл€ св€зи Entity с другими сервисами или дл€ работы с Entity.
+
+States Ц –еализаци€ паттерна State. Ќабор классов, определ€ющих состо€ние Entity.
