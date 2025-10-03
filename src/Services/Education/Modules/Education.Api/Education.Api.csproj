@@ -11,7 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\Courses\" />
     <Folder Include="Controllers\Exams\" />
     <Folder Include="Controllers\Grades\" />
     <Folder Include="Controllers\Homeworks\" />
@@ -19,6 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CourseModule\CourseModule.Application\CourseModule.Application.csproj" />
+    <ProjectReference Include="..\CourseModule\CourseModule.Infrastructure\CourseModule.Infrastructure.csproj" />
     <ProjectReference Include="..\LessonModule\LessonModule.Application\LessonModule.Application.csproj" />
     <ProjectReference Include="..\LessonModule\LessonModule.Domain\LessonModule.Domain.csproj" />
   </ItemGroup>
