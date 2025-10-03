@@ -6,22 +6,24 @@ namespace CourseModule.Domain.States.Courses;
 
 public class CloseCourseState : ICourseStatusState
 {
-    public void Block(CourseEntity course)
+    public Result Block(CourseEntity course)
     {
-        Result.Failure(new Error(
+        return Result.Failure(new Error(
             code: "Invalid.State",
             message: "The closed course can't be blocked"));
     }
 
-    public void Close(CourseEntity course)
+    public Result Close(CourseEntity course)
     {
         course.SetState(new CloseCourseState());
         course.ChangeStatus(CourseStatus.Closed);
+
+        return Result.Success();
     }
 
-    public void Open(CourseEntity course)
+    public Result Open(CourseEntity course)
     {
-        Result.Failure(new Error(
+        return Result.Failure(new Error(
             code: "Invalid.State",
             message: "The closed course can't be opened"));
     }
