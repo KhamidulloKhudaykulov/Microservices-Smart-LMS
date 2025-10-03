@@ -4,7 +4,7 @@ namespace CourseModule.Domain.Interfaces;
 
 public interface ICourseStatusState
 {
-    void Open(CourseEntity course);
-    void Close(CourseEntity course);
-    void Block(CourseEntity course);
+    Result Open(CourseEntity course);
+    Result Close(CourseEntity course);
+    Result Block(CourseEntity course);
 }
