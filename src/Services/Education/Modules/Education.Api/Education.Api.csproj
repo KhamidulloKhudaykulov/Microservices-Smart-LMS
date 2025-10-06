@@ -22,14 +22,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\External\StudentIntegration\Infrastructure\StudentIntegration.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\External\StudentIntegration\StudentIntegration.Application\StudentIntegration.Application.csproj" />
     <ProjectReference Include="..\..\External\StudentIntegration\StudentIntegration.Infrastructure\StudentIntegration.Infrastructure.csproj" />
-    <ProjectReference Include="..\CourseModule\CourseModel.Orchestration\CourseModule.Orchestration.csproj" />
     <ProjectReference Include="..\CourseModule\CourseModule.Application\CourseModule.Application.csproj" />
     <ProjectReference Include="..\CourseModule\CourseModule.Infrastructure\CourseModule.Infrastructure.csproj" />
     <ProjectReference Include="..\CourseModule\CourseModule.Orchestration\CourseModule.Orchestration.csproj" />
     <ProjectReference Include="..\LessonModule\LessonModule.Application\LessonModule.Application.csproj" />
-    <ProjectReference Include="..\LessonModule\LessonModule.Domain\LessonModule.Domain.csproj" />
+    <ProjectReference Include="..\LessonModule\LessonModule.Infrastructure\LessonModule.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
