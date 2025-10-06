@@ -1,4 +1,5 @@
-﻿using CourseModule.Application.UseCases.Courses.Commands;
+﻿using CourseModel.Orchestration.Queries;
+using CourseModule.Application.UseCases.Courses.Commands;
 using CourseModule.Application.UseCases.Courses.Queries;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,7 +21,7 @@ public partial class CourseController
     [HttpGet("students/{courseId}")]
     public async Task<IActionResult> GetCourseStudents(Guid courseId)
     {
-        var query = new GetStudentsByCourseIdQuery(courseId);
+        var query = new GetCourseWithStudentsQuery(courseId);
         var response = await _sender.Send(query);
         if (response.IsFailure)
             return BadRequest(response.Error.Message);

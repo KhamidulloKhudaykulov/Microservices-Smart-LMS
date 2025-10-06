@@ -2,12 +2,14 @@ using Education.Api.Extensions;
 using Infrastructure;
 using CourseModule.Application.Extensions;
 using CourseModule.Infrastructure.Extensions;
+using CourseModel.Orchestration.Application.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddStudentIntegrationInfrastructure(builder.Configuration);
 
 builder.Services.AddCourseModuleApplication();
+builder.Services.AddCourseModuleOrchestration();
 builder.Services.AddCourseModuleInfrastructure(builder.Configuration);
 
 builder.Services.AddControllers();
