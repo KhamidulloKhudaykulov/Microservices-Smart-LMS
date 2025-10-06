@@ -1,4 +1,5 @@
 ﻿using Grpc.Core;
+using Newtonsoft.Json;
 using StudentService.Domain.Repositories;
 
 namespace StudentService.Infrastructure.Grpc.Students.Implementations;
@@ -18,4 +19,54 @@ public class StudentGrpcServiceHandler(
             Exists = student is not null
         };
     }
+
+    public override async Task<GetStudentAsJsonStringResponse> GetStudentAsJsonString(GetStudentAsJsonStringRequest request, ServerCallContext context)
+    {
+        var student = await _studentRepository
+            .SelectAsync(u => u.Id == Guid.Parse(request.StudentId));
+
+        if (student is null)
+            return new GetStudentAsJsonStringResponse
+            {
+                Content = ""
+            };
+
+        var json = JsonConvert.SerializeObject(student);
+        return new GetStudentAsJsonStringResponse
+        {
+            Content = json
+        };
+    }
+
+    public override async Task<GetStudentsByIdsResponse> GetStudentsByIds(GetStudentsByIdsRequest request, ServerCallContext context)
+    {
+        var studentIds = request.StudentIds
+           .Where(id => Guid.TryParse(id, out _))
+           .Select(Guid.Parse)
+           .ToList();
+
+        if (!studentIds.Any())
+            return new GetStudentsByIdsResponse();
+
+        var students = await _studentRepository.GetAllByStudentIdsAsync(studentIds);
+
+        if (!students.Any())
+            return new GetStudentsByIdsResponse();
+
+        var result = new GetStudentsByIdsResponse();
+
+        foreach (var student in students)
+        {
+            result.Students.Add(new StudentGrpcModel
+            {
+                Id = student.Id.ToString(),
+                FullName = student.FullName.Value,
+                Email = student.Email.Value,
+                Phonenumber = student.PhoneNumber.Value
+            });
+        }
+
+        return result;
+    }
+
 }

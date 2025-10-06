@@ -4,6 +4,8 @@ option csharp_namespace = "StudentService.Infrastructure.Grpc";
 
 service StudentGrpcService {
   rpc VerifyExistStudent (VerifyStudentRequest) returns (VerifyStudentResponse);
+  rpc GetStudentAsJsonString (GetStudentAsJsonStringRequest) returns (GetStudentAsJsonStringResponse);
+  rpc GetStudentsByIds (GetStudentsByIdsRequest) returns (GetStudentsByIdsResponse);
 }
 
 message VerifyStudentRequest {
@@ -12,4 +14,28 @@ message VerifyStudentRequest {
 
 message VerifyStudentResponse {
   bool exists = 1;
+}
+
+message GetStudentAsJsonStringRequest {
+  string studentId = 1;
+}
+
+message GetStudentAsJsonStringResponse {
+  string content = 1;
+}
+
+message GetStudentsByIdsRequest {
+  repeated string studentIds = 1;
+}
+
+message StudentGrpcModel {
+  string id = 1;
+  string fullName = 2;
+  string email = 3;
+  string passportdata = 4;
+  string phonenumber = 5;
+}
+
+message GetStudentsByIdsResponse {
+  repeated StudentGrpcModel students = 1;
 }
