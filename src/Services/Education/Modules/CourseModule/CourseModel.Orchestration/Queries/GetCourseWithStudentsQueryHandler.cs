@@ -1,10 +1,10 @@
-﻿using Application.InterfaceBridges;
-using CourseModel.Orchestration.Dtos;
-using CourseModule.Domain.Exceptions;
+﻿using CourseModule.Domain.Exceptions;
 using CourseModule.Domain.Repositories;
+using CourseModule.Orchestration.Dtos;
 using SharedKernel.Application.Abstractions.Messaging;
+using StudentIntegration.Application.InterfaceBridges;
 
-namespace CourseModel.Orchestration.Queries;
+namespace CourseModule.Orchestration.Queries;
 
 public record GetCourseWithStudentsQuery(
     Guid CourseId) : IQuery<IEnumerable<StudentDto>>;

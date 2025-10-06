@@ -1,8 +1,8 @@
 using Education.Api.Extensions;
-using Infrastructure;
 using CourseModule.Application.Extensions;
 using CourseModule.Infrastructure.Extensions;
-using CourseModel.Orchestration.Application.Extensions;
+using StudentIntegration.Infrastructure;
+using CourseModule.Orchestration.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,7 +1,8 @@
-﻿using Application.InterfaceBridges;
-using Domain.Contracts;
+﻿using Infrastructure.Grpc;
+using StudentIntegration.Application.InterfaceBridges;
+using StudentIntegration.Domain.Contracts;
 
-namespace Infrastructure.Grpc.Client;
+namespace StudentIntegration.Infrastructure.Grpc.Client;
 
 public class StudentGrpcServiceClient : IStudentServiceClient
 {

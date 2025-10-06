@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace CourseModel.Orchestration.Application.Extensions;
+namespace CourseModule.Orchestration.Extensions;
 
 public static class AssemblyReference
 {

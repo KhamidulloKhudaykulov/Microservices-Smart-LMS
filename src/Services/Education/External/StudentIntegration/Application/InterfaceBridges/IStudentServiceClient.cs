@@ -1,6 +1,6 @@
-﻿using Domain.Contracts;
+﻿using StudentIntegration.Domain.Contracts;
 
-namespace Application.InterfaceBridges;
+namespace StudentIntegration.Application.InterfaceBridges;
 
 public interface IStudentServiceClient
 {

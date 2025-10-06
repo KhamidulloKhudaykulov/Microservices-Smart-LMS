@@ -1,4 +1,4 @@
-﻿namespace CourseModel.Orchestration.Dtos;
+﻿namespace CourseModule.Orchestration.Dtos;
 
 public record StudentDto(
     Guid Id,

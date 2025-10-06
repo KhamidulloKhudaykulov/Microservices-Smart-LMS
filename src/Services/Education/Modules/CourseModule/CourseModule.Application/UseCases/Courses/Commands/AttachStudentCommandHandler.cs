@@ -1,9 +1,9 @@
-﻿using Application.InterfaceBridges;
-using CourseModule.Domain.Exceptions;
+﻿using CourseModule.Domain.Exceptions;
 using CourseModule.Domain.Repositories;
 using MediatR;
 using SharedKernel.Application.Abstractions.Messaging;
 using SharedKernel.Domain.Repositories;
+using StudentIntegration.Application.InterfaceBridges;
 
 namespace CourseModule.Application.UseCases.Courses.Commands;
 

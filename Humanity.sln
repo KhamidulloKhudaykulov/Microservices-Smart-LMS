@@ -134,13 +134,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{B0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StudentIntegration", "StudentIntegration", "{08CFC86F-2452-2AAB-484B-0315F6EFE3F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\Services\Education\External\StudentIntegration\Application\Application.csproj", "{C65B33A3-781A-41D1-AC70-2899F8A6C86F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentIntegration.Application", "src\Services\Education\External\StudentIntegration\Application\StudentIntegration.Application.csproj", "{C65B33A3-781A-41D1-AC70-2899F8A6C86F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Services\Education\External\StudentIntegration\Domain\Domain.csproj", "{3C6804E7-F2D3-4445-9837-3FC061AA1E34}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentIntegration.Domain", "src\Services\Education\External\StudentIntegration\Domain\StudentIntegration.Domain.csproj", "{3C6804E7-F2D3-4445-9837-3FC061AA1E34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "src\Services\Education\External\StudentIntegration\Infrastructure\Infrastructure.csproj", "{4C964866-A7F0-40BE-9255-9ED023465D81}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentIntegration.Infrastructure", "src\Services\Education\External\StudentIntegration\Infrastructure\StudentIntegration.Infrastructure.csproj", "{4C964866-A7F0-40BE-9255-9ED023465D81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseModel.Orchestration", "src\Services\Education\Modules\CourseModule\CourseModel.Orchestration\CourseModel.Orchestration.csproj", "{FB0E7D6B-587C-4D47-A6D8-3B800D056A74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseModule.Orchestration", "src\Services\Education\Modules\CourseModule\CourseModel.Orchestration\CourseModule.Orchestration.csproj", "{FB0E7D6B-587C-4D47-A6D8-3B800D056A74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

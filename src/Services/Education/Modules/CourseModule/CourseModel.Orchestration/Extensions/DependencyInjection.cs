@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace CourseModel.Orchestration.Application.Extensions;
+namespace CourseModule.Orchestration.Extensions;
 
 public static class DependencyInjection
 {

@@ -1,4 +1,4 @@
-﻿namespace Domain.Contracts;
+﻿namespace StudentIntegration.Domain.Contracts;
 
 public class StudentResponseContract
 {

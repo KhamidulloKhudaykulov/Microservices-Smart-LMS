@@ -22,8 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\External\StudentIntegration\Infrastructure\Infrastructure.csproj" />
-    <ProjectReference Include="..\CourseModule\CourseModel.Orchestration\CourseModel.Orchestration.csproj" />
+    <ProjectReference Include="..\..\External\StudentIntegration\Infrastructure\StudentIntegration.Infrastructure.csproj" />
+    <ProjectReference Include="..\CourseModule\CourseModel.Orchestration\CourseModule.Orchestration.csproj" />
     <ProjectReference Include="..\CourseModule\CourseModule.Application\CourseModule.Application.csproj" />
     <ProjectReference Include="..\CourseModule\CourseModule.Infrastructure\CourseModule.Infrastructure.csproj" />
     <ProjectReference Include="..\LessonModule\LessonModule.Application\LessonModule.Application.csproj" />
