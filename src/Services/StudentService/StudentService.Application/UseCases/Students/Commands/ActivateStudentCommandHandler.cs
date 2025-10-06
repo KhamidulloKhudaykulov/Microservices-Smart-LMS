@@ -15,7 +15,7 @@ public sealed class ActivateStudentCommandHandler(
 {
     public async Task<Result> Handle(ActivateStudentCommand request, CancellationToken cancellationToken)
     {
-        Student student = await _studentRepository.SelectAsync(u => u.Id == request.id);
+        var student = await _studentRepository.SelectAsync(u => u.Id == request.id);
         if (student == null)
             return StudentBaseException<Student>.StudentNotFoundException();
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using StudentService.Domain.Entities;
 using StudentService.Persistence.Extensions;
 
 namespace StudentService.Persistence;

@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using StackExchange.Redis;
 using StudentService.Application.Interfaces.Redis;
@@ -7,11 +8,12 @@ namespace StudentService.Infrastructure.Utilities.Redis;
 public class RedisCacheService : IRedisCacheService
 {
     private readonly IDatabase _db;
-    public RedisCacheService(string connectionString)
+    public RedisCacheService(string connection)
     {
-        var redis = ConnectionMultiplexer.Connect(connectionString);
+        var redis = ConnectionMultiplexer.Connect(connection);
         _db = redis.GetDatabase();
     }
+
     public async Task SetAsync<T>(string key, T value)
     {
         var json = JsonConvert.SerializeObject(value);

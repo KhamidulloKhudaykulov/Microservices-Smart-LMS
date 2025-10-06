@@ -18,6 +18,8 @@ public class CourseEntity : AggregateRoot
         StartsAt = startsAt;
     }
     public Guid AccountId { get; private set; }
+    public List<Guid> StudentIds { get; private set; } = new List<Guid>();
+    public List<Guid> TeacherIds { get; private set; } = new List<Guid>();
     public string Name { get; private set; }
     public DateTime StartsAt { get; private set; }
     public DateTime? EndsAt { get; private set; }
@@ -33,6 +35,18 @@ public class CourseEntity : AggregateRoot
     {
         var entity = new CourseEntity(id, accountId, name, startsAt);
         return Result.Success(entity);
+    }
+
+    public Result AddStudent(Guid studentId)
+    {
+        StudentIds.Add(studentId);
+        return Result.Success();
+    }
+
+    public Result AddTeacher(Guid teacherId)
+    {
+        TeacherIds.Add(teacherId);
+        return Result.Success();
     }
 
     public void UpdateCourseName(string name)

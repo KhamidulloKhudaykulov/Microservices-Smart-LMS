@@ -19,7 +19,6 @@ public partial class StudentController : ControllerBase
     }
 
     [HttpPost]
-    [Authorize(Policy = "IdentityOnly")]
     public async Task<IActionResult> PostAsync(CreateStudentCommand command)
     {
         var result = await _sender.Send(command);

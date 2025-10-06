@@ -9,6 +9,7 @@ namespace StudentService.Domain.Entities;
 
 public class Student : Entity
 {
+    protected Student() { }
     private Student(
         Guid id,
         FullName fullname,

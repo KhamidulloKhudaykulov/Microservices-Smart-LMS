@@ -19,3 +19,19 @@ E:/Private/.NET/Humanity/src/Services/StudentService/StudentService.Application/
 /home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/obj/Debug/net8.0/refint/StudentService.Application.dll
 /home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/obj/Debug/net8.0/StudentService.Application.pdb
 /home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Application/obj/Debug/net8.0/ref/StudentService.Application.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Application\bin\Debug\net8.0\StudentService.Application.deps.json
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Application\bin\Debug\net8.0\StudentService.Application.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Application\bin\Debug\net8.0\StudentService.Application.pdb
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Application\bin\Debug\net8.0\StudentService.Domain.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Application\bin\Debug\net8.0\StudentService.Domain.pdb
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\StudentService.Application.csproj.AssemblyReference.cache
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\StudentService.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\StudentService.Application.AssemblyInfoInputs.cache
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\StudentService.Application.AssemblyInfo.cs
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\StudentService.Application.csproj.CoreCompileInputs.cache
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\StudentService.Application.sourcelink.json
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\StudentS.7AD106C8.Up2Date
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\StudentService.Application.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\refint\StudentService.Application.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\StudentService.Application.pdb
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Application\obj\Debug\net8.0\ref\StudentService.Application.dll

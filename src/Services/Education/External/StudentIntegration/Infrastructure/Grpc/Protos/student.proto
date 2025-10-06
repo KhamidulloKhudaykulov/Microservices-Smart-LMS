@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option csharp_namespace = "Infrastructure.Grpc";
+
+service StudentGrpcService {
+  rpc VerifyExistStudent (VerifyStudentRequest) returns (VerifyStudentResponse);
+}
+
+message VerifyStudentRequest {
+  string studentId = 1;
+}
+
+message VerifyStudentResponse {
+  bool exists = 1;
+}

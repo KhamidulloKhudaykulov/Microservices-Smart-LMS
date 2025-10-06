@@ -1,14 +1,15 @@
 ﻿using CourseModule.Application.UseCases.Courses.Commands;
+using CourseModule.Application.UseCases.Courses.Queries;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Education.Api.Controllers.Courses;
 
 public partial class CourseController
 {
-    [HttpPut("close/{courseId}")]
-    public async Task<IActionResult> Close(Guid courseId)
+    [HttpPut("addstudent/{courseId}/{studentId}")]
+    public async Task<IActionResult> Close(Guid courseId, Guid studentId)
     {
-        var command = new CloseCourseCommand(courseId);
+        var command = new AttachStudentCommand(courseId, studentId);
         var response = await _sender.Send(command);
         if (response.IsFailure)
             return BadRequest(response.Error.Message);
@@ -16,11 +17,11 @@ public partial class CourseController
         return FromResult(response);
     }
 
-    [HttpPut("block/{courseId}")]
-    public async Task<IActionResult> Block(Guid courseId)
+    [HttpGet("students/{courseId}")]
+    public async Task<IActionResult> GetCourseStudents(Guid courseId)
     {
-        var command = new BlockCourseCommand(courseId);
-        var response = await _sender.Send(command);
+        var query = new GetStudentsByCourseIdQuery(courseId);
+        var response = await _sender.Send(query);
         if (response.IsFailure)
             return BadRequest(response.Error.Message);
 

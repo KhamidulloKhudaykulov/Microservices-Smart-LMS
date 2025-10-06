@@ -30,7 +30,7 @@ public sealed class CreateStudentCommandHandler(
         await _studentRepository.InsertAsync(student, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-        await _domainEventDispatcher.DispatchAsync(student.DomainEvents);
+        //await _domainEventDispatcher.DispatchAsync(student.DomainEvents);
         student.ClearDomainEvents();
 
         return Result.Success();

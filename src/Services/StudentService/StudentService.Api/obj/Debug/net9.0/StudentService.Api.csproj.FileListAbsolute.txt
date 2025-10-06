@@ -41,3 +41,47 @@
 /home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Api/obj/Debug/net9.0/StudentService.Api.pdb
 /home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Api/obj/Debug/net9.0/StudentService.Api.genruntimeconfig.cache
 /home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Api/obj/Debug/net9.0/ref/StudentService.Api.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\appsettings.Development.json
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\appsettings.json
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\StudentService.Api.staticwebassets.endpoints.json
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\StudentService.Api.exe
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\StudentService.Api.deps.json
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\StudentService.Api.runtimeconfig.json
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\StudentService.Api.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\StudentService.Api.pdb
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\MediatR.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\MediatR.Contracts.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\Microsoft.OpenApi.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\StudentService.Application.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\StudentService.Domain.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\StudentService.Application.pdb
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\bin\Debug\net9.0\StudentService.Domain.pdb
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\StudentService.Api.csproj.AssemblyReference.cache
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\rpswa.dswa.cache.json
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\StudentService.Api.GeneratedMSBuildEditorConfig.editorconfig
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\StudentService.Api.AssemblyInfoInputs.cache
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\StudentService.Api.AssemblyInfo.cs
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\StudentService.Api.csproj.CoreCompileInputs.cache
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\StudentService.Api.MvcApplicationPartsAssemblyInfo.cs
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\StudentService.Api.MvcApplicationPartsAssemblyInfo.cache
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\StudentService.Api.sourcelink.json
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\rjimswa.dswa.cache.json
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\scopedcss\bundle\StudentService.Api.styles.css
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\staticwebassets.build.json
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\staticwebassets.build.json.cache
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\staticwebassets.development.json
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\StudentS.28052889.Up2Date
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\StudentService.Api.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\refint\StudentService.Api.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\StudentService.Api.pdb
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\StudentService.Api.genruntimeconfig.cache
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Api\obj\Debug\net9.0\ref\StudentService.Api.dll

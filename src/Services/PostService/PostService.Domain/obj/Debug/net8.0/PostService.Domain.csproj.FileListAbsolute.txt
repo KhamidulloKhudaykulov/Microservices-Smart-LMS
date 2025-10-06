@@ -1,0 +1,12 @@
+D:\selfprojects\Humanity\src\Services\PostService\PostService.Domain\bin\Debug\net8.0\PostService.Domain.deps.json
+D:\selfprojects\Humanity\src\Services\PostService\PostService.Domain\bin\Debug\net8.0\PostService.Domain.dll
+D:\selfprojects\Humanity\src\Services\PostService\PostService.Domain\bin\Debug\net8.0\PostService.Domain.pdb
+D:\selfprojects\Humanity\src\Services\PostService\PostService.Domain\obj\Debug\net8.0\PostService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\selfprojects\Humanity\src\Services\PostService\PostService.Domain\obj\Debug\net8.0\PostService.Domain.AssemblyInfoInputs.cache
+D:\selfprojects\Humanity\src\Services\PostService\PostService.Domain\obj\Debug\net8.0\PostService.Domain.AssemblyInfo.cs
+D:\selfprojects\Humanity\src\Services\PostService\PostService.Domain\obj\Debug\net8.0\PostService.Domain.csproj.CoreCompileInputs.cache
+D:\selfprojects\Humanity\src\Services\PostService\PostService.Domain\obj\Debug\net8.0\PostService.Domain.sourcelink.json
+D:\selfprojects\Humanity\src\Services\PostService\PostService.Domain\obj\Debug\net8.0\PostService.Domain.dll
+D:\selfprojects\Humanity\src\Services\PostService\PostService.Domain\obj\Debug\net8.0\refint\PostService.Domain.dll
+D:\selfprojects\Humanity\src\Services\PostService\PostService.Domain\obj\Debug\net8.0\PostService.Domain.pdb
+D:\selfprojects\Humanity\src\Services\PostService\PostService.Domain\obj\Debug\net8.0\ref\PostService.Domain.dll

@@ -14,3 +14,15 @@ E:/Private/.NET/Humanity/src/Services/StudentService/StudentService.Domain/obj/D
 /home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/obj/Debug/net8.0/refint/StudentService.Domain.dll
 /home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/obj/Debug/net8.0/StudentService.Domain.pdb
 /home/pop-ospop-os/Рабочий стол/selfprojects/Humanity/src/Services/StudentService/StudentService.Domain/obj/Debug/net8.0/ref/StudentService.Domain.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Domain\bin\Debug\net8.0\StudentService.Domain.deps.json
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Domain\bin\Debug\net8.0\StudentService.Domain.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Domain\bin\Debug\net8.0\StudentService.Domain.pdb
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Domain\obj\Debug\net8.0\StudentService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Domain\obj\Debug\net8.0\StudentService.Domain.AssemblyInfoInputs.cache
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Domain\obj\Debug\net8.0\StudentService.Domain.AssemblyInfo.cs
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Domain\obj\Debug\net8.0\StudentService.Domain.csproj.CoreCompileInputs.cache
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Domain\obj\Debug\net8.0\StudentService.Domain.sourcelink.json
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Domain\obj\Debug\net8.0\StudentService.Domain.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Domain\obj\Debug\net8.0\refint\StudentService.Domain.dll
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Domain\obj\Debug\net8.0\StudentService.Domain.pdb
+D:\selfprojects\Humanity\src\Services\StudentService\StudentService.Domain\obj\Debug\net8.0\ref\StudentService.Domain.dll
