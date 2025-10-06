@@ -1,6 +1,5 @@
 ﻿using Application.InterfaceBridges;
 using Domain.Contracts;
-using Grpc.Core;
 
 namespace Infrastructure.Grpc.Client;
 
@@ -13,15 +12,23 @@ public class StudentGrpcServiceClient : IStudentServiceClient
         _client = client;
     }
 
-    public VerifyStudentResponse VerifyExistStudent(VerifyStudentRequest request)
+    public async Task<List<StudentResponseContract>> GetStudentsByIds(List<Guid> studentIds)
     {
-        Console.WriteLine($"Verifying student: {request.StudentId}");
+        var request = new GetStudentsByIdsRequest();
+        request.StudentIds.AddRange(studentIds.Select(id => id.ToString()));
 
-        var response = _client.VerifyExistStudent(request);
+        var response = await _client.GetStudentsByIdsAsync(request);
 
-        Console.WriteLine($"Response: {response.Exists}");
+        var result = response.Students.Select(s => new StudentResponseContract
+        {
+            Id = Guid.Parse(s.Id),
+            FullName = s.FullName,
+            Email = s.Email,
+            PassportData = s.Passportdata,
+            PhoneNumber = s.Phonenumber
+        }).ToList();
 
-        return response;
+        return result;
     }
 
     public async Task<StudentResponseContract> VerifyExistStudentById(Guid studentId)
