@@ -7,16 +7,16 @@ using SharedKernel.Domain.Repositories;
 
 namespace CourseModule.Application.UseCases.Courses.Commands;
 
-public record UpdateCourseStartDateCommand(
+public record RemoveStudentFromCourseCommand(
     Guid CourseId,
-    DateTime StartsAt) : ICommand<Unit>;
+    Guid StudentId) : ICommand<Unit>;
 
-public class UpdateCourseStartDateCommandHandler(
+public class RemoveStudentFromCourseCommandHandler(
     ICourseRepository _courseRepository,
     IUnitOfWork _unitOfWork) 
-    : ICommandHandler<UpdateCourseStartDateCommand, Unit>
+    : ICommandHandler<RemoveStudentFromCourseCommand, Unit>
 {
-    public async Task<Result<Unit>> Handle(UpdateCourseStartDateCommand request, CancellationToken cancellationToken)
+    public async Task<Result<Unit>> Handle(RemoveStudentFromCourseCommand request, CancellationToken cancellationToken)
     {
         var result = await CourseRepositoryContract.GetCourseOrNotFoundAsync(_courseRepository, request.CourseId);
 
@@ -25,11 +25,12 @@ public class UpdateCourseStartDateCommandHandler(
 
         var course = result.Value;
 
-        course.UpdateStartDate(request.StartsAt);
+        if (!course.StudentIds.Remove(request.StudentId))
+            return Results.NotFoundException<Unit>(StudentErrors.NotFound);
 
         await _courseRepository.UpdateAsync(course);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
-
+        
         return Result.Success(Unit.Value);
     }
 }

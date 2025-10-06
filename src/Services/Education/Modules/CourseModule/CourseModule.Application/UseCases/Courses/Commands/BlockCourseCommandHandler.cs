@@ -1,4 +1,5 @@
-﻿using CourseModule.Domain.Exceptions;
+﻿using CourseModule.Application.UseCases.Courses.Helpers;
+using CourseModule.Domain.Exceptions;
 using CourseModule.Domain.Repositories;
 using MediatR;
 using SharedKernel.Application.Abstractions.Messaging;
@@ -15,11 +16,12 @@ public class BlockCourseCommandHandler(
 {
     public async Task<Result<Unit>> Handle(BlockCourseCommand request, CancellationToken cancellationToken)
     {
-        var course = await _courseRepository
-            .SelectByIdAsync(request.CourseId);
+        var result = await CourseRepositoryContract.GetCourseOrNotFoundAsync(_courseRepository, request.CourseId);
 
-        if (course is null)
-            return Results.NotFoundException<Unit>(CourseErrors.NotFound);
+        if (result.IsFailure)
+            return Results.CustomException<Unit>(result.Error);
+
+        var course = result.Value;
 
         var blockResult = course.Block();
 

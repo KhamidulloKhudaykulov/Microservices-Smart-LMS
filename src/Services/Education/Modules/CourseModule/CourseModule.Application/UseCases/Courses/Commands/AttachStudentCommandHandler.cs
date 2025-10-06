@@ -1,4 +1,5 @@
-﻿using CourseModule.Domain.Exceptions;
+﻿using CourseModule.Application.UseCases.Courses.Helpers;
+using CourseModule.Domain.Exceptions;
 using CourseModule.Domain.Repositories;
 using MediatR;
 using SharedKernel.Application.Abstractions.Messaging;
@@ -19,9 +20,12 @@ public class AttachStudentCommandHandler(
 {
     public async Task<Result<Unit>> Handle(AttachStudentCommand request, CancellationToken cancellationToken)
     {
-        var course = await _courseRepository.SelectByIdAsync(request.CourseId);
-        if (course is null)
-            return Results.NotFoundException<Unit>(CourseErrors.NotFound);
+        var result = await CourseRepositoryContract.GetCourseOrNotFoundAsync(_courseRepository, request.CourseId);
+
+        if (result.IsFailure)
+            return Results.CustomException<Unit>(result.Error);
+
+        var course = result.Value;
 
         if (course.StudentIds.Contains(request.StudentId))
             return Results.AlreadyExistsException<Unit>(StudentErrors.AlreadyExists);
@@ -30,8 +34,8 @@ public class AttachStudentCommandHandler(
         if (student is null)
             return Results.NotFoundException<Unit>(StudentErrors.NotFound);
 
-        var result = course.AddStudent(request.StudentId);
-        if (result.IsFailure)
+        var addStudentResult = course.AddStudent(request.StudentId);
+        if (addStudentResult.IsFailure)
             return Results.CustomException<Unit>(result.Error);
 
         await _courseRepository.UpdateAsync(course);
