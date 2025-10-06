@@ -7,19 +7,19 @@ using SharedKernel.Application.Abstractions.Messaging;
 namespace CourseModule.Application.UseCases.Courses.Queries;
 
 public record GetStudentsByCourseIdQuery(
-    Guid CourseId) : IQuery<CourseStudentResponseDto>;
+    Guid CourseId) : IQuery<CourseStudentIdsResponseDto>;
 
 public class GetStudentsByCourseIdQueryHandler(
     ICourseRepository _courseRepository)
-    : IQueryHandler<GetStudentsByCourseIdQuery, CourseStudentResponseDto>
+    : IQueryHandler<GetStudentsByCourseIdQuery, CourseStudentIdsResponseDto>
 {
-    public async Task<Result<CourseStudentResponseDto>> Handle(GetStudentsByCourseIdQuery request, CancellationToken cancellationToken)
+    public async Task<Result<CourseStudentIdsResponseDto>> Handle(GetStudentsByCourseIdQuery request, CancellationToken cancellationToken)
     {
         var course = await _courseRepository.SelectByIdAsync(request.CourseId);
         if (course is null)
-            return Results.NotFoundException<CourseStudentResponseDto>(CourseErrors.NotFound);
+            return Results.NotFoundException<CourseStudentIdsResponseDto>(CourseErrors.NotFound);
 
-        var result = new CourseStudentResponseDto(StudentIds: course.StudentIds);
+        var result = new CourseStudentIdsResponseDto(StudentIds: course.StudentIds);
         return Result.Success(result);
     }
 }

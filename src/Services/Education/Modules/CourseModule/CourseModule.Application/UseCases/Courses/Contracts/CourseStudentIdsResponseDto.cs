@@ -1,4 +1,4 @@
 ﻿namespace CourseModule.Application.UseCases.Courses.Contracts;
 
-public record CourseStudentResponseDto(
+public record CourseStudentIdsResponseDto(
     List<Guid> StudentIds);
