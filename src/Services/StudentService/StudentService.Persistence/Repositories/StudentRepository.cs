@@ -57,4 +57,11 @@ public class StudentRepository : IStudentRepository
             ? await _students.FirstOrDefaultAsync()
             : await _students.FirstOrDefaultAsync(predicate);
     }
+
+    public async Task<IEnumerable<Student>> GetAllByStudentIdsAsync(List<Guid> ids)
+    {
+        return await _students
+            .Where(s => ids.Contains(s.Id))
+            .ToListAsync();
+    }
 }
