@@ -9,6 +9,7 @@ public interface IStudentRepository
     Task<Student> UpdateAsync(Student user, CancellationToken cancellationToken);
     Task<Student> DeleteAsync(Student user, CancellationToken cancellationToken);
     Task<Student?> SelectAsync(Expression<Func<Student, bool>>? predicate = null);
+    Task<IEnumerable<Student>> GetAllByStudentIdsAsync(List<Guid> ids);
     Task<IEnumerable<Student>> SelectAllAsync(Expression<Func<Student, bool>>? predicate = null);
     IQueryable<Student> SelectAllAsQueryable(Expression<Func<Student, bool>>? predicate = null);
 }
