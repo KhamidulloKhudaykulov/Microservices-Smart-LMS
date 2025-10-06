@@ -1,6 +1,5 @@
-﻿using CourseModel.Orchestration.Queries;
+﻿using CourseModule.Orchestration.Queries;
 using CourseModule.Application.UseCases.Courses.Commands;
-using CourseModule.Application.UseCases.Courses.Queries;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Education.Api.Controllers.Courses;

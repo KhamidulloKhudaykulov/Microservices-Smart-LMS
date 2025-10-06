@@ -9,6 +9,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\External\StudentIntegration\Application\StudentIntegration.Application.csproj" />
     <ProjectReference Include="..\..\..\External\StudentIntegration\Domain\StudentIntegration.Domain.csproj" />
+    <ProjectReference Include="..\..\..\External\StudentIntegration\StudentIntegration.Application\StudentIntegration.Application.csproj" />
+    <ProjectReference Include="..\..\..\External\StudentIntegration\StudentIntegration.Domain\StudentIntegration.Domain.csproj" />
     <ProjectReference Include="..\CourseModule.Domain\CourseModule.Domain.csproj" />
   </ItemGroup>
 
