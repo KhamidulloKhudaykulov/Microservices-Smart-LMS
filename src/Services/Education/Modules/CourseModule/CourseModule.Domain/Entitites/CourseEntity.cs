@@ -39,7 +39,10 @@ public class CourseEntity : AggregateRoot
 
     public Result AddStudent(Guid studentId)
     {
-        StudentIds.Add(studentId);
+        StudentIds.Add(studentId); 
+        if (!StudentIds.Contains(studentId))
+            StudentIds.Add(studentId);
+
         return Result.Success();
     }
 
