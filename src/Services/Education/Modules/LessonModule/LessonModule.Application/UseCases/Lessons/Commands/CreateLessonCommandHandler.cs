@@ -18,7 +18,7 @@ public record CreateLessonCommand(
 public class CreateLessonCommandHandler(
     ILessonRepository _lessonRepository,
     IUnitOfWork _unitOfWork,
-    ICourseService _courseService) 
+    ICourseServiceClient _courseService) 
     : ICommandHandler<CreateLessonCommand, Unit>
 {
     public async Task<Result<Unit>> Handle(CreateLessonCommand request, CancellationToken cancellationToken)

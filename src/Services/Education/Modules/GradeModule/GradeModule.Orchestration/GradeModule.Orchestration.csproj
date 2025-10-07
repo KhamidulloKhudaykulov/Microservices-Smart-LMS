@@ -8,13 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\External\StudentIntegration\StudentIntegration.Application\StudentIntegration.Application.csproj" />
-    <ProjectReference Include="..\..\LessonModule\LessonModule.Application\LessonModule.Application.csproj" />
+    <ProjectReference Include="..\GradeModule.Application\GradeModule.Application.csproj" />
     <ProjectReference Include="..\GradeModule.Domain\GradeModule.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="UseCases\Courses\Contracts\" />
-    <Folder Include="UseCases\Courses\Queries\" />
   </ItemGroup>
 
 </Project>

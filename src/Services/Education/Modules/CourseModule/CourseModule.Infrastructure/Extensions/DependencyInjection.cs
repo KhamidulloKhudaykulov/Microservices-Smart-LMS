@@ -18,10 +18,10 @@ public static class DependencyInjection
     {
         services.AddDbContext<CourseDbContext>(options =>
         {
-            options.UseSqlServer(configuration.GetConnectionString("DefaultCourseDbConnection"));
+            options.UseSqlServer(configuration.GetConnectionString("EducationDbConnection"));
         });
 
-        services.AddScoped<ICourseService, CourseService>();
+        services.AddScoped<ICourseServiceClient, CourseService>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<ICourseRepository, CourseRepository>();
 

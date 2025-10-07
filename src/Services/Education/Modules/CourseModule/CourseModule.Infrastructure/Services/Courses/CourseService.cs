@@ -1,4 +1,5 @@
 ﻿using CourseModule.Application.Interfaces;
+using CourseModule.Application.UseCases.Courses.Contracts;
 using CourseModule.Domain.Exceptions;
 using CourseModule.Domain.Repositories;
 
@@ -6,8 +7,19 @@ namespace CourseModule.Infrastructure.Services.Courses;
 
 public class CourseService(
     ICourseRepository _courseRepository) 
-    : ICourseService
+    : ICourseServiceClient
 {
+    public async Task<Result<CourseResponseDto>?> GetCourseByIdAsync(Guid courseId)
+    {
+        var course = await _courseRepository
+            .SelectByIdAsync(courseId);
+
+        if (course is null)
+            return Results.NotFoundException<CourseResponseDto>(CourseErrors.NotFound);
+
+        return new CourseResponseDto(course.Id, course.Name, course.StartsAt);
+    }
+
     public async Task<Result<bool>> IsCourseAvailable(Guid courseId)
     {
         var course = await _courseRepository

@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers\Exams\" />
-    <Folder Include="Controllers\Grades\" />
     <Folder Include="Controllers\Homeworks\" />
     <Folder Include="Controllers\Schedules\" />
   </ItemGroup>
@@ -27,6 +26,8 @@
     <ProjectReference Include="..\CourseModule\CourseModule.Application\CourseModule.Application.csproj" />
     <ProjectReference Include="..\CourseModule\CourseModule.Infrastructure\CourseModule.Infrastructure.csproj" />
     <ProjectReference Include="..\CourseModule\CourseModule.Orchestration\CourseModule.Orchestration.csproj" />
+    <ProjectReference Include="..\GradeModule\GradeModule.Infrastructure\GradeModule.Infrastructure.csproj" />
+    <ProjectReference Include="..\GradeModule\GradeModule.Orchestration\GradeModule.Orchestration.csproj" />
     <ProjectReference Include="..\LessonModule\LessonModule.Application\LessonModule.Application.csproj" />
     <ProjectReference Include="..\LessonModule\LessonModule.Infrastructure\LessonModule.Infrastructure.csproj" />
   </ItemGroup>

@@ -1,5 +1,7 @@
 ﻿using CourseModule.Application.Extensions;
 using CourseModule.Infrastructure.Extensions;
+using LessonModule.Application.Extensions;
+using LessonModule.Infrastructure.Extensions;
 
 namespace Education.Api.Extensions;
 
