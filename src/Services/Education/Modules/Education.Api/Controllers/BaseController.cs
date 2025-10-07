@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Education.Api.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/education/[controller]")]
 public class BaseController : ControllerBase
 {
     private IActionResult MapError(Error error) => error.Code switch

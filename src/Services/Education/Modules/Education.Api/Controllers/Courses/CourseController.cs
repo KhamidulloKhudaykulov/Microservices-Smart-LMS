@@ -4,7 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Education.Api.Controllers.Courses;
 
-[Route("api/courses")]
+[Route("api/education/courses")]
+[Tags("1. Работа с курсами")]
 public partial class CourseController : BaseController
 {
     private readonly ISender _sender;
