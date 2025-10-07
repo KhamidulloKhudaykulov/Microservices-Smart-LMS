@@ -5,6 +5,7 @@ namespace LessonModule.Domain.Entities;
 
 public class LessonEntity : Entity
 {
+    protected LessonEntity() { }
     private LessonEntity(
         Guid courseId,
         Theme theme,

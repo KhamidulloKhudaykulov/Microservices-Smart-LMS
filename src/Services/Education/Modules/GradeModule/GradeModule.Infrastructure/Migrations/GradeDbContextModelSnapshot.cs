@@ -34,6 +34,9 @@ namespace GradeModule.Infrastructure.Migrations
                     b.Property<Guid>("AssignedBy")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("CourseId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid?>("ExamId")
                         .HasColumnType("uniqueidentifier");
 

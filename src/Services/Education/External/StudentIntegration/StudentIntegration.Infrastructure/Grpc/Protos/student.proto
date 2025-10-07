@@ -6,6 +6,7 @@ service StudentGrpcService {
   rpc VerifyExistStudent (VerifyStudentRequest) returns (VerifyStudentResponse);
   rpc GetStudentAsJsonString (GetStudentAsJsonStringRequest) returns (GetStudentAsJsonStringResponse);
   rpc GetStudentsByIds (GetStudentsByIdsRequest) returns (GetStudentsByIdsResponse);
+  rpc GetStudentDetailsById (GetStudentDetailsByIdRequest) returns (GetStudentDetailsByIdResponse);
 }
 
 message VerifyStudentRequest {
@@ -26,6 +27,14 @@ message GetStudentAsJsonStringResponse {
 
 message GetStudentsByIdsRequest {
   repeated string studentIds = 1;
+}
+
+message GetStudentDetailsByIdRequest {
+	string studentId = 1;
+}
+
+message GetStudentDetailsByIdResponse {
+	StudentGrpcModel student = 1;
 }
 
 message StudentGrpcModel {

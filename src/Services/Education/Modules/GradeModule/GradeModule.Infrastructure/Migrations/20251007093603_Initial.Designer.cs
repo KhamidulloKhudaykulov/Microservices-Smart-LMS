@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GradeModule.Infrastructure.Migrations
 {
     [DbContext(typeof(GradeDbContext))]
-    [Migration("20251007044640_Initial")]
+    [Migration("20251007093603_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -35,6 +35,9 @@ namespace GradeModule.Infrastructure.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("AssignedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CourseId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid?>("ExamId")

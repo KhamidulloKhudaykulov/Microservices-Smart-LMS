@@ -1,7 +1,11 @@
-﻿using GradeModule.Infrastructure.Persistence;
+﻿using GradeModule.Domain.Repositories;
+using GradeModule.Infrastructure.Persistence;
+using GradeModule.Infrastructure.Repositories;
+using GradeModule.Infrastructure.Repsoitories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SharedKernel.Domain.Repositories;
 
 namespace GradeModule.Infrastructure.Extensions;
 
@@ -15,6 +19,9 @@ public static class DependencyInjection
         {
             options.UseSqlServer(configuration.GetConnectionString("EducationDbConnection"));
         });
+
+        services.AddScoped<IGradeRepository, GradeRepository>();
+        services.AddScoped<IGradeUnitOfWork, UnitOfWork>();
 
         return services;
     }

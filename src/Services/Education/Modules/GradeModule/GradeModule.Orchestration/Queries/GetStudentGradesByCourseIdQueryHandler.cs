@@ -26,7 +26,7 @@ public class GetStudentGradesByCourseIdQueryHandler(
         if (!studentGrades.Any())
             return new List<StudentGradeDto>();
 
-        var studentTask = _studentServiceClient.VerifyExistStudentById(request.studentId);
+        var studentTask = _studentServiceClient.GetStudentDetailsById(request.studentId);
         var courseTask = _courseServiceClient.GetCourseByIdAsync(request.courseId);
 
         await Task.WhenAll(studentTask, courseTask);

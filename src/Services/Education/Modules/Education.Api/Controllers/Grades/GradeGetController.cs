@@ -16,7 +16,7 @@ public partial class GradeController
         return BadRequest(result);
     }
 
-    [HttpGet("course/{lessonId}/{studentId}")]
+    [HttpGet("course/{studentId}")]
     public async Task<IActionResult> GetByCourseId(Guid courseId, Guid studentId)
     {
         var query = new GetStudentGradesByCourseIdQuery(studentId, courseId);

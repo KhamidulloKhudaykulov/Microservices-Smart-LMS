@@ -17,6 +17,7 @@ namespace GradeModule.Infrastructure.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     StudentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CourseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     LessonId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     ExamId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     Score = table.Column<decimal>(type: "decimal(18,2)", nullable: false),

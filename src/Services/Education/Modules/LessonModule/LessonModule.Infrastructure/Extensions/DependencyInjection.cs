@@ -22,7 +22,7 @@ public static class DependencyInjection
         });
 
         services.AddScoped<ILessonServiceClient, LessonServiceClient>();
-        services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped<ILessonUnitOfWork, UnitOfWork>();
         services.AddScoped<ILessonRepository, LessonRepository>();
 
         return services;

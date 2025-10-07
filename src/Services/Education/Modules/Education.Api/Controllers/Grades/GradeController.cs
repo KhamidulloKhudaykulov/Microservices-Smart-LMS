@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Education.Api.Controllers.Grades;
 
 [Route("api/grades")]
-public class GradeController : BaseController
+public partial class GradeController : BaseController
 {
     private readonly ISender _sender;
 

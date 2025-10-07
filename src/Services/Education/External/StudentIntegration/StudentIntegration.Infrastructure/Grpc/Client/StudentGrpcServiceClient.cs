@@ -1,4 +1,5 @@
-﻿using Infrastructure.Grpc;
+﻿using Google.Protobuf;
+using Infrastructure.Grpc;
 using StudentIntegration.Application.InterfaceBridges;
 using StudentIntegration.Domain.Contracts;
 
@@ -43,7 +44,26 @@ public class StudentGrpcServiceClient : IStudentServiceClient
 
         return new StudentResponseContract
         {
-            Id = studentId,
+            Id = studentId
+        };
+    }
+
+    public async Task<StudentResponseContract> GetStudentDetailsById(Guid studentId)
+    {
+        var request = new GetStudentDetailsByIdRequest
+        {
+            StudentId = studentId.ToString()
+        };
+
+        var response = await _client.GetStudentDetailsByIdAsync(request);
+
+        return new StudentResponseContract
+        {
+            Id = Guid.Parse(response.Student.Id),
+            Email = response.Student.Email,
+            FullName = response.Student.FullName,
+            PassportData = response.Student.Passportdata,
+            PhoneNumber = response.Student.Phonenumber
         };
     }
 }

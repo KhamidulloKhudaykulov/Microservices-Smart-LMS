@@ -20,6 +20,31 @@ public class StudentGrpcServiceHandler(
         };
     }
 
+    public override async Task<GetStudentDetailsByIdResponse> GetStudentDetailsById(GetStudentDetailsByIdRequest request, ServerCallContext context)
+    {
+        var student = await _studentRepository
+           .SelectAsync(u => u.Id == Guid.Parse(request.StudentId));
+
+        if (student is null)
+            return new GetStudentDetailsByIdResponse();
+
+        var responseModel = new StudentGrpcModel
+        {
+            Id = student.Id.ToString(),
+            Email = student.Email.Value,
+            FullName = student.FullName.Value,
+            Passportdata = student.PassportData.Value,
+            Phonenumber = student.PhoneNumber.Value
+        };
+
+        var response = new GetStudentDetailsByIdResponse
+        {
+            Student = responseModel,
+        };
+
+        return response;
+    }
+
     public override async Task<GetStudentAsJsonStringResponse> GetStudentAsJsonString(GetStudentAsJsonStringRequest request, ServerCallContext context)
     {
         var student = await _studentRepository

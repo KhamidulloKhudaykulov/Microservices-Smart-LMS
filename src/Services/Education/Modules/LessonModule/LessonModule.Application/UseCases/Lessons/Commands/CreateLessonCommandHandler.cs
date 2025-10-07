@@ -11,13 +11,13 @@ namespace LessonModule.Application.UseCases.Lessons.Commands;
 
 public record CreateLessonCommand(
     Guid CourseId,
-    Theme Theme,
+    string Theme,
     DateTime Date,
     TimeSpan StartsAt) : ICommand<Unit>;
 
 public class CreateLessonCommandHandler(
     ILessonRepository _lessonRepository,
-    IUnitOfWork _unitOfWork,
+    ILessonUnitOfWork _unitOfWork,
     ICourseServiceClient _courseService) 
     : ICommandHandler<CreateLessonCommand, Unit>
 {
@@ -27,7 +27,8 @@ public class CreateLessonCommandHandler(
         if (course.IsFailure)
             return Results.CustomException<Unit>(course.Error);
 
-        var lesson = LessonEntity.Create(request.CourseId, request.Theme, request.Date, request.StartsAt);
+        var theme = Theme.Create(request.Theme);
+        var lesson = LessonEntity.Create(request.CourseId, theme.Value, request.Date, request.StartsAt);
 
         if (lesson.IsFailure)
             return Result.Failure<Unit>(lesson.Error);

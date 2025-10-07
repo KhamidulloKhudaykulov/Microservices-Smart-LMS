@@ -24,8 +24,7 @@ public class LessonRepository : ILessonRepository
 
     public async Task<LessonEntity> InsertAsync(LessonEntity entity)
     {
-        await _lessons.AddAsync(entity);
-        return entity;
+        return (await _lessons.AddAsync(entity)).Entity;
     }
 
     public async Task<LessonEntity> UpdateAsync(LessonEntity entity)

@@ -1,9 +1,10 @@
-﻿using LessonModule.Infrastructure.Persistence;
+﻿using LessonModule.Domain.Repositories;
+using LessonModule.Infrastructure.Persistence;
 using SharedKernel.Domain.Repositories;
 
 namespace LessonModule.Infrastructure.Repositories;
 
-public class UnitOfWork : IUnitOfWork
+public class UnitOfWork : ILessonUnitOfWork
 {
     private readonly LessonDbContext _dbContext;
 

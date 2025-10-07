@@ -20,7 +20,7 @@ public record CreateLessonGradeCommand(
 
 public class CreateLessonGradeCommandHandler(
     IGradeRepository _gradeRepository,
-    IUnitOfWork _unitOfWork,
+    IGradeUnitOfWork _unitOfWork,
     IStudentServiceClient _studentServiceClient,
     ILessonServiceClient _lessonServiceClient)
     : ICommandHandler<CreateLessonGradeCommand, Unit>
