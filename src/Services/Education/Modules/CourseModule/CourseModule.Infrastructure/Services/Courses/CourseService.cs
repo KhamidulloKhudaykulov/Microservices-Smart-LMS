@@ -30,4 +30,17 @@ public class CourseService(
 
         return Result.Success(true);
     }
+
+    public async Task<bool> IsStudentExistInCourseAsync(Guid courseId, Guid studentId)
+    {
+        var course = await _courseRepository
+            .SelectByIdAsync(courseId);
+
+        if (course is null)
+            return false;
+
+        var hasStudent = course.StudentIds.Contains(studentId);
+
+        return hasStudent;
+    }
 }
