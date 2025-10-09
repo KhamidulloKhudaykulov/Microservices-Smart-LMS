@@ -10,14 +10,18 @@ public class Homework : AggregateRoot
         string title,
         string? description,
         DateTime endTime,
-        Guid lessonId,
-        Guid createdBy)
+        Guid? lessonId,
+        Guid courseId,
+        Guid createdBy,
+        decimal maxScore)
         : base(id)
     {
         Title = title;
         Description = description;
         EndTime = endTime;
         LessonId = lessonId;
+        CourseId = courseId;
+        MaxScore = maxScore;
 
         CreatedDate = DateTime.UtcNow;
         Status = HomeworkStatus.InProgress;
@@ -31,7 +35,9 @@ public class Homework : AggregateRoot
     public DateTime CreatedDate { get; private set; }
     public DateTime EndTime { get; private set; }
     public HomeworkStatus Status { get; private set; }
-    public Guid LessonId { get; private set; }
+    public Guid? LessonId { get; private set; }
+
+    public Guid CourseId { get; private set; }
 
     public Guid CreatedBy { get; private set; }
 
@@ -40,8 +46,10 @@ public class Homework : AggregateRoot
         string title,
         string? description,
         DateTime endTime,
-        Guid lessonId,
-        Guid createdBy)
+        Guid? lessonId,
+        Guid courseId,
+        Guid createdBy,
+        decimal maxScore)
     {
         var result = new Homework(
             id, 
@@ -49,7 +57,9 @@ public class Homework : AggregateRoot
             description, 
             endTime, 
             lessonId,
-            createdBy);
+            courseId,
+            createdBy,
+            maxScore);
 
         return Result.Success(result);
     }
