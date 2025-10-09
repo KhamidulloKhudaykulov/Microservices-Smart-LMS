@@ -33,7 +33,7 @@ public class StudentGrpcServiceClient : IStudentServiceClient
         return result;
     }
 
-    public async Task<StudentResponseContract> VerifyExistStudentById(Guid studentId)
+    public async Task<StudentResponseContract?> VerifyExistStudentById(Guid studentId)
     {
         var request = new VerifyStudentRequest
         {
@@ -41,6 +41,8 @@ public class StudentGrpcServiceClient : IStudentServiceClient
         };
 
         var response = await _client.VerifyExistStudentAsync(request);
+        if (!response.Exists)
+            return null;
 
         return new StudentResponseContract
         {
