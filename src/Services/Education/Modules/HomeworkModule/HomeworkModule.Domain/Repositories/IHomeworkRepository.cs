@@ -1,4 +1,4 @@
-﻿using HomeworkModule.Domain.Entities;
+﻿using HomeworkModule.Domain.Aggregates;
 using System.Linq.Expressions;
 
 namespace HomeworkModule.Domain.Repositories;
