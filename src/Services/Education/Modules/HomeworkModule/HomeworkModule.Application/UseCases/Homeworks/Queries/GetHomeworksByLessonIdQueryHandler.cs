@@ -19,7 +19,7 @@ public class GetHomeworksByLessonIdQueryHandler(
         var result = aggregates
             .Select(h => new HomeworkResponseDto(
                 Id: h.Id,
-                LessonId: h.LessonId,
+                LessonId: h.LessonId ?? Guid.Empty,
                 CreatedBy: h.CreatedBy,
                 CreatedAt: h.CreatedDate,
                 EndTime: h.EndTime,

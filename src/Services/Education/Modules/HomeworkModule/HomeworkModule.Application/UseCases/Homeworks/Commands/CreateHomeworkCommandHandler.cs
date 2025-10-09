@@ -7,7 +7,8 @@ namespace HomeworkModule.Application.UseCases.Homeworks.Commands;
 
 public record CreateHomeworkCommand(
     Guid Id,
-    Guid LessonId,
+    Guid? LessonId,
+    Guid CourseId,
     Guid CreatedBy,
     decimal MaxScore,
     DateTime EndTime,
@@ -26,8 +27,10 @@ public class CreateHomeworkCommandHandler(
             request.Title, 
             request.Description, 
             request.EndTime, 
-            request.LessonId, 
-            request.CreatedBy);
+            request.LessonId,
+            request.CourseId,
+            request.CreatedBy,
+            request.MaxScore);
 
         if (!aggregate.IsSuccess)
             return Result.Failure<Unit>(aggregate.Error);
