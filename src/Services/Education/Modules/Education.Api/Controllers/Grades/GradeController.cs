@@ -1,4 +1,5 @@
 ﻿using GradeModule.Application.UseCases.Courses.Commands;
+using GradeModule.Application.UseCases.Homeworks.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,7 +16,7 @@ public partial class GradeController : BaseController
         _sender = sender;
     }
 
-    [HttpPost]
+    [HttpPost("lesson")]
     public async Task<IActionResult> AssignLessonGrade(CreateLessonGradeCommand command)
     {
         var result = await _sender.Send(command);
@@ -23,5 +24,15 @@ public partial class GradeController : BaseController
             return FromResult(result);
 
         return BadRequest(result);
+    }
+
+    [HttpPost("homework")]
+    public async Task<IActionResult> AssignHomeworkGrade([FromQuery]CreateHomeworkGradeCommand command)
+    {
+        var result = await _sender.Send(command);
+        if (result.IsSuccess)
+            return FromResult(result);
+
+        return BadRequest(result.Error);
     }
 }
