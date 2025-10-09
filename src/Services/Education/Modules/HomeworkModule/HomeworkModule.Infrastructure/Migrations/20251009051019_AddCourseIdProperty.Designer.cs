@@ -4,6 +4,7 @@ using HomeworkModule.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HomeworkModule.Infrastructure.Migrations
 {
     [DbContext(typeof(HomeworkDbContext))]
-    partial class HomeworkDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251009051019_AddCourseIdProperty")]
+    partial class AddCourseIdProperty
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
