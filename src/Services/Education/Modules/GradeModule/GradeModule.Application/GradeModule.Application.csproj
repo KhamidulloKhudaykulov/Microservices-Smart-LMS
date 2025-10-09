@@ -15,6 +15,8 @@
   <ItemGroup>
     <Folder Include="UseCases\Courses\Contracts\" />
     <Folder Include="UseCases\Courses\Queries\" />
+    <Folder Include="UseCases\Homeworks\Contracts\" />
+    <Folder Include="UseCases\Homeworks\Queries\" />
   </ItemGroup>
 
 </Project>
