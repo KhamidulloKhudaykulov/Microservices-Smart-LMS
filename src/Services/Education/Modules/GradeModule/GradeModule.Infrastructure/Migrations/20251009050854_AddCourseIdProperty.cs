@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace GradeModule.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class AddCourseIdProperty : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -29,6 +29,24 @@ namespace GradeModule.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_grades", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "homework_grades",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    StudentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CourseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    HomeworkId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Score = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    AssignedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    AssignedBy = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Feedback = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_homework_grades", x => x.Id);
+                });
         }
 
         /// <inheritdoc />
@@ -36,6 +54,9 @@ namespace GradeModule.Infrastructure.Migrations
         {
             migrationBuilder.DropTable(
                 name: "grades");
+
+            migrationBuilder.DropTable(
+                name: "homework_grades");
         }
     }
 }

@@ -8,6 +8,7 @@ public class GradeHomeworkEntity : Entity
         Guid id,
         Guid studentId,
         Guid homeworkId,
+        Guid courseId,
         Guid assignedBy,
         decimal score,
         string? feedback)
@@ -15,6 +16,7 @@ public class GradeHomeworkEntity : Entity
         Id = id;
         StudentId = studentId;
         HomeworkId = homeworkId;
+        CourseId = courseId;
         Score = score;
         AssignedBy = assignedBy;
         Feedback = feedback;
@@ -33,6 +35,7 @@ public class GradeHomeworkEntity : Entity
         Guid id,
         Guid studentId,
         Guid homeworkId,
+        Guid courseId,
         Guid assignedBy,
         decimal score,
         string? feedback)
@@ -41,6 +44,7 @@ public class GradeHomeworkEntity : Entity
             id,
             studentId,
             homeworkId,
+            courseId,
             assignedBy,
             score,
             feedback);
