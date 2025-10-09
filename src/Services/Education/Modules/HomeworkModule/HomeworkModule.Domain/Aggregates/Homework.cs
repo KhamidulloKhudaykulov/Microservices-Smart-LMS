@@ -1,7 +1,7 @@
 ﻿using HomeworkModule.Domain.Enums;
 using SharedKernel.Domain.Primitives;
 
-namespace HomeworkModule.Domain.Entities;
+namespace HomeworkModule.Domain.Aggregates;
 
 public class Homework : AggregateRoot
 {
