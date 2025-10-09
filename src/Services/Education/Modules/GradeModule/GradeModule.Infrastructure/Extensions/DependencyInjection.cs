@@ -5,7 +5,6 @@ using GradeModule.Infrastructure.Repsoitories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SharedKernel.Domain.Repositories;
 
 namespace GradeModule.Infrastructure.Extensions;
 
@@ -21,6 +20,7 @@ public static class DependencyInjection
         });
 
         services.AddScoped<IGradeRepository, GradeRepository>();
+        services.AddScoped<IGradeHomeworkRepository, GradeHomeworkRepository>();
         services.AddScoped<IGradeUnitOfWork, UnitOfWork>();
 
         return services;
