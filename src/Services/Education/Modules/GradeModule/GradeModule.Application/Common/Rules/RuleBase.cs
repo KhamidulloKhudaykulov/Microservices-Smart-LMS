@@ -4,7 +4,10 @@ public abstract class RuleBase<TCommand> : IRule<TCommand>
 {
     private IRule<TCommand>? _next;
     public IRule<TCommand> Then(IRule<TCommand> next)
-        => _next = next;
+    {
+        _next = next;
+        return this;
+    }
     public async Task<Result> CheckAsync(TCommand command, CancellationToken cancellationToken = default)
     {
         var result = await HandleAsync(command, cancellationToken);
