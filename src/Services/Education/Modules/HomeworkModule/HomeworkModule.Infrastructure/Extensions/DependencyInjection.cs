@@ -1,6 +1,8 @@
-﻿using HomeworkModule.Domain.Repositories;
+﻿using HomeworkModule.Application.Interfaces;
+using HomeworkModule.Domain.Repositories;
 using HomeworkModule.Infrastructure.Persistence;
 using HomeworkModule.Infrastructure.Repositories;
+using HomeworkModule.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,6 +22,7 @@ public static class DependencyInjection
 
         services.AddScoped<IHomeworkRepository, HomeworkRepository>();
         services.AddScoped<IHomeworkUnitOfWork, HomeworkUnitOfWork>();
+        services.AddScoped<IHomeworkServiceClient, HomeworkServiceClient>();
 
         return services;
     }
