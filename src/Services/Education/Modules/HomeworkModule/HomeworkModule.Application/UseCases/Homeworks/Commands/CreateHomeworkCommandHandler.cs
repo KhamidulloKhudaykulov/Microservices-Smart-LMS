@@ -1,4 +1,4 @@
-﻿using HomeworkModule.Domain.Entities;
+﻿using HomeworkModule.Domain.Aggregates;
 using HomeworkModule.Domain.Repositories;
 using MediatR;
 using SharedKernel.Application.Abstractions.Messaging;
