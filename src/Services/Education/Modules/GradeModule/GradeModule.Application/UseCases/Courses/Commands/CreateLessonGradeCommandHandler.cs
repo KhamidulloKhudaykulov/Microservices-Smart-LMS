@@ -1,6 +1,4 @@
-﻿using CourseModule.Domain.Exceptions;
-using GradeModule.Domain.Enitites;
-using GradeModule.Domain.Exceptions;
+﻿using GradeModule.Domain.Enitites;
 using GradeModule.Domain.Repositories;
 using LessonModule.Application.Interfaces;
 using MediatR;
