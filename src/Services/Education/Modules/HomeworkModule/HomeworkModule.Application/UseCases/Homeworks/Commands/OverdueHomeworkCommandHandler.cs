@@ -5,6 +5,7 @@ using SharedKernel.Application.Abstractions.Messaging;
 namespace HomeworkModule.Application.UseCases.Homeworks.Commands;
 
 public record OverdueHomeworkCommand(
+    Guid courseId,
     Guid HomeworkId) : ICommand<Unit>;
 
 public class OverdueHomeworkCommandHandler(
@@ -15,7 +16,7 @@ public class OverdueHomeworkCommandHandler(
     public async Task<Result<Unit>> Handle(OverdueHomeworkCommand request, CancellationToken cancellationToken)
     {
         var aggregate = await _homeworkRepository
-           .SelectByIdAsync(request.HomeworkId);
+           .SelectByIdAsync(request.courseId, request.HomeworkId);
 
         if (aggregate is null)
             return Result.Failure<Unit>(new Error(

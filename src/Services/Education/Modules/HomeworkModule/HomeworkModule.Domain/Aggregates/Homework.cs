@@ -1,10 +1,12 @@
 ﻿using HomeworkModule.Domain.Enums;
+using Newtonsoft.Json;
 using SharedKernel.Domain.Primitives;
 
 namespace HomeworkModule.Domain.Aggregates;
 
 public class Homework : AggregateRoot
 {
+    [JsonConstructor]
     private Homework(
         Guid id,
         string title,

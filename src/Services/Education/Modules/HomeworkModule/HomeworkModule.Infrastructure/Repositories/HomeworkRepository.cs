@@ -35,25 +35,27 @@ public class HomeworkRepository : IHomeworkRepository
         await Task.CompletedTask;
     }
 
-    public async Task<Homework?> SelectByIdAsync(Guid id)
+    public async Task<Homework?> SelectByIdAsync(Guid courseId, Guid id)
     {
         return await _homeworks
             .AsNoTracking()
+            .Where(h => h.CourseId == courseId)
             .FirstOrDefaultAsync(x => x.Id == id);
     }
 
-    public async Task<Homework?> SelectAsync(Expression<Func<Homework, bool>> predicate)
+    public async Task<Homework?> SelectAsync(Guid courseId, Expression<Func<Homework, bool>> predicate)
     {
         return await _homeworks
             .AsNoTracking()
+            .Where(h => h.CourseId == courseId)
             .FirstOrDefaultAsync(predicate);
     }
 
-    public async Task<IEnumerable<Homework>> SelectAllAsync(Expression<Func<Homework, bool>>? predicate = null)
+    public async Task<IEnumerable<Homework>> SelectAllAsync(Guid courseId, Expression<Func<Homework, bool>>? predicate = null)
     {
         var query = _homeworks
             .AsNoTracking()
-            .AsQueryable();
+            .Where(h => h.CourseId == courseId);
 
         if (predicate is not null)
             query = query.Where(predicate);
@@ -61,11 +63,11 @@ public class HomeworkRepository : IHomeworkRepository
         return await query.ToListAsync();
     }
 
-    public IQueryable<Homework> SelectAllAsQueryable(Expression<Func<Homework, bool>>? predicate = null)
+    public IQueryable<Homework> SelectAllAsQueryable(Guid courseId, Expression<Func<Homework, bool>>? predicate = null)
     {
         var query = _homeworks
             .AsNoTracking()
-            .AsQueryable();
+            .Where(h => h.CourseId == courseId);
 
         if (predicate is not null)
             query = query.Where(predicate);

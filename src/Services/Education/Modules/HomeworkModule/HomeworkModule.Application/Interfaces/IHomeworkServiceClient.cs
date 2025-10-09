@@ -2,5 +2,5 @@
 
 public interface IHomeworkServiceClient
 {
-    Task<Result<bool>> CheckExistHomeworkById(Guid id);
+    Task<Result<bool>> CheckExistHomeworkById(Guid courseId, Guid id);
 }

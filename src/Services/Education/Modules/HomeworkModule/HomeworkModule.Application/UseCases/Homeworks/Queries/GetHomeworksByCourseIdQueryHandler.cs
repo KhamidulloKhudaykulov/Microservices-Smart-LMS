@@ -4,18 +4,17 @@ using SharedKernel.Application.Abstractions.Messaging;
 
 namespace HomeworkModule.Application.UseCases.Homeworks.Queries;
 
-public record GetHomeworksByLessonIdQuery(
-    Guid CourseId,
-    Guid LessonId) : IQuery<List<HomeworkResponseDto>>;
+public record GetHomeworksByCourseIdQuery(
+    Guid CourseId) : IQuery<List<HomeworkResponseDto>>;
 
-public class GetHomeworksByLessonIdQueryHandler(
-    IHomeworkRepository _homeworkRepository) 
-    : IQueryHandler<GetHomeworksByLessonIdQuery, List<HomeworkResponseDto>>
+public class GetHomeworksByCourseIdQueryHandler(
+    IHomeworkRepository _homeworkRepository)
+    : IQueryHandler<GetHomeworksByCourseIdQuery, List<HomeworkResponseDto>>
 {
-    public async Task<Result<List<HomeworkResponseDto>>> Handle(GetHomeworksByLessonIdQuery request, CancellationToken cancellationToken)
+    public async Task<Result<List<HomeworkResponseDto>>> Handle(GetHomeworksByCourseIdQuery request, CancellationToken cancellationToken)
     {
         var aggregates = await _homeworkRepository
-            .SelectAllAsync(request.CourseId, h => h.LessonId == request.LessonId);
+            .SelectAllAsync(request.CourseId);
 
         var result = aggregates
             .Select(h => new HomeworkResponseDto(

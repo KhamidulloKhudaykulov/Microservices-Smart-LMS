@@ -7,10 +7,10 @@ public class HomeworkServiceClient(
     IHomeworkRepository _homeworkRepository) 
     : IHomeworkServiceClient
 {
-    public async Task<Result<bool>> CheckExistHomeworkById(Guid id)
+    public async Task<Result<bool>> CheckExistHomeworkById(Guid courseId, Guid id)
     {
         var entity = await _homeworkRepository
-            .SelectByIdAsync(id);
+            .SelectByIdAsync(courseId, id);
 
         if (entity is null)
             return Result.Failure<bool>(new Error(

@@ -11,7 +11,7 @@ public class HomeworkMustExistRule(
     protected override async Task<Result> HandleAsync(CreateHomeworkGradeCommand command, CancellationToken cancellationToken)
     {
         var existHomework = await _homeworkServiceClient
-            .CheckExistHomeworkById(command.HomeworkId);
+            .CheckExistHomeworkById(command.CourseId, command.HomeworkId);
 
         if (existHomework.IsFailure)
             return Result.Failure(existHomework.Error);

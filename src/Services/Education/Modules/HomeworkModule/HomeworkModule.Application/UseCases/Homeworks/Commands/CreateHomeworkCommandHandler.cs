@@ -6,7 +6,7 @@ using SharedKernel.Application.Abstractions.Messaging;
 namespace HomeworkModule.Application.UseCases.Homeworks.Commands;
 
 public record CreateHomeworkCommand(
-    Guid Id,
+    Guid? Id,
     Guid? LessonId,
     Guid CourseId,
     Guid CreatedBy,
@@ -23,7 +23,7 @@ public class CreateHomeworkCommandHandler(
     public async Task<Result<Unit>> Handle(CreateHomeworkCommand request, CancellationToken cancellationToken)
     {
         var aggregate = Homework.Create(
-            request.Id, 
+            request.Id ?? Guid.NewGuid(),
             request.Title, 
             request.Description, 
             request.EndTime, 
