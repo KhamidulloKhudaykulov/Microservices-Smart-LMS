@@ -8,6 +8,8 @@ using GradeModule.Orchestration.Extensions;
 using LessonModule.Infrastructure.Extensions;
 using LessonModule.Application.Extensions;
 using GradeModule.Application.Extensions;
+using HomeworkModule.Application.Extensions;
+using HomeworkModule.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +25,9 @@ builder.Services.AddGradeModuleOrchestration();
 
 builder.Services.AddLessonModuleApplication();
 builder.Services.AddLessonModuleInfrastructure(builder.Configuration);
+
+builder.Services.AddHomeworkModuleApplication();
+builder.Services.AddHomeworkModuleInfrastructure(builder.Configuration);
 
 builder.Services.AddControllers();
 
