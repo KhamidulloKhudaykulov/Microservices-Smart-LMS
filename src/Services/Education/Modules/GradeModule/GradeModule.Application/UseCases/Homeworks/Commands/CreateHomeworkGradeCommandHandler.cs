@@ -2,6 +2,7 @@
 using GradeModule.Application.UseCases.Homeworks.Rules;
 using GradeModule.Domain.Enitites;
 using GradeModule.Domain.Repositories;
+using HomeworkModule.Application.Interfaces;
 using MediatR;
 using SharedKernel.Application.Abstractions.Messaging;
 using StudentIntegration.Application.InterfaceBridges;
@@ -9,7 +10,7 @@ using StudentIntegration.Application.InterfaceBridges;
 namespace GradeModule.Application.UseCases.Homeworks.Commands;
 
 public record CreateHomeworkGradeCommand(
-    Guid Id,
+    Guid? Id,
     Guid CourseId,
     Guid HomeworkId,
     Guid StudentId,
@@ -20,22 +21,25 @@ public record CreateHomeworkGradeCommand(
 public class CreateHomeworkGradeCommandHandler(
     IGradeHomeworkRepository _gradeHomeworkRepository,
     IGradeUnitOfWork _unitOfWork,
+    IHomeworkServiceClient _homeworkServiceClient,
     IStudentServiceClient _studentServiceClient,
     ICourseServiceClient _courseServiceClient) 
     : ICommandHandler<CreateHomeworkGradeCommand, Unit>
 {
     public async Task<Result<Unit>> Handle(CreateHomeworkGradeCommand request, CancellationToken cancellationToken)
     {
-        var rules = new StudentMustExistRule(_studentServiceClient, _courseServiceClient);
+        var rules = new HomeworkMustExistRule(_homeworkServiceClient)
+            .Then(new StudentMustExistRule(_studentServiceClient, _courseServiceClient));
 
         var validationResult = await rules.CheckAsync(request, cancellationToken);
         if (validationResult.IsFailure)
             return Result.Failure<Unit>(validationResult.Error);
 
         var entity = GradeHomeworkEntity.Create(
-            request.Id,
+            request.Id ?? Guid.NewGuid(),
             request.StudentId,
             request.HomeworkId,
+            request.CourseId,
             request.AssignedBy,
             request.Score,
             request.Feedback);
