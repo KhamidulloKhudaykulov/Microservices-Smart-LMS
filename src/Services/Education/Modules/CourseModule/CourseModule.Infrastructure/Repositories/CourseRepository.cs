@@ -2,6 +2,7 @@
 using CourseModule.Domain.Repositories;
 using CourseModule.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace CourseModule.Infrastructure.Repositories;
 
@@ -43,6 +44,12 @@ public class CourseRepository : ICourseRepository
             .AsNoTracking()
             .Where(c => c.AccountId == accountId)
             .ToListAsync();
+    }
+
+    public async Task<CourseEntity?> SelectAsync(Expression<Func<CourseEntity, bool>> predicate)
+    {
+        return await _courses
+            .FirstOrDefaultAsync(predicate);
     }
 
     public async Task<CourseEntity?> SelectByIdAsync(Guid id)
