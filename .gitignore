@@ -140,7 +140,6 @@ Desktop.ini
 **/.vs/
 **/.vscode/
 **/*user*
-**/*cache*
 
 # Temporary files
 **/*.tmp
