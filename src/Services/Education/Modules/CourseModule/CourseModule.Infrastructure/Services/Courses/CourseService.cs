@@ -1,7 +1,9 @@
 ﻿using CourseModule.Application.Interfaces;
 using CourseModule.Application.UseCases.Courses.Contracts;
+using CourseModule.Domain.Entitites;
 using CourseModule.Domain.Exceptions;
 using CourseModule.Domain.Repositories;
+using System.Linq.Expressions;
 
 namespace CourseModule.Infrastructure.Services.Courses;
 
@@ -9,13 +11,24 @@ public class CourseService(
     ICourseRepository _courseRepository) 
     : ICourseServiceClient
 {
-    public async Task<Result<CourseResponseDto>?> GetCourseByIdAsync(Guid courseId)
+    public async Task<Result<CourseResponseDto?>> GetCourse(Expression<Func<CourseEntity, bool>> predicate)
+    {
+        var course = await _courseRepository
+            .SelectAsync(predicate);
+
+        if (course is null)
+            return Results.NotFoundException<CourseResponseDto?>(CourseErrors.NotFound);
+
+        return new CourseResponseDto(course.Id, course.Name, course.StartsAt);
+    }
+
+    public async Task<Result<CourseResponseDto?>> GetCourseByIdAsync(Guid courseId)
     {
         var course = await _courseRepository
             .SelectByIdAsync(courseId);
 
         if (course is null)
-            return Results.NotFoundException<CourseResponseDto>(CourseErrors.NotFound);
+            return Results.NotFoundException<CourseResponseDto?>(CourseErrors.NotFound);
 
         return new CourseResponseDto(course.Id, course.Name, course.StartsAt);
     }
