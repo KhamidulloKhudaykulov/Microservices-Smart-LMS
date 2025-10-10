@@ -32,6 +32,7 @@
     <ProjectReference Include="..\LessonModule\LessonModule.Infrastructure\LessonModule.Infrastructure.csproj" />
     <ProjectReference Include="..\ScheduleModule\ScheduleModule.Application\ScheduleModule.Application.csproj" />
     <ProjectReference Include="..\ScheduleModule\ScheduleModule.Infrastructure\ScheduleModule.Infrastructure.csproj" />
+    <ProjectReference Include="..\ScheduleModule\ScheduleModule.Orchestration\ScheduleModule.Orchestration.csproj" />
   </ItemGroup>
 
 </Project>

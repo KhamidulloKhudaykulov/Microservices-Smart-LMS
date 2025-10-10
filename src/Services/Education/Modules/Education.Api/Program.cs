@@ -12,6 +12,7 @@ using HomeworkModule.Application.Extensions;
 using HomeworkModule.Infrastructure.Extensions;
 using ScheduleModule.Infrastructure.Extensions;
 using ScheduleModule.Application.Extensions;
+using ScheduleModule.Orchestration.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,11 +29,12 @@ builder.Services.AddGradeModuleOrchestration();
 builder.Services.AddLessonModuleApplication();
 builder.Services.AddLessonModuleInfrastructure(builder.Configuration);
 
-builder.Services.AddScheduleModuleApplication();
+builder.Services.AddHomeworkModuleApplication();
 builder.Services.AddHomeworkModuleInfrastructure(builder.Configuration);
 
-builder.Services.AddHomeworkModuleApplication();
+builder.Services.AddScheduleModuleApplication();
 builder.Services.AddScheduleModuleInfrastructure(builder.Configuration);
+builder.Services.AddScheduleModuleOrchestration();
 
 builder.Services.AddControllers();
 

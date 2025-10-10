@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using ScheduleModule.Application.UseCases.LessonSchedules.Commands;
+using ScheduleModule.Orchestration.Queries;
 
 namespace Education.Api.Controllers.Schedules;
 
@@ -34,5 +35,15 @@ public class ScheduleController : BaseController
             return FromResult(response);
 
         return BadRequest(response);
+    }
+
+    [HttpGet("absentstudents/{lessonId}")]
+    public async Task<IActionResult> GetAbsentStudents(Guid lessonId)
+    {
+        var query = await _sender.Send(new GetAbsentStudentsQuery(lessonId));
+        if (query.IsSuccess)
+            return FromResult(query);
+
+        return BadRequest(query);
     }
 }
