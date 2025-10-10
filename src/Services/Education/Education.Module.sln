@@ -69,6 +69,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScheduleModule.Infrastructu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradeModule.Orchestration", "Modules\GradeModule\GradeModule.Orchestration\GradeModule.Orchestration.csproj", "{4901FD47-7103-4912-8811-F206B22A6B32}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScheduleModule.Orchestration", "Modules\ScheduleModule\ScheduleModule.Orchestration\ScheduleModule.Orchestration.csproj", "{6FF72499-B2E0-442F-9628-B8076F9B29C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -367,6 +369,18 @@ Global
 		{4901FD47-7103-4912-8811-F206B22A6B32}.Release|x64.Build.0 = Release|Any CPU
 		{4901FD47-7103-4912-8811-F206B22A6B32}.Release|x86.ActiveCfg = Release|Any CPU
 		{4901FD47-7103-4912-8811-F206B22A6B32}.Release|x86.Build.0 = Release|Any CPU
+		{6FF72499-B2E0-442F-9628-B8076F9B29C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FF72499-B2E0-442F-9628-B8076F9B29C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FF72499-B2E0-442F-9628-B8076F9B29C3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6FF72499-B2E0-442F-9628-B8076F9B29C3}.Debug|x64.Build.0 = Debug|Any CPU
+		{6FF72499-B2E0-442F-9628-B8076F9B29C3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6FF72499-B2E0-442F-9628-B8076F9B29C3}.Debug|x86.Build.0 = Debug|Any CPU
+		{6FF72499-B2E0-442F-9628-B8076F9B29C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FF72499-B2E0-442F-9628-B8076F9B29C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FF72499-B2E0-442F-9628-B8076F9B29C3}.Release|x64.ActiveCfg = Release|Any CPU
+		{6FF72499-B2E0-442F-9628-B8076F9B29C3}.Release|x64.Build.0 = Release|Any CPU
+		{6FF72499-B2E0-442F-9628-B8076F9B29C3}.Release|x86.ActiveCfg = Release|Any CPU
+		{6FF72499-B2E0-442F-9628-B8076F9B29C3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -403,5 +417,6 @@ Global
 		{6F0DD318-FB9A-44B5-AC4E-451BC5B4A62B} = {91765EEA-F519-1B1F-B110-405B7A845242}
 		{5D5D78B2-D452-406E-AA49-8E3FCCEBF567} = {91765EEA-F519-1B1F-B110-405B7A845242}
 		{4901FD47-7103-4912-8811-F206B22A6B32} = {0005259E-7414-0192-C640-CAADF64B84FC}
+		{6FF72499-B2E0-442F-9628-B8076F9B29C3} = {91765EEA-F519-1B1F-B110-405B7A845242}
 	EndGlobalSection
 EndGlobal

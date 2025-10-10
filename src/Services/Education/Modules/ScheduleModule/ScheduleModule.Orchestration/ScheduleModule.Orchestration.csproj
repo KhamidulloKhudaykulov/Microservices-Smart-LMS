@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\External\StudentIntegration\StudentIntegration.Application\StudentIntegration.Application.csproj" />
+    <ProjectReference Include="..\..\CourseModule\CourseModule.Application\CourseModule.Application.csproj" />
+    <ProjectReference Include="..\..\LessonModule\LessonModule.Application\LessonModule.Application.csproj" />
+    <ProjectReference Include="..\ScheduleModule.Domain\ScheduleModule.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
