@@ -23,7 +23,7 @@ public class CreateHomeworkGradeCommandHandler(
     IGradeUnitOfWork _unitOfWork,
     IHomeworkServiceClient _homeworkServiceClient,
     IStudentServiceClient _studentServiceClient,
-    ICourseServiceClient _courseServiceClient) 
+    ICourseServiceClient _courseServiceClient)
     : ICommandHandler<CreateHomeworkGradeCommand, Unit>
 {
     public async Task<Result<Unit>> Handle(CreateHomeworkGradeCommand request, CancellationToken cancellationToken)

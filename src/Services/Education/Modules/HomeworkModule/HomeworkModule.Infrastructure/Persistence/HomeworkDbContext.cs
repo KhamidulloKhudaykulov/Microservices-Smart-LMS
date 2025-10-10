@@ -1,5 +1,4 @@
-﻿using HomeworkModule.Domain.Aggregates;
-using HomeworkModule.Infrastructure.EfConfigurations;
+﻿using HomeworkModule.Infrastructure.EfConfigurations;
 using HomeworkModule.Infrastructure.Extensions;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,5 +1,4 @@
-﻿using Google.Protobuf;
-using Infrastructure.Grpc;
+﻿using Infrastructure.Grpc;
 using StudentIntegration.Application.InterfaceBridges;
 using StudentIntegration.Domain.Contracts;
 
@@ -8,10 +7,14 @@ namespace StudentIntegration.Infrastructure.Grpc.Client;
 public class StudentGrpcServiceClient : IStudentServiceClient
 {
     private readonly StudentGrpcService.StudentGrpcServiceClient _client;
+    private readonly HttpClient _httpClient;
 
-    public StudentGrpcServiceClient(StudentGrpcService.StudentGrpcServiceClient client)
+    private const string CacheBaseUrl = "https://localhost:7266/api/cache/students";
+
+    public StudentGrpcServiceClient(StudentGrpcService.StudentGrpcServiceClient client, HttpClient httpClient)
     {
         _client = client;
+        _httpClient = httpClient;
     }
 
     public async Task<List<StudentResponseContract>> GetStudentsByIds(List<Guid> studentIds)
@@ -21,7 +24,7 @@ public class StudentGrpcServiceClient : IStudentServiceClient
 
         var response = await _client.GetStudentsByIdsAsync(request);
 
-        var result = response.Students.Select(s => new StudentResponseContract
+        return response.Students.Select(s => new StudentResponseContract
         {
             Id = Guid.Parse(s.Id),
             FullName = s.FullName,
@@ -29,25 +32,26 @@ public class StudentGrpcServiceClient : IStudentServiceClient
             PassportData = s.Passportdata,
             PhoneNumber = s.Phonenumber
         }).ToList();
-
-        return result;
     }
 
-    public async Task<StudentResponseContract?> VerifyExistStudentById(Guid studentId)
+    public async Task<bool> VerifyExistStudentById(Guid studentId)
     {
-        var request = new VerifyStudentRequest
-        {
-            StudentId = studentId.ToString()
-        };
+        var url = $"{CacheBaseUrl}/verify/{studentId}";
 
-        var response = await _client.VerifyExistStudentAsync(request);
-        if (!response.Exists)
-            return null;
-
-        return new StudentResponseContract
+        try
         {
-            Id = studentId
-        };
+            var response = await _httpClient.GetAsync(url);
+
+            var json = await response.Content.ReadAsStringAsync();
+            var student = System.Text.Json.JsonSerializer.Deserialize<bool>(json);
+
+            return student;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[VerifyExistStudentById] Error: {ex.Message}");
+            return false;
+        }
     }
 
     public async Task<StudentResponseContract> GetStudentDetailsById(Guid studentId)

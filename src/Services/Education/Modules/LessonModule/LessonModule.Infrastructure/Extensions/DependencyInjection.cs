@@ -6,7 +6,6 @@ using LessonModule.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SharedKernel.Domain.Repositories;
 
 namespace LessonModule.Infrastructure.Extensions;
 

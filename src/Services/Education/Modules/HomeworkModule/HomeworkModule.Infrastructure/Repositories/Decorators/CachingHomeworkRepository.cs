@@ -2,9 +2,7 @@
 using HomeworkModule.Domain.Repositories;
 using Newtonsoft.Json;
 using StackExchange.Redis;
-using System;
 using System.Data;
-using System.Linq;
 using System.Linq.Expressions;
 
 namespace HomeworkModule.Infrastructure.Repositories.Decorators;
@@ -14,9 +12,9 @@ public class CachingHomeworkRepository : IHomeworkRepository
     private readonly IHomeworkRepository _inner;
 
     private readonly IDatabase _redisDb;
-    
+
     public CachingHomeworkRepository(
-        IHomeworkRepository inner, 
+        IHomeworkRepository inner,
         IConnectionMultiplexer redis)
     {
         _redisDb = redis.GetDatabase();
@@ -66,7 +64,7 @@ public class CachingHomeworkRepository : IHomeworkRepository
             return entity;
 
         var result = await _inner.SelectAsync(courseId, predicate);
-        
+
         var cacheKey = GenerateKeyByCourseId(courseId.ToString());
 
         var json = JsonConvert.SerializeObject(result);

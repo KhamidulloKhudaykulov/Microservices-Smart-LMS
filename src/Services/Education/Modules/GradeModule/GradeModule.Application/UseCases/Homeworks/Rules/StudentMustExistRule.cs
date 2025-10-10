@@ -7,7 +7,7 @@ namespace GradeModule.Application.UseCases.Homeworks.Rules;
 
 public class StudentMustExistRule(
     IStudentServiceClient _studentServiceClient,
-    ICourseServiceClient _courseServiceClient) 
+    ICourseServiceClient _courseServiceClient)
     : RuleBase<CreateHomeworkGradeCommand>
 {
     protected override async Task<Result> HandleAsync(CreateHomeworkGradeCommand command, CancellationToken cancellationToken)
@@ -15,7 +15,7 @@ public class StudentMustExistRule(
         var student = await _studentServiceClient
             .VerifyExistStudentById(command.StudentId);
 
-        if (student is null)
+        if (!student)
             return Result.Failure(new Error(
                 code: "Student.NotFound",
                 message: $"This student with Id={command.StudentId} was not found"));

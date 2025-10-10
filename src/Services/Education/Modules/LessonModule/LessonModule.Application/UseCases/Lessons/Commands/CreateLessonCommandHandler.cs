@@ -5,7 +5,6 @@ using LessonModule.Domain.Repositories;
 using LessonModule.Domain.ValueObjects.Lessons;
 using MediatR;
 using SharedKernel.Application.Abstractions.Messaging;
-using SharedKernel.Domain.Repositories;
 
 namespace LessonModule.Application.UseCases.Lessons.Commands;
 
@@ -18,7 +17,7 @@ public record CreateLessonCommand(
 public class CreateLessonCommandHandler(
     ILessonRepository _lessonRepository,
     ILessonUnitOfWork _unitOfWork,
-    ICourseServiceClient _courseService) 
+    ICourseServiceClient _courseService)
     : ICommandHandler<CreateLessonCommand, Unit>
 {
     public async Task<Result<Unit>> Handle(CreateLessonCommand request, CancellationToken cancellationToken)

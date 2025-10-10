@@ -1,8 +1,8 @@
-﻿using System.Linq.Expressions;
-using GradeModule.Domain.Enitites;
+﻿using GradeModule.Domain.Enitites;
 using GradeModule.Domain.Repositories;
 using GradeModule.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace GradeModule.Infrastructure.Repositories;
 

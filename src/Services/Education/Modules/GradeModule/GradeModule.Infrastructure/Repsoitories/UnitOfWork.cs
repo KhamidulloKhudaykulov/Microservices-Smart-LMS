@@ -1,6 +1,5 @@
 ﻿using GradeModule.Domain.Repositories;
 using GradeModule.Infrastructure.Persistence;
-using SharedKernel.Domain.Repositories;
 
 namespace GradeModule.Infrastructure.Repsoitories;
 

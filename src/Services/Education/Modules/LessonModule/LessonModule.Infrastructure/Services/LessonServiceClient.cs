@@ -5,7 +5,7 @@ using LessonModule.Domain.Repositories;
 namespace LessonModule.Infrastructure.Services;
 
 public class LessonServiceClient(
-    ILessonRepository _lessonRepository) 
+    ILessonRepository _lessonRepository)
     : ILessonServiceClient
 {
     public async Task<bool> ChechExistLessonByIdAsync(Guid lessonId)

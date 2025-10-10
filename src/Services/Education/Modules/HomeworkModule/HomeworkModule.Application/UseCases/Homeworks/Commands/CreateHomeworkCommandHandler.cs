@@ -24,9 +24,9 @@ public class CreateHomeworkCommandHandler(
     {
         var aggregate = Homework.Create(
             request.Id ?? Guid.NewGuid(),
-            request.Title, 
-            request.Description, 
-            request.EndTime, 
+            request.Title,
+            request.Description,
+            request.EndTime,
             request.LessonId,
             request.CourseId,
             request.CreatedBy,

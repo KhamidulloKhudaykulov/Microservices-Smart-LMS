@@ -1,7 +1,5 @@
-﻿using CourseModule.Application.Interfaces;
-using GradeModule.Domain.Repositories;
+﻿using GradeModule.Domain.Repositories;
 using GradeModule.Orchestration.Dtos;
-using LessonModule.Application.Interfaces;
 using SharedKernel.Application.Abstractions.Messaging;
 using StudentIntegration.Application.InterfaceBridges;
 
@@ -28,7 +26,7 @@ public class GetGradesByLessonIdQueryHandler(
                 code: "Grade.NotFound",
                 message: "This student was not graded at this date"));
 
-        var student = await _studentServiceClient.VerifyExistStudentById(request.StudentId);
+        var student = await _studentServiceClient.GetStudentDetailsById(request.StudentId);
 
         var result = new StudentGradeDto(student.FullName, grade.AssignedAt, grade.Score, grade.Feedback);
 

@@ -10,7 +10,7 @@ public record OverdueHomeworkCommand(
 
 public class OverdueHomeworkCommandHandler(
     IHomeworkRepository _homeworkRepository,
-    IHomeworkUnitOfWork _unitOfWork) 
+    IHomeworkUnitOfWork _unitOfWork)
     : ICommandHandler<OverdueHomeworkCommand, Unit>
 {
     public async Task<Result<Unit>> Handle(OverdueHomeworkCommand request, CancellationToken cancellationToken)

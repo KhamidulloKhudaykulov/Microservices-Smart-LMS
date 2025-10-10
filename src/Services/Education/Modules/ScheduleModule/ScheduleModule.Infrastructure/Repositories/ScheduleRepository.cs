@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace ScheduleModule.Infrastructure.Repositories;
 
-public class ScheduleRepository<T> : IScheduleRepository<T> 
+public class ScheduleRepository<T> : IScheduleRepository<T>
     where T : Entity
 {
     private readonly ScheduleDbContext _dbContext;

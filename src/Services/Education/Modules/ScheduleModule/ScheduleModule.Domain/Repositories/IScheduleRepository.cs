@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 
 namespace ScheduleModule.Domain.Repositories;
 
-public interface IScheduleRepository<T> 
+public interface IScheduleRepository<T>
     where T : Entity
 {
     Task<T> InsertAsync(T entity);

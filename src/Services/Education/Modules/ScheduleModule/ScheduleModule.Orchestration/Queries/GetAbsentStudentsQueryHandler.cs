@@ -1,12 +1,10 @@
 ﻿using CourseModule.Application.Interfaces;
 using LessonModule.Application.Interfaces;
-using MediatR;
 using ScheduleModule.Domain.Entities;
 using ScheduleModule.Domain.Repositories;
 using ScheduleModule.Orchestration.Dtos;
 using SharedKernel.Application.Abstractions.Messaging;
 using StudentIntegration.Application.InterfaceBridges;
-using System.Collections.Generic;
 
 namespace ScheduleModule.Orchestration.Queries;
 

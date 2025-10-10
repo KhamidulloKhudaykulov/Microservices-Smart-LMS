@@ -3,7 +3,6 @@ using GradeModule.Domain.Repositories;
 using LessonModule.Application.Interfaces;
 using MediatR;
 using SharedKernel.Application.Abstractions.Messaging;
-using SharedKernel.Domain.Repositories;
 using StudentIntegration.Application.InterfaceBridges;
 
 namespace GradeModule.Application.UseCases.Courses.Commands;
@@ -27,7 +26,7 @@ public class CreateLessonGradeCommandHandler(
     {
         // must check course exist
 
-        if (await _studentServiceClient.VerifyExistStudentById(request.studentId) is null)
+        if (!await _studentServiceClient.VerifyExistStudentById(request.studentId))
             return Result.Failure<Unit>(new Error(
                 code: "User.NotFound",
                 message: "This user is not found"));

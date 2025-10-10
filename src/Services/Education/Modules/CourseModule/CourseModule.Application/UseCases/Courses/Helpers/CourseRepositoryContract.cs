@@ -1,7 +1,6 @@
 ﻿using CourseModule.Domain.Entitites;
 using CourseModule.Domain.Exceptions;
 using CourseModule.Domain.Repositories;
-using MediatR;
 
 namespace CourseModule.Application.UseCases.Courses.Helpers;
 

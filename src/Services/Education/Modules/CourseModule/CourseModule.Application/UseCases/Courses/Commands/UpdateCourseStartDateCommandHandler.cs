@@ -13,7 +13,7 @@ public record UpdateCourseStartDateCommand(
 
 public class UpdateCourseStartDateCommandHandler(
     ICourseRepository _courseRepository,
-    IUnitOfWork _unitOfWork) 
+    IUnitOfWork _unitOfWork)
     : ICommandHandler<UpdateCourseStartDateCommand, Unit>
 {
     public async Task<Result<Unit>> Handle(UpdateCourseStartDateCommand request, CancellationToken cancellationToken)

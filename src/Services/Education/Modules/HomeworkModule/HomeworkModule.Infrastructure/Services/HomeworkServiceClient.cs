@@ -4,7 +4,7 @@ using HomeworkModule.Domain.Repositories;
 namespace HomeworkModule.Infrastructure.Services;
 
 public class HomeworkServiceClient(
-    IHomeworkRepository _homeworkRepository) 
+    IHomeworkRepository _homeworkRepository)
     : IHomeworkServiceClient
 {
     public async Task<Result<bool>> CheckExistHomeworkById(Guid courseId, Guid id)

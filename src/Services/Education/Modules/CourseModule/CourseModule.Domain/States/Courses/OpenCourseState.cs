@@ -18,7 +18,7 @@ public class OpenCourseState : ICourseStatusState
     {
         course.SetState(new CloseCourseState());
         course.ChangeStatus(CourseStatus.Closed);
-        
+
         return Result.Success();
     }
 
@@ -26,7 +26,7 @@ public class OpenCourseState : ICourseStatusState
     {
         course.SetState(new OpenCourseState());
         course.ChangeStatus(CourseStatus.Opened);
-    
+
         return Result.Success();
     }
 }

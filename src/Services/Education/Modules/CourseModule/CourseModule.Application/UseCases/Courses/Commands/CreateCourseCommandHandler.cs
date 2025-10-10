@@ -14,7 +14,7 @@ public record CreateCourseCommand(
 
 public class CreateCourseCommandHandler(
     ICourseRepository _courseRepository,
-    IUnitOfWork _unitOfWork) 
+    IUnitOfWork _unitOfWork)
     : ICommandHandler<CreateCourseCommand, Unit>
 {
     public async Task<Result<Unit>> Handle(CreateCourseCommand request, CancellationToken cancellationToken)

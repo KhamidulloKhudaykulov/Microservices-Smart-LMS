@@ -29,14 +29,14 @@ public class LessonEntity : Entity
         Guid courseId,
         Theme theme,
         DateTime date,
-        TimeSpan startTime, 
+        TimeSpan startTime,
         TimeSpan? endTime = null)
     {
         return Result.Success(new LessonEntity(
             courseId,
             theme,
             date,
-            startTime, 
+            startTime,
             endTime));
     }
 

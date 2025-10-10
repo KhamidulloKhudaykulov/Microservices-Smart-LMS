@@ -11,8 +11,8 @@ public class CourseEntity : AggregateRoot
         Guid id,
         Guid AccountId,
         string name,
-        DateTime startsAt) 
-        : base(id) 
+        DateTime startsAt)
+        : base(id)
     {
         Name = name;
         StartsAt = startsAt;
@@ -39,7 +39,7 @@ public class CourseEntity : AggregateRoot
 
     public Result AddStudent(Guid studentId)
     {
-        StudentIds.Add(studentId); 
+        StudentIds.Add(studentId);
         if (!StudentIds.Contains(studentId))
             StudentIds.Add(studentId);
 
@@ -55,7 +55,7 @@ public class CourseEntity : AggregateRoot
     public void UpdateCourseName(string name)
         => Name = name;
 
-    public void UpdateStartDate(DateTime startsAt) 
+    public void UpdateStartDate(DateTime startsAt)
         => StartsAt = startsAt;
 
     public void ChangeStatus(CourseStatus status)

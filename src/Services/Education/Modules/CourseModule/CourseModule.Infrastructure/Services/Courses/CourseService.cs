@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 namespace CourseModule.Infrastructure.Services.Courses;
 
 public class CourseService(
-    ICourseRepository _courseRepository) 
+    ICourseRepository _courseRepository)
     : ICourseServiceClient
 {
     public async Task<Result<CourseResponseDto?>> GetCourse(Expression<Func<CourseEntity, bool>> predicate)

@@ -9,7 +9,7 @@ public record GetLessonQuery(
     Guid LessonId) : IQuery<LessonResponseDto>;
 
 public class GetLessonQueryHandler(
-    ILessonRepository _lessonRepository) 
+    ILessonRepository _lessonRepository)
     : IQueryHandler<GetLessonQuery, LessonResponseDto>
 {
     public async Task<Result<LessonResponseDto>> Handle(GetLessonQuery request, CancellationToken cancellationToken)

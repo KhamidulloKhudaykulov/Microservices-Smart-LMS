@@ -13,7 +13,7 @@ public record RemoveStudentFromCourseCommand(
 
 public class RemoveStudentFromCourseCommandHandler(
     ICourseRepository _courseRepository,
-    IUnitOfWork _unitOfWork) 
+    IUnitOfWork _unitOfWork)
     : ICommandHandler<RemoveStudentFromCourseCommand, Unit>
 {
     public async Task<Result<Unit>> Handle(RemoveStudentFromCourseCommand request, CancellationToken cancellationToken)
@@ -30,7 +30,7 @@ public class RemoveStudentFromCourseCommandHandler(
 
         await _courseRepository.UpdateAsync(course);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
-        
+
         return Result.Success(Unit.Value);
     }
 }

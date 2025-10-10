@@ -20,14 +20,14 @@ public partial class GradeController : BaseController
     public async Task<IActionResult> AssignLessonGrade(CreateLessonGradeCommand command)
     {
         var result = await _sender.Send(command);
-        if (result.IsSuccess) 
+        if (result.IsSuccess)
             return FromResult(result);
 
         return BadRequest(result);
     }
 
     [HttpPost("homework")]
-    public async Task<IActionResult> AssignHomeworkGrade([FromQuery]CreateHomeworkGradeCommand command)
+    public async Task<IActionResult> AssignHomeworkGrade([FromQuery] CreateHomeworkGradeCommand command)
     {
         var result = await _sender.Send(command);
         if (result.IsSuccess)

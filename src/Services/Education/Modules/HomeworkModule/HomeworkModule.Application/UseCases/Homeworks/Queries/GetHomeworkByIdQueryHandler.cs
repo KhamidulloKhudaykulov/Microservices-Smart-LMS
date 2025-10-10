@@ -1,6 +1,5 @@
 ﻿using HomeworkModule.Application.UseCases.Homeworks.Contracts;
 using HomeworkModule.Domain.Repositories;
-using MediatR;
 using SharedKernel.Application.Abstractions.Messaging;
 
 namespace HomeworkModule.Application.UseCases.Homeworks.Queries;
@@ -10,7 +9,7 @@ public record GetHomeworkByIdQuery(
     Guid HomeworkId) : IQuery<HomeworkResponseDto>;
 
 public class GetHomeworkByIdQueryHandler(
-    IHomeworkRepository _homeworkRepository) 
+    IHomeworkRepository _homeworkRepository)
     : IQueryHandler<GetHomeworkByIdQuery, HomeworkResponseDto>
 {
     public async Task<Result<HomeworkResponseDto>> Handle(GetHomeworkByIdQuery request, CancellationToken cancellationToken)

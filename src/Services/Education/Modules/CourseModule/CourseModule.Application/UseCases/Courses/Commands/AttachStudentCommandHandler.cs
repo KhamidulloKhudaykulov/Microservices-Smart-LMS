@@ -31,7 +31,7 @@ public class AttachStudentCommandHandler(
             return Results.AlreadyExistsException<Unit>(StudentErrors.AlreadyExists);
 
         var student = await _studentServiceClient.VerifyExistStudentById(request.StudentId);
-        if (student is null)
+        if (!student)
             return Results.NotFoundException<Unit>(StudentErrors.NotFound);
 
         var addStudentResult = course.AddStudent(request.StudentId);

@@ -9,7 +9,7 @@ public record GetAllCoursesQuery(
     Guid accountId) : IQuery<IEnumerable<CourseResponseDto>>;
 
 public class GetAllCoursesQueryHandler(
-    ICourseRepository _courseRepository) 
+    ICourseRepository _courseRepository)
     : IQueryHandler<GetAllCoursesQuery, IEnumerable<CourseResponseDto>>
 {
     public async Task<Result<IEnumerable<CourseResponseDto>>> Handle(GetAllCoursesQuery request, CancellationToken cancellationToken)

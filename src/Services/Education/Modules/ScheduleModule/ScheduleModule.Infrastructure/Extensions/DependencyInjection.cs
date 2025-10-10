@@ -4,7 +4,6 @@ using Microsoft.Extensions.DependencyInjection;
 using ScheduleModule.Domain.Repositories;
 using ScheduleModule.Infrastructure.Persistence;
 using ScheduleModule.Infrastructure.Repositories;
-using StackExchange.Redis;
 
 namespace ScheduleModule.Infrastructure.Extensions;
 

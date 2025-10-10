@@ -1,18 +1,18 @@
-using Education.Api.Extensions;
 using CourseModule.Application.Extensions;
 using CourseModule.Infrastructure.Extensions;
-using StudentIntegration.Infrastructure;
 using CourseModule.Orchestration.Extensions;
+using Education.Api.Extensions;
+using GradeModule.Application.Extensions;
 using GradeModule.Infrastructure.Extensions;
 using GradeModule.Orchestration.Extensions;
-using LessonModule.Infrastructure.Extensions;
-using LessonModule.Application.Extensions;
-using GradeModule.Application.Extensions;
 using HomeworkModule.Application.Extensions;
 using HomeworkModule.Infrastructure.Extensions;
-using ScheduleModule.Infrastructure.Extensions;
+using LessonModule.Application.Extensions;
+using LessonModule.Infrastructure.Extensions;
 using ScheduleModule.Application.Extensions;
+using ScheduleModule.Infrastructure.Extensions;
 using ScheduleModule.Orchestration.Extensions;
+using StudentIntegration.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 

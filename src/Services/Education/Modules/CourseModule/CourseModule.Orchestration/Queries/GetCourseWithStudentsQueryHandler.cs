@@ -11,7 +11,7 @@ public record GetCourseWithStudentsQuery(
 
 public class GetCourseWithStudentsQueryHandler(
     IStudentServiceClient _studentServiceClient,
-    ICourseRepository _courseRepository) 
+    ICourseRepository _courseRepository)
     : IQueryHandler<GetCourseWithStudentsQuery, IEnumerable<StudentDto>>
 {
     public async Task<Result<IEnumerable<StudentDto>>> Handle(GetCourseWithStudentsQuery request, CancellationToken cancellationToken)

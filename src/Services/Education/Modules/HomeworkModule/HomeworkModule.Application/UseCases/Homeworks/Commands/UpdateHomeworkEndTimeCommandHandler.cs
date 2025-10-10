@@ -11,7 +11,7 @@ public record UpdateHomeworkEndTimeCommand(
 
 public class UpdateHomeworkEndTimeCommandHandler(
     IHomeworkRepository _homeworkRepository,
-    IHomeworkUnitOfWork _unitOfWork) 
+    IHomeworkUnitOfWork _unitOfWork)
     : ICommandHandler<UpdateHomeworkEndTimeCommand, Unit>
 {
     public async Task<Result<Unit>> Handle(UpdateHomeworkEndTimeCommand request, CancellationToken cancellationToken)

@@ -9,7 +9,7 @@ public record GetHomeworksByLessonIdQuery(
     Guid LessonId) : IQuery<List<HomeworkResponseDto>>;
 
 public class GetHomeworksByLessonIdQueryHandler(
-    IHomeworkRepository _homeworkRepository) 
+    IHomeworkRepository _homeworkRepository)
     : IQueryHandler<GetHomeworksByLessonIdQuery, List<HomeworkResponseDto>>
 {
     public async Task<Result<List<HomeworkResponseDto>>> Handle(GetHomeworksByLessonIdQuery request, CancellationToken cancellationToken)

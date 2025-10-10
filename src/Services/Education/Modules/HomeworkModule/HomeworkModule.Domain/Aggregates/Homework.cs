@@ -54,10 +54,10 @@ public class Homework : AggregateRoot
         decimal maxScore)
     {
         var result = new Homework(
-            id, 
-            title, 
-            description, 
-            endTime, 
+            id,
+            title,
+            description,
+            endTime,
             lessonId,
             courseId,
             createdBy,
@@ -72,6 +72,6 @@ public class Homework : AggregateRoot
         return Result.Success(this);
     }
 
-    public void Overdue() 
+    public void Overdue()
         => Status = HomeworkStatus.Overdue;
 }

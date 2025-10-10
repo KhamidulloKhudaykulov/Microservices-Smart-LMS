@@ -1,7 +1,6 @@
 ﻿using CourseModule.Application.UseCases.Courses.Contracts;
 using CourseModule.Domain.Exceptions;
 using CourseModule.Domain.Repositories;
-using MediatR;
 using SharedKernel.Application.Abstractions.Messaging;
 
 namespace CourseModule.Application.UseCases.Courses.Queries;

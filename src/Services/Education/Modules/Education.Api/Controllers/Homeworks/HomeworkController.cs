@@ -16,7 +16,7 @@ public class HomeworkController : BaseController
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create([FromQuery]CreateHomeworkCommand commmand)
+    public async Task<IActionResult> Create([FromQuery] CreateHomeworkCommand commmand)
     {
         var result = await _sender.Send(commmand);
         if (result.IsSuccess)
