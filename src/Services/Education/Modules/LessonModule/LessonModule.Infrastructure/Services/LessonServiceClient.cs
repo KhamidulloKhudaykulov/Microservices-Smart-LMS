@@ -24,6 +24,6 @@ public class LessonServiceClient(
         if (existLesson is null)
             return null;
 
-        return new LessonResponseDto(existLesson.Id, existLesson.Theme.Value, existLesson.Date);
+        return new LessonResponseDto(existLesson.CourseId, existLesson.Theme.Value, existLesson.Date);
     }
 }
