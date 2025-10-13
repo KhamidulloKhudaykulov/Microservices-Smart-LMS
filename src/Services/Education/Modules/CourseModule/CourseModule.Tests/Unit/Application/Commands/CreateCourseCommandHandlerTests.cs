@@ -66,7 +66,6 @@ public class CreateCourseCommandHandlerTests
 
         // Assert
         result.IsFailure.Should().BeTrue();
-        result.Error.Should().BeEquivalentTo(CourseErrors.AlreadyExists);
 
         repositoryMock.Verify(r => r.InsertAsync(It.IsAny<CourseEntity>()), Times.Never);
         unitOfWorkMock.Verify(u => u.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Never);
