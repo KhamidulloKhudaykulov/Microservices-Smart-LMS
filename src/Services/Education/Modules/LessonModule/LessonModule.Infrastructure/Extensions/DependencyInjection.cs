@@ -1,8 +1,6 @@
-﻿using LessonModule.Application.Interfaces;
-using LessonModule.Domain.Repositories;
+﻿using LessonModule.Domain.Repositories;
 using LessonModule.Infrastructure.Persistence;
 using LessonModule.Infrastructure.Repositories;
-using LessonModule.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,7 +18,6 @@ public static class DependencyInjection
             options.UseSqlServer(configuration.GetConnectionString("EducationDbConnection"));
         });
 
-        services.AddScoped<ILessonServiceClient, LessonServiceClient>();
         services.AddScoped<ILessonUnitOfWork, UnitOfWork>();
         services.AddScoped<ILessonRepository, LessonRepository>();
 
