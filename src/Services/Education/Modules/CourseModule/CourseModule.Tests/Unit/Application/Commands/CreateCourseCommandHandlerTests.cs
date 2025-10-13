@@ -1,11 +1,8 @@
 ﻿using CourseModule.Application.UseCases.Courses.Commands;
 using CourseModule.Domain.Entitites;
-using CourseModule.Domain.Exceptions;
-using CourseModule.Domain.Repositories;
 using CourseModule.Tests.Unit.Common.Mocks;
 using FluentAssertions;
 using Moq;
-using SharedKernel.Domain.Repositories;
 using Xunit;
 
 namespace CourseModule.Tests.Unit.Application.Commands;

@@ -16,8 +16,7 @@ public static class CourseRepositoryMock
     public static Mock<IUnitOfWork> GetUnitOfWork()
     {
         var mock = new Mock<IUnitOfWork>();
-        mock.Setup(u => u.SaveChangesAsync(It.IsAny<CancellationToken>()))
-            .ReturnsAsync(1);
+        
         return mock;
     }
 }
