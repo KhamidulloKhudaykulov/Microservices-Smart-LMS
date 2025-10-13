@@ -11,7 +11,7 @@ public class CourseIntegration(
     ICourseRepository _courseRepository)
     : ICourseIntegration
 {
-    public async Task<Result<CourseResponseDto?>> GetCourse(Expression<Func<CourseEntity, bool>> predicate)
+    public async Task<Result<CourseResponseDto?>> GetCourse(Guid courseId, Expression<Func<CourseEntity, bool>> predicate)
     {
         var course = await _courseRepository
             .SelectAsync(predicate);
