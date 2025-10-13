@@ -46,9 +46,10 @@ public class CourseRepository : ICourseRepository
             .ToListAsync();
     }
 
-    public async Task<CourseEntity?> SelectAsync(Expression<Func<CourseEntity, bool>> predicate)
+    public async Task<CourseEntity?> SelectAsync(Guid courseId, Expression<Func<CourseEntity, bool>> predicate)
     {
-        return await _courses
+        var courses = _courses.Where(c => c.Id == courseId);
+        return await courses
             .FirstOrDefaultAsync(predicate);
     }
 
