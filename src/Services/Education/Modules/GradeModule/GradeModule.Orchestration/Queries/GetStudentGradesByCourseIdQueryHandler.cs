@@ -1,6 +1,7 @@
 ﻿using CourseModule.Application.Interfaces;
 using GradeModule.Domain.Repositories;
 using GradeModule.Orchestration.Dtos;
+using Integration.Logic.Abstractions;
 using SharedKernel.Application.Abstractions.Messaging;
 using StudentIntegration.Application.InterfaceBridges;
 
@@ -14,7 +15,7 @@ public record GetStudentGradesByCourseIdQuery(
 public class GetStudentGradesByCourseIdQueryHandler(
     IGradeRepository _gradeRepository,
     IStudentServiceClient _studentServiceClient,
-    ICourseServiceClient _courseServiceClient)
+    ICourseIntegration _courseIntegration)
     : IQueryHandler<GetStudentGradesByCourseIdQuery, List<StudentGradeDto>>
 {
     public async Task<Result<List<StudentGradeDto>>> Handle(GetStudentGradesByCourseIdQuery request, CancellationToken cancellationToken)
@@ -27,7 +28,7 @@ public class GetStudentGradesByCourseIdQueryHandler(
             return new List<StudentGradeDto>();
 
         var studentTask = _studentServiceClient.GetStudentDetailsById(request.studentId);
-        var courseTask = _courseServiceClient.GetCourseByIdAsync(request.courseId);
+        var courseTask = _courseIntegration.GetCourseByIdAsync(request.courseId);
 
         await Task.WhenAll(studentTask, courseTask);
 

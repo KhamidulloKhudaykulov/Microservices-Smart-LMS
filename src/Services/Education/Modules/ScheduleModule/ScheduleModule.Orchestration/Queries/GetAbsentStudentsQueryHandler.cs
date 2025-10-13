@@ -14,7 +14,7 @@ public record GetAbsentStudentsQuery(
 public class GetAbsentStudentsQueryHandler(
     IScheduleRepository<LessonScheduleEntity> _scheduleRepository,
     IStudentServiceClient _studentServiceClient,
-    ICourseServiceClient _courseServiceClient,
+    ICourseIntegration _courseIntegration,
     ILessonIntegration _lessonIntegration) : IQueryHandler<GetAbsentStudentsQuery, List<AbsentStudentResponseDto>>
 {
     public async Task<Result<List<AbsentStudentResponseDto>>> Handle(GetAbsentStudentsQuery request, CancellationToken cancellationToken)
@@ -37,7 +37,7 @@ public class GetAbsentStudentsQueryHandler(
         var lesson = await _lessonIntegration.GetLessonByIdAsync(request.LessonId);
 
         var studentTask = _studentServiceClient.GetStudentsByIds(absentStudents);
-        var courseTask = _courseServiceClient.GetCourseByIdAsync(lesson!.CourseId);
+        var courseTask = _courseIntegration.GetCourseByIdAsync(lesson!.CourseId);
 
         await Task.WhenAll(studentTask, courseTask);
 

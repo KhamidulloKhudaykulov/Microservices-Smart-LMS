@@ -3,6 +3,7 @@ using GradeModule.Application.UseCases.Homeworks.Rules;
 using GradeModule.Domain.Enitites;
 using GradeModule.Domain.Repositories;
 using HomeworkModule.Application.Interfaces;
+using Integration.Logic.Abstractions;
 using MediatR;
 using SharedKernel.Application.Abstractions.Messaging;
 using StudentIntegration.Application.InterfaceBridges;
@@ -23,13 +24,13 @@ public class CreateHomeworkGradeCommandHandler(
     IGradeUnitOfWork _unitOfWork,
     IHomeworkServiceClient _homeworkServiceClient,
     IStudentServiceClient _studentServiceClient,
-    ICourseServiceClient _courseServiceClient)
+    ICourseIntegration _courseIntegration)
     : ICommandHandler<CreateHomeworkGradeCommand, Unit>
 {
     public async Task<Result<Unit>> Handle(CreateHomeworkGradeCommand request, CancellationToken cancellationToken)
     {
         var rules = new HomeworkMustExistRule(_homeworkServiceClient)
-            .Then(new StudentMustExistRule(_studentServiceClient, _courseServiceClient));
+            .Then(new StudentMustExistRule(_studentServiceClient, _courseIntegration));
 
         var validationResult = await rules.CheckAsync(request, cancellationToken);
         if (validationResult.IsFailure)

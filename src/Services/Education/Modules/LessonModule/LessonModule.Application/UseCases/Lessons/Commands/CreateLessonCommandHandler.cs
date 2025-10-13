@@ -1,5 +1,6 @@
 ﻿using CourseModule.Application.Interfaces;
 using CourseModule.Domain.Exceptions;
+using Integration.Logic.Abstractions;
 using LessonModule.Domain.Entities;
 using LessonModule.Domain.Repositories;
 using LessonModule.Domain.ValueObjects.Lessons;
@@ -17,12 +18,12 @@ public record CreateLessonCommand(
 public class CreateLessonCommandHandler(
     ILessonRepository _lessonRepository,
     ILessonUnitOfWork _unitOfWork,
-    ICourseServiceClient _courseService)
+    ICourseIntegration _courseIntegration)
     : ICommandHandler<CreateLessonCommand, Unit>
 {
     public async Task<Result<Unit>> Handle(CreateLessonCommand request, CancellationToken cancellationToken)
     {
-        var course = await _courseService.IsCourseAvailable(request.CourseId);
+        var course = await _courseIntegration.IsCourseAvailable(request.CourseId);
         if (course.IsFailure)
             return Results.CustomException<Unit>(course.Error);
 
