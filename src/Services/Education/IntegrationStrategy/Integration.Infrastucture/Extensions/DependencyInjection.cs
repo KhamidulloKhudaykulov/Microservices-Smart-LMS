@@ -25,7 +25,15 @@ public static class DependencyInjection
         {
             try
             {
-                connectionMultiplexer = ConnectionMultiplexer.Connect(redisSettings.Host!);
+                var options = new ConfigurationOptions
+                {
+                    EndPoints = { redisSettings.Host },
+                    User = redisSettings.Username,
+                    Password = redisSettings.Password,
+                    AbortOnConnectFail = false
+                };
+
+                connectionMultiplexer = ConnectionMultiplexer.Connect(options);
                 services.AddSingleton<IConnectionMultiplexer>(connectionMultiplexer);
 
                 services.AddScoped<LessonIntegration>();
