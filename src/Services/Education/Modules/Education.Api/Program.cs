@@ -12,11 +12,17 @@ using LessonModule.Infrastructure.Extensions;
 using ScheduleModule.Application.Extensions;
 using ScheduleModule.Infrastructure.Extensions;
 using ScheduleModule.Orchestration.Extensions;
+using Integration.Infrastucture.Extensions;
 using StudentIntegration.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration
+    .AddJsonFile("ProjectConfigs/appsettings.redis.json", optional: true, reloadOnChange: true);
+
 builder.Services.AddStudentIntegrationInfrastructure(builder.Configuration);
+
+builder.Services.AddIntegrationInfrastructure(builder.Configuration);
 
 builder.Services.AddCourseModuleApplication();
 builder.Services.AddCourseModuleOrchestration();
