@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\External\StudentIntegration\StudentIntegration.Application\StudentIntegration.Application.csproj" />
+    <ProjectReference Include="..\..\..\IntegrationStrategy\Integration.Logic\Integration.Logic.csproj" />
     <ProjectReference Include="..\..\CourseModule\CourseModule.Application\CourseModule.Application.csproj" />
     <ProjectReference Include="..\..\LessonModule\LessonModule.Application\LessonModule.Application.csproj" />
     <ProjectReference Include="..\ScheduleModule.Domain\ScheduleModule.Domain.csproj" />
