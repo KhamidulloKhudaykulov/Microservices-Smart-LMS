@@ -2,7 +2,6 @@
 using CourseModule.Domain.Repositories;
 using CourseModule.Infrastructure.Persistence;
 using CourseModule.Infrastructure.Repositories;
-using CourseModule.Infrastructure.Services.Courses;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,7 +20,6 @@ public static class DependencyInjection
             options.UseSqlServer(configuration.GetConnectionString("EducationDbConnection"));
         });
 
-        services.AddScoped<ICourseServiceClient, CourseService>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<ICourseRepository, CourseRepository>();
 
