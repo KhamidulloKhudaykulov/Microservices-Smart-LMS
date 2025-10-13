@@ -14,7 +14,7 @@ public class CourseIntegration(
     public async Task<Result<CourseResponseDto?>> GetCourse(Guid courseId, Expression<Func<CourseEntity, bool>> predicate)
     {
         var course = await _courseRepository
-            .SelectAsync(predicate);
+            .SelectAsync(courseId, predicate);
 
         if (course is null)
             return Results.NotFoundException<CourseResponseDto?>(CourseErrors.NotFound);
