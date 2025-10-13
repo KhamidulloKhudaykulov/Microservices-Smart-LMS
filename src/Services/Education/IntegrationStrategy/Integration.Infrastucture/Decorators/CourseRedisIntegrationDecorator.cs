@@ -2,9 +2,7 @@
 using CourseModule.Domain.Entitites;
 using Integration.Logic.Abstractions;
 using StackExchange.Redis;
-using System;
 using System.Linq.Expressions;
-using System.Net.NetworkInformation;
 using System.Text.Json;
 
 namespace Integration.Infrastucture.Decorators;
