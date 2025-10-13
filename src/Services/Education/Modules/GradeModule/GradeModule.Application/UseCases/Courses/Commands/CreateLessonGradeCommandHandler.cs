@@ -1,6 +1,6 @@
 ﻿using GradeModule.Domain.Enitites;
 using GradeModule.Domain.Repositories;
-using LessonModule.Application.Interfaces;
+using Integration.Logic.Abstractions;
 using MediatR;
 using SharedKernel.Application.Abstractions.Messaging;
 using StudentIntegration.Application.InterfaceBridges;
@@ -19,7 +19,7 @@ public class CreateLessonGradeCommandHandler(
     IGradeRepository _gradeRepository,
     IGradeUnitOfWork _unitOfWork,
     IStudentServiceClient _studentServiceClient,
-    ILessonServiceClient _lessonServiceClient)
+    ILessonIntegration _lessonintegration)
     : ICommandHandler<CreateLessonGradeCommand, Unit>
 {
     public async Task<Result<Unit>> Handle(CreateLessonGradeCommand request, CancellationToken cancellationToken)
@@ -31,7 +31,7 @@ public class CreateLessonGradeCommandHandler(
                 code: "User.NotFound",
                 message: "This user is not found"));
 
-        if (!await _lessonServiceClient.ChechExistLessonByIdAsync(request.lessonId))
+        if (!await _lessonintegration.ChechExistLessonByIdAsync(request.lessonId))
             return Result.Failure<Unit>(new Error(
                 code: "Lesson.NotFound",
                 message: "This lesson is not found"));
