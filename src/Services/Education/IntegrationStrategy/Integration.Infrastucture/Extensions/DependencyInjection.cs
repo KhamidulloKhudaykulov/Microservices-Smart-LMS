@@ -1,4 +1,6 @@
-﻿using Integration.Infrastucture.Configurations;
+﻿using CourseModule.Infrastructure.Services.Courses;
+using Integration.Infrastucture.Configurations;
+using Integration.Infrastucture.Decorators;
 using Integration.Infrastucture.Implementations;
 using Integration.Logic.Abstractions;
 using Microsoft.Extensions.Configuration;
@@ -33,17 +35,27 @@ public static class DependencyInjection
                     var redis = sp.GetRequiredService<IConnectionMultiplexer>();
                     return new LessonRedisIntegrationDecorator(inner, redis);
                 });
+
+                services.AddScoped<CourseIntegration>();
+                services.AddScoped<ICourseIntegration>(sp =>
+                {
+                    var inner = sp.GetRequiredService<CourseIntegration>();
+                    var redis = sp.GetRequiredService<IConnectionMultiplexer>();
+                    return new CourseRedisIntegrationDecorator(inner, redis);
+                });
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Redis connection failed: {ex.Message}");
 
                 services.AddScoped<ILessonIntegration, LessonIntegration>();
+                services.AddScoped<ICourseIntegration, CourseIntegration>();
             }
         }
         else
         {
             services.AddScoped<ILessonIntegration, LessonIntegration>();
+            services.AddScoped<ICourseIntegration, CourseIntegration>();
         }
 
         return services;
