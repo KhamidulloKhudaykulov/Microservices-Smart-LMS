@@ -62,7 +62,7 @@ public class CourseRedisIntegrationDecorator
         if (response is null)
             return null;
 
-        var json = JsonSerializer.Serialize(response);
+        var json = JsonSerializer.Serialize(response.Value);
         await _db.StringSetAsync(cacheKey, json, TimeSpan.FromHours(1));
 
         return response!;
