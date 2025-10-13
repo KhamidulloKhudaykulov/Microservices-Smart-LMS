@@ -10,6 +10,8 @@ public class LessonRedisIntegrationDecorator
     : BaseDecorator<ILessonIntegration>, ILessonIntegration
 {
     private readonly IConnectionMultiplexer _redis;
+    private readonly string KeyPrefix = "lessons";
+    private readonly IDatabase _db;
 
     public LessonRedisIntegrationDecorator(
         ILessonIntegration inner,
@@ -17,20 +19,20 @@ public class LessonRedisIntegrationDecorator
         : base(inner)
     {
         _redis = redis;
+        _db = _redis.GetDatabase();
     }
 
     public async Task<bool> ChechExistLessonByIdAsync(Guid lessonId)
     {
-        var db = _redis.GetDatabase();
-        var cacheKey = $"lesson:{lessonId}:exists";
+        var cacheKey = $"{KeyPrefix}:{lessonId}:exists";
 
-        if (await db.KeyExistsAsync(cacheKey))
+        if (await _db.KeyExistsAsync(cacheKey))
             return true;
 
         var result = await _inner.ChechExistLessonByIdAsync(lessonId);
 
         if (result)
-            await db.StringSetAsync(cacheKey, "1", TimeSpan.FromMinutes(10));
+            await _db.StringSetAsync(cacheKey, "1", TimeSpan.FromMinutes(10));
 
         return result;
     }
@@ -38,7 +40,7 @@ public class LessonRedisIntegrationDecorator
     public async Task<LessonResponseDto?> GetLessonByIdAsync(Guid lessonId)
     {
         var db = _redis.GetDatabase();
-        var cacheKey = $"lesson:{lessonId}";
+        var cacheKey = $"{KeyPrefix}:{lessonId}";
 
         var cachedValue = await db.StringGetAsync(cacheKey);
         if (cachedValue.HasValue)
