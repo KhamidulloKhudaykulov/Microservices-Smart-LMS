@@ -1,5 +1,5 @@
 ﻿using CourseModule.Application.Interfaces;
-using LessonModule.Application.Interfaces;
+using Integration.Logic.Abstractions;
 using ScheduleModule.Domain.Entities;
 using ScheduleModule.Domain.Repositories;
 using ScheduleModule.Orchestration.Dtos;
@@ -15,7 +15,7 @@ public class GetAbsentStudentsQueryHandler(
     IScheduleRepository<LessonScheduleEntity> _scheduleRepository,
     IStudentServiceClient _studentServiceClient,
     ICourseServiceClient _courseServiceClient,
-    ILessonServiceClient _lessonServiceClient) : IQueryHandler<GetAbsentStudentsQuery, List<AbsentStudentResponseDto>>
+    ILessonIntegration _lessonIntegration) : IQueryHandler<GetAbsentStudentsQuery, List<AbsentStudentResponseDto>>
 {
     public async Task<Result<List<AbsentStudentResponseDto>>> Handle(GetAbsentStudentsQuery request, CancellationToken cancellationToken)
     {
@@ -34,7 +34,7 @@ public class GetAbsentStudentsQueryHandler(
                 code: "AbsetStudents.NotFound",
                 message: "Absent students was not found in this Lesson"));
 
-        var lesson = await _lessonServiceClient.GetLessonByIdAsync(request.LessonId);
+        var lesson = await _lessonIntegration.GetLessonByIdAsync(request.LessonId);
 
         var studentTask = _studentServiceClient.GetStudentsByIds(absentStudents);
         var courseTask = _courseServiceClient.GetCourseByIdAsync(lesson!.CourseId);
