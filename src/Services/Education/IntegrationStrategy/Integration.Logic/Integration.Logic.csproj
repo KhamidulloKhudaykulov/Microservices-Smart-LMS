@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="SharedKernel" Version="1.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Modules\CourseModule\CourseModule.Domain\CourseModule.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
