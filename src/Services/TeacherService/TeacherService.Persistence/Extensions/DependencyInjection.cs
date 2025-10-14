@@ -12,7 +12,7 @@ public static class DependencyInjection
     {
         services.AddDbContext<TeacherServiceDbContext>(options =>
         {
-            options.UseSqlServer(configuration.GetConnectionString("DefaultStudentDbConnection"));
+            options.UseSqlServer(configuration.GetConnectionString("DefaultTeacherDbConnection"));
         });
 
         return services;
