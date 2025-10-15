@@ -13,9 +13,7 @@ public class TeacherController : ControllerBase
     private readonly ISender _sender;
 
     public TeacherController(ISender sender)
-    {
-        _sender = sender;
-    }
+        => _sender = sender;
 
     [HttpPost]
     public async Task<IActionResult> Create(CreateTeacherCommand command)
