@@ -7,7 +7,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddServices(builder.Configuration);
-builder.Services.AddAuthenticationExtension(builder.Configuration);
+//builder.Services.AddAuthenticationExtension(builder.Configuration);
 builder.Services.AddRateLimiterExtension();
 
 var app = builder.Build();
@@ -18,12 +18,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseAuthenticationMiddleware();
+//app.UseAuthenticationMiddleware();
 
 app.UseRateLimiter();
 
-app.UseAuthentication();
-app.UseAuthorization();
+//app.UseAuthentication();
+//app.UseAuthorization();
 
 app.UseClaimsForwardingMiddelware();
 
