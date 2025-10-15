@@ -68,7 +68,7 @@ public class TeacherController : ControllerBase
         return BadRequest(response.Error);
     }
 
-    [HttpGet("{page}/{pageSize}")]
+    [HttpGet("page:{page}/size:{pageSize}")]
     public async Task<IActionResult> GetAll(int page, int pageSize)
     {
         var query = new GetAllTeachersQuery(page, pageSize);
