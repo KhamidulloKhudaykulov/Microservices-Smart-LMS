@@ -12,7 +12,7 @@ using TeacherService.Persistence;
 namespace TeacherService.Persistence.Migrations
 {
     [DbContext(typeof(TeacherServiceDbContext))]
-    [Migration("20251014053930_Initial")]
+    [Migration("20251015073112_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -42,6 +42,9 @@ namespace TeacherService.Persistence.Migrations
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<string>("Surname")
                         .IsRequired()
