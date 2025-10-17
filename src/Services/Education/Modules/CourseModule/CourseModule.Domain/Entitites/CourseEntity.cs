@@ -1,6 +1,7 @@
 ﻿using CourseModule.Domain.Enums;
 using CourseModule.Domain.Interfaces;
 using CourseModule.Domain.States.Courses;
+using CourseModule.Domain.ValueObjects;
 using SharedKernel.Domain.Primitives;
 
 namespace CourseModule.Domain.Entitites;
@@ -10,7 +11,7 @@ public class CourseEntity : AggregateRoot
     private CourseEntity(
         Guid id,
         Guid AccountId,
-        string name,
+        CourseName name,
         DateTime startsAt)
         : base(id)
     {
@@ -20,7 +21,7 @@ public class CourseEntity : AggregateRoot
     public Guid AccountId { get; private set; }
     public List<Guid> StudentIds { get; private set; } = new List<Guid>();
     public List<Guid> TeacherIds { get; private set; } = new List<Guid>();
-    public string Name { get; private set; }
+    public CourseName Name { get; private set; }
     public DateTime StartsAt { get; private set; }
     public DateTime? EndsAt { get; private set; }
     public CourseStatus Status { get; protected set; } = CourseStatus.Opened;
@@ -30,7 +31,7 @@ public class CourseEntity : AggregateRoot
     public static Result<CourseEntity> Create(
         Guid id,
         Guid accountId,
-        string name,
+        CourseName name,
         DateTime startsAt)
     {
         var entity = new CourseEntity(id, accountId, name, startsAt);
