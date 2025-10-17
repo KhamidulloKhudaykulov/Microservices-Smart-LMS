@@ -1,6 +1,7 @@
 ﻿using CourseModule.Domain.Entitites;
 using CourseModule.Domain.Exceptions;
 using CourseModule.Domain.Repositories;
+using CourseModule.Domain.ValueObjects;
 using MediatR;
 using SharedKernel.Application.Abstractions.Messaging;
 using SharedKernel.Domain.Repositories;
@@ -23,10 +24,14 @@ public class CreateCourseCommandHandler(
         if (course is not null)
             return Results.AlreadyExistsException<Unit>(CourseErrors.AlreadyExists);
 
+        var courseName = CourseName.Create(request.CourseName);
+        if (courseName.IsFailure)
+            return Result.Failure<Unit>(courseName.Error);
+
         var newCourse = CourseEntity.Create(
             id: Guid.NewGuid(),
             accountId: request.AccountId,
-            name: request.CourseName,
+            name: courseName.Value,
             startsAt: request.StartsAt);
 
         if (newCourse.IsFailure)
