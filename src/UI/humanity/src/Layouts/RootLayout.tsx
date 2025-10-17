@@ -3,18 +3,17 @@ import { Layout, Menu, Breadcrumb } from 'antd';
 import {
     DesktopOutlined,
     PieChartOutlined,
-    FileOutlined,
-    TeamOutlined,
     UserOutlined,
     ProfileOutlined,
     MessageOutlined,
     SettingOutlined,
     InfoCircleOutlined,
 } from '@ant-design/icons';
+import { NavLink, Outlet } from 'react-router-dom';
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const RootLayout: React.FC<{}> = ({ }) => {
     const [collapsed, setCollapsed] = React.useState(false);
 
     return (
@@ -26,10 +25,10 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 </div>
                 <Menu theme="light" defaultSelectedKeys={['1']} mode="inline">
                     <Menu.Item key="1" icon={<PieChartOutlined />}>
-                        Dashboard
+                        <NavLink to="/">Dashboard</NavLink>
                     </Menu.Item>
                     <Menu.Item key="2" icon={<UserOutlined />}>
-                        Talabalar
+                        <NavLink to="/students">O'quvchilar</NavLink>
                     </Menu.Item>
                     <Menu.Item key="6" icon={<ProfileOutlined />}>
                         Kurslar
@@ -54,7 +53,7 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             {/* Main Layout */}
             <Layout className="site-layout">
                 <Header style={{ padding: 0, background: '#fff', display: "flex", height: 72 }}>
-                    <h2 style={{ marginLeft: 16 }}>Welcome to Humanity</h2>
+                    <h2 style={{ marginLeft: 16 }}>Welcome to SMART-LMS</h2>
                     <div style={{ display: "flex", alignItems: "center", marginLeft: "auto", marginRight: 20 }}>
                         <img
                             src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
@@ -75,8 +74,8 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                         <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
                         <Breadcrumb.Item>Analytics</Breadcrumb.Item>
                     </Breadcrumb>
-                    <div style={{ padding: 24, minHeight: 360, background: '#fff' }}>
-                        {children}
+                    <div style={{ background: '#fff' }}>
+                        <Outlet />
                     </div>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>

@@ -115,6 +115,25 @@ namespace StudentService.Persistence.Migrations
                                 .HasForeignKey("StudentId");
                         });
 
+                    b.OwnsOne("StudentService.Domain.ValueObjects.Students.UniqueCode", "UniqueCode", b1 =>
+                        {
+                            b1.Property<Guid>("StudentId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasMaxLength(7)
+                                .HasColumnType("nvarchar(7)")
+                                .HasColumnName("uniqueCode");
+
+                            b1.HasKey("StudentId");
+
+                            b1.ToTable("students");
+
+                            b1.WithOwner()
+                                .HasForeignKey("StudentId");
+                        });
+
                     b.Navigation("Email")
                         .IsRequired();
 
@@ -125,6 +144,9 @@ namespace StudentService.Persistence.Migrations
                         .IsRequired();
 
                     b.Navigation("PhoneNumber")
+                        .IsRequired();
+
+                    b.Navigation("UniqueCode")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

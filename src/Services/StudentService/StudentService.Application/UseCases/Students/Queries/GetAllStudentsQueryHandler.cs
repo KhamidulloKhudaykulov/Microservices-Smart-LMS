@@ -30,19 +30,21 @@ public class GetAllStudentsQueryHandler : IRequestHandler<GetAllStudentsQuery, R
         var items = await _redisCacheService
             .GetAsync<IEnumerable<StudentResponseDto>>(cacheKey);
 
-        if (items is not null)
+        if (items is not null 
+                && items.Count() > 0)
             return Result.Success<IEnumerable<StudentResponseDto>>(items);
 
         var students = (await _studentRepository.SelectAllAsync())
-            .Skip((request.PageNumber - 1) * request.PageSize)
-            .Take(request.PageSize)
+            //.Skip((request.PageNumber - 1) * request.PageSize)
+            //.Take(request.PageSize)
             .Select(s => new StudentResponseDto()
             {
                 Id = s.Id,
                 FullName = s.FullName.Value,
                 PhoneNumber = s.PhoneNumber.Value,
                 PassportData = s.PassportData.Value,
-                Email = s.Email.Value
+                Email = s.Email.Value,
+                UniqueCode = s.UniqueCode.Value,
             });
 
         await _redisCacheService.SetAsync(cacheKey, students);

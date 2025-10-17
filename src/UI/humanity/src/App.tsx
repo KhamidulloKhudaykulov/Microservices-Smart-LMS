@@ -1,13 +1,18 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import RootLayout from './Layouts/RootLayout';
-import { Button } from 'antd';
+import Students from './Views/Students';
 
 function App() {
   return (
-    <RootLayout>
-      <h1>Dashboard Content</h1>
-      <Button type="primary">Click Me</Button>
-    </RootLayout>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<RootLayout />}>
+          <Route path="/" element={<div>Home Page</div>} />
+          <Route path="/students" element={<Students />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -15,15 +15,18 @@ public class Student : Entity
         FullName fullname,
         PhoneNumber phoneNumber,
         PassportData passportData,
-        Email email)
+        Email email,
+        UniqueCode uniqueCode)
     {
         Id = id;
         FullName = fullname;
         PhoneNumber = phoneNumber;
         PassportData = passportData;
         Email = email;
+        UniqueCode = uniqueCode;
     }
 
+    public UniqueCode UniqueCode { get; private set; }
     public FullName FullName { get; private set; }
     public PhoneNumber PhoneNumber { get; private set; }
     public PassportData PassportData { get; private set; }
@@ -39,18 +42,40 @@ public class Student : Entity
         string passportData,
         string email)
     {
+        var fullNameResult = FullName.Create(fullName);
+        if (fullNameResult.IsFailure)
+            return Result.Failure<Student>(fullNameResult.Error);
+
+        var phoneNumberResult = PhoneNumber.Create(phoneNumber);
+        if (phoneNumberResult.IsFailure)
+            return Result.Failure<Student>(phoneNumberResult.Error);
+
+        var passportDataResult = PassportData.Create(passportData);
+        if (passportDataResult.IsFailure)
+            return Result.Failure<Student>(passportDataResult.Error);
+
+        var emailResult = Email.Create(email);
+        if (emailResult.IsFailure)
+            return Result.Failure<Student>(emailResult.Error);
+
+        var uniqueCodeResult = UniqueCode.Create();
+        if (uniqueCodeResult.IsFailure)
+            return Result.Failure<Student>(uniqueCodeResult.Error);
+
         var student = new Student(
             id,
-            FullName.Create(fullName).Value,
-            PhoneNumber.Create(phoneNumber).Value,
-            PassportData.Create(passportData).Value,
-            Email.Create(email).Value
-            );
+            fullNameResult.Value,
+            phoneNumberResult.Value,
+            passportDataResult.Value,
+            emailResult.Value,
+            uniqueCodeResult.Value
+        );
 
         student.AddDomainEvent(new StudentCreatedDomainEvent(student.Id, student.Email.Value));
 
-        return student;
+        return Result.Success(student);
     }
+
 
     public Result<Student> Update(
         string fullName,

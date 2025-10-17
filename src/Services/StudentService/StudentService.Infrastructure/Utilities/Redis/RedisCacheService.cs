@@ -10,7 +10,16 @@ public class RedisCacheService : IRedisCacheService
     private readonly IDatabase _db;
     public RedisCacheService(string connection)
     {
-        var redis = ConnectionMultiplexer.Connect(connection);
+        var options = new ConfigurationOptions
+        {
+            EndPoints = { "localhost:6379" },
+            User = "admin",
+            Password = "admin",
+            DefaultDatabase = 0,
+            AbortOnConnectFail = false
+        };
+
+        var redis = ConnectionMultiplexer.Connect(options);
         _db = redis.GetDatabase();
     }
 

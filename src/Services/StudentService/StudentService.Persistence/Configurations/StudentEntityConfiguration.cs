@@ -47,6 +47,14 @@ public class StudentEntityConfiguration : IEntityTypeConfiguration<Student>
              .IsRequired();
         });
 
+        builder.OwnsOne(s => s.UniqueCode, e =>
+        {
+            e.Property(p => p.Value)
+             .HasColumnName("uniqueCode")
+             .HasMaxLength(7)
+             .IsRequired();
+        });
+
         // 🔹 Status
         builder.Property(s => s.StudentStatus)
                .HasColumnName("status")

@@ -32,8 +32,8 @@ public partial class StudentController : ControllerBase
     {
         var permissions = HttpContext.GetStudentPermissions();
 
-        if (!permissions.Contains("student.get"))
-            return Forbid();
+        //if (!permissions.Contains("student.get"))
+        //    return Forbid();
 
         var result = await _sender.Send(query);
         return result.IsSuccess
